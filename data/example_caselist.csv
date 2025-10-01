@@ -1,0 +1,52 @@
+﻿player_id;team;sex;case_id;event_id;date_event;problem_type;onset;body_area;tissue;pathology_type;organ_system;aetiology;mh_symptoms;when_occurred;match_min;contact;contact_type;player_action;sanction;card;subsequent_cat;recurrence_type;timeloss;timeloss_cat;osiics_15_code
+player_1;team_1;male;case_1;event_1;05/02/2025;Injury;Sudden-onset;Lower leg;Muscle/tendon;Muscle injury;;;;Training;;No;;Running (any speed);No foul;;re-injury;;33;timeloss;QMS
+player_8;team_1;male;case_2;event_2;11/01/2025;Injury;Sudden-onset;Head;Nervous system;Brain/Spinal cord injury;;;;Training;;Yes, direct contact (to injured body part);Ball;Heading;No foul;;index;;9;timeloss;HN1
+player_8;team_1;male;case_3;event_3;12/02/2025;Injury;Sudden-onset;Head;Nervous system;Brain/Spinal cord injury;;;;Match;32;Yes, direct contact (to injured body part);Opponent;Collision;No foul;;re-injury;early;30;timeloss;HN1
+player_12;team_2;male;case_4;event_4;07/02/2025;Injury;Sudden-onset;Knee;Ligament/joint capsule;Joint sprain (ligament tear or acute instability);;;;Match;76;Yes, direct contact (to injured body part);Team mate;Collision;No foul;;index;;44;timeloss;KL3
+player_15;team_2;male;case_5;event_5;02/02/2025;Injury;Sudden-onset;Head;Nervous system;Brain/Spinal cord injury;;;;Match;45;Yes, direct contact (to injured body part);Opponent;Tackle;Opponent committing foul;No card;re-injury;;9;timeloss;HN1
+player_18;team_2;male;case_6;event_6;09/01/2025;Injury;Sudden-onset;Thigh;Muscle/tendon;Muscle injury;;;;Training;;No;;Change of direction;No foul;;index;;11;timeloss;TMAL
+player_19;team_2;male;case_7;event_7;10/01/2025;Injury;Sudden-onset;Thigh;Muscle/tendon;Muscle injury;;;;Training;;No;;Falling;No foul;;index;;5;timeloss;TMS
+player_23;team_3;male;case_8;event_8;02/02/2025;Injury;Gradual-onset;Groin;Muscle/tendon;Muscle injury;;;;;;;;;;;index;;8;timeloss;GMY
+player_24;team_3;male;case_9;event_9;14/01/2025;Illness;;Medical;;;Respiratory ;Infection;;;;;;;;;recurrent illness;;6;timeloss;MPIC
+player_29;team_3;male;case_10;event_10;03/02/2025;Injury;Sudden-onset;Knee;Ligament/joint capsule;Joint sprain (ligament tear or acute instability);;;;Match;92;No;;Change of direction;No foul;;index;;230;timeloss;KL1
+player_30;team_4;male;case_11;event_11;11/01/2025;Injury;Sudden-onset;Ankle;Ligament/joint capsule;Joint sprain (ligament tear or acute instability);;;;Training;;Yes, direct contact (to injured body part);Opponent;Running (any speed);No foul;;re-injury;;10;timeloss;ALA
+player_32;team_4;male;case_12;event_12;31/01/2025;Illness;;Medical;;;Respiratory ;Infection;;;;;;;;;Unknown;;7;timeloss;MPIC
+player_36;team_4;male;case_13;event_13;07/01/2025;Injury;Sudden-onset;Thigh;Muscle/tendon;Muscle injury;;;;Match;67;Yes, direct contact (to injured body part);;Hit by ball;No foul;;index;;13;timeloss;TMAL
+player_39;team_4;male;case_14;event_14;08/02/2025;Injury;Gradual-onset;Knee;Muscle/tendon;Tendinopathy;;;;;;;;;;;re-injury;;1;timeloss;KT9
+player_42;team_5;male;case_15;event_15;06/01/2025;Injury;Sudden-onset;Groin;Muscle/tendon;Muscle injury;;;;Training;;No;;;No foul;;index;;1;timeloss;GMY
+player_44;team_5;male;case_16;event_16;03/01/2025;Injury;Gradual-onset;Groin;Muscle/tendon;Muscle injury;;;;;;;;;;;index;;26;timeloss;GMY
+player_55;team_6;male;case_17;event_17;01/02/2025;Injury;Sudden-onset;Ankle;Ligament/joint capsule;Joint sprain (ligament tear or acute instability);;;;Training;;No;;;;;re-injury;;3;timeloss;ALJ
+player_57;team_6;male;case_18;event_18;05/02/2025;Injury;Sudden-onset;Ankle;Ligament/joint capsule;Joint sprain (ligament tear or acute instability);;;;Match;9;No;;Landing;No foul;;index;;119;timeloss;ALM
+player_59;team_6;male;case_19;event_19;11/02/2025;Mental health problem;;Medical;;;Psychiatric/psychological ;Unknown, or not specified;Generalised anxiety;;;;;;;;exacerbation;;15;timeloss;MSZX
+player_61;team_7;male;case_20;event_20;15/01/2025;Injury;Sudden-onset;Lower leg;Bone;Fracture;;;;Match;12;Yes, direct contact (to injured body part);Opponent;Tackle;No foul;;index;;100;timeloss;QFS
+player_62;team_7;male;case_21;event_21;15/01/2025;Illness;;Medical;;;Gastrointestinal ;Infection;;;;;;;;;index;;1;timeloss;MGIX
+player_66;team_7;male;case_22;event_22;12/02/2025;Injury;Sudden-onset;Thigh;Muscle/tendon;Muscle contusion;;;;Match;46;Yes, direct contact (to injured body part);Opponent;Tackle;Injured player committing foul;Red card;index;;4;timeloss;THD
+player_67;team_7;male;case_23;event_23;11/01/2025;Injury;Sudden-onset;Head;Vessels;Contusion/vascular;;;;Match;34;Yes, direct contact (to injured body part);Opponent;Collision;No foul;;index;;2;timeloss;HV1
+player_75;team_8;male;case_24;event_24;26/01/2025;Mental health problem;;Medical;;;Psychiatric/psychological ;Unknown, or not specified;Depression;;;;;;;;index;;7;timeloss;MSZX
+player_77;team_8;male;case_25;event_25;30/01/2025;Injury;Sudden-onset;Knee;Ligament/joint capsule;Joint sprain (ligament tear or acute instability);;;;Match;78;Yes, indirect contact (to other body part);Ball;Kicking (any type);No foul;;index;;15;timeloss;KLV
+player_88;team_9;male;case_26;event_26;12/02/2025;Injury;Sudden-onset;Knee;Bone;Bone contusion;;;;Match;55;Yes, direct contact (to injured body part);Opponent;Collision;No foul;;index;;1;timeloss;KJX
+player_88;team_9;male;case_27;event_26;12/02/2025;Injury;Sudden-onset;Head;Superficial tissues/skin;Laceration;;;;Training;;Yes, direct contact (to injured body part);Team mate;Heading;No foul;;index;;;;HK1
+player_90;team_10;male;case_28;event_27;12/02/2025;Injury;Sudden-onset;Foot;Ligament/joint capsule;Joint sprain (ligament tear or acute instability);;;;Match;15;Yes, direct contact (to injured body part);Opponent;Kicking (any type);No foul;;index;;4;timeloss;FLJ
+player_95;team_10;male;case_29;event_28;04/01/2025;Illness;;Medical;;;Gastrointestinal ;Infection;;;;;;;;;index;;1;timeloss;MGIX
+player_98;team_10;male;case_30;event_29;07/02/2025;Injury;Sudden-onset;Knee;Cartilage/synovium/bursa;Cartilage;;;;Match;54;No;;Kicking (any type);No foul;;index;;185;timeloss;KC3
+player_123;team_13;male;case_31;event_30;08/02/2025;Injury;Gradual-onset;Foot;Bone;Bone stress injury;;;;;;;;;;;index;;50;timeloss;FSN
+player_128;team_13;male;case_32;event_31;20/08/2025;Injury;Sudden-onset;Thigh;Muscle/tendon;Muscle injury;;;;Match;83;No;;Running;No foul;;index;;30;timeloss;TMH
+player_128;team_13;male;case_33;event_32;30/09/2025;Injury;Gradual-onset;Lumbosacral;Non-specific ;Pain without tissue type specified ;;;;;;;;;;;index;;3;timeloss;LP1
+player_129;team_13;male;case_34;event_33;30/03/2025;Injury;Gradual-onset;Thigh;Muscle/tendon;Tendinopathy;;;;;;;;;;;index;;0;non-timeloss;TT1
+player_134;team_14;male;case_35;event_34;15/01/2025;Injury;Gradual-onset;Wrist;Muscle/tendon;Tendinopathy;;;;;;;;;;;re-injury;;0;non-timeloss;WTF
+player_142;team_15;male;case_36;event_35;12/02/2025;Injury;Sudden-onset;Thigh;Muscle/tendon;Muscle injury;;;;Training;;No;;Running (any speed);No foul;;re-injury;;0;non-timeloss;TM1
+player_143;team_15;male;case_37;event_36;11/01/2025;Injury;Sudden-onset;Ankle;Ligament/joint capsule;Joint sprain (ligament tear or acute instability);;;;Match;80;Yes, direct contact (to injured body part);Opponent;Change of direction;No foul;;index;;41;timeloss;ALJ
+player_145;team_15;male;case_38;event_37;26/01/2025;Injury;Gradual-onset;Lower leg;Muscle/tendon;Muscle injury;;;;;;;;;;;index;;0;non-timeloss;QMT
+player_145;team_15;male;case_39;event_38;30/01/2025;Illness;;Medical;;;;;;;;;;;;;index;;4;timeloss;MGIX
+player_151;team_16;male;case_40;event_39;12/02/2025;Injury;Sudden-onset;Knee;Cartilage/synovium/bursa;Cartilage;;;;Match;60;No;;Change of direction;No foul;;index;;98;timeloss;KC3
+player_153;team_16;male;case_41;event_40;12/02/2025;Mental health problem;;Medical;;;;;;;;;;;;;index;;0;non-timeloss;MSZX
+player_155;team_16;male;case_42;event_41;12/02/2025;Injury;Sudden-onset;Thigh;Muscle/tendon;Muscle injury;;;;Match;85;No;;Change of direction;No foul;;index;;6;timeloss;TM1
+player_160;team_17;male;case_43;event_42;04/01/2025;Injury;Sudden-onset;Lumbosacral;Muscle/tendon;Tendinopathy;;;;Match;80;No;;Other:;No foul;;index;;2;timeloss;LTP
+player_161;team_17;male;case_44;event_43;07/02/2025;Injury;Sudden-onset;Foot;Bone;Bone contusion;;;;Training;;Yes, direct contact (to injured body part);Opponent;Controlling the ball;No foul;;index;;3;timeloss;FJX
+player_166;team_17;male;case_45;event_44;08/02/2025;Illness;;Medical;;;;;;;;;;;;;index;;5;timeloss;MPIX
+player_175;team_18;male;case_46;event_45;20/08/2025;Injury;Sudden-onset;Head;Vessels;Contusion/vascular;;;;Match;20;Yes, direct contact (to injured body part);Ball;Running (any speed);Opponent committing foul;Yellow card;index;;1;timeloss;HV1
+player_177;team_18;male;case_47;event_46;07/08/2025;Illness;;Medical;;;;;;;;;;;;;index;;2;timeloss;MPIX
+player_183;team_19;male;case_48;event_47;09/08/2025;Injury;Sudden-onset;Ankle;Ligament/joint capsule;Joint sprain (ligament tear or acute instability);;;;Match;10;Yes, direct contact (to injured body part);Opponent;Running (any speed);Opponent committing foul;Yellow card;Unknown;;7;timeloss;ALA
+player_188;team_19;male;case_49;event_48;26/07/2025;Injury;Sudden-onset;Knee;Ligament/joint capsule;Joint sprain (ligament tear or acute instability);;;;Training;;No;;Change of direction;No foul;;index;;110;timeloss;KL1
+player_199;team_20;male;case_50;event_49;30/07/2025;Injury;Sudden-onset;Thigh;Muscle/tendon;Muscle contusion;;;;Match;46;Yes, direct contact (to injured body part);Opponent;Tackle;Injured player committing foul;Red card;index;;;;THD
+player_199;team_20;male;case_51;event_49;30/07/2025;Injury;Sudden-onset;Knee;Ligament/joint capsule;Joint sprain (ligament tear or acute instability);;;;Match;46;Yes, direct contact (to injured body part);Opponent;Tackle;Injured player committing foul;Red card;index;;220;timeloss;KL1
