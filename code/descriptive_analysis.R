@@ -2,31 +2,29 @@
 
 # Define output directory and project name
 
-output_dir <- "03_Analysis/Results/men" 
-project_name <- "OFT2025_men"
+output_dir <- "results" 
+project_name <- "test"
 
 
 
 ## Load and prepare data -----
 ### Player data -------------
-player_details <- read_delim("02_Data/deid/player_list_deid.csv", delim = ",") %>% filter(sex == "men")
+player_details <- read_delim("data/example_player_details.csv", delim = ";") 
 
 ###  Case data --------
-caselist <- read_delim("02_Data/deid/caselist_deid.csv", delim = ",") %>% filter(sex == "men", when_occurred != "Other" | is.na(when_occurred)) %>% filter(subsequent_cat != "exacerbation")
+caselist <- read_delim("data/example_caselist.csv", delim = ";") %>% filter(subsequent_cat != "exacerbation")
 
 ### Exposure data --------
-data_exposure <- read_delim("02_Data/deid/exposure_wide_deid.csv", delim = ",") %>% 
-  group_by(sex)%>%
-  filter(sex == "men") %>%
+data_exposure <- read_delim("data/example_exposure_daily.csv", delim = ";") %>% 
   summarise(
-    match = sum(match)/60,
-    training = sum(training)/60,
-    total = sum(total)/60
+    match = sum(match_minutes)/60,
+    training = sum(training_minutes)/60) %>%
+  mutate(total = match + training
   ) %>% print()
 
-data_exposure_days <- read_delim("02_Data/raw/exposure/exposure_days.csv", delim = ";", locale = locale(decimal_mark = ","))
-data_exposure_days <- data_exposure_days %>% filter(sex =="men")
-player_days <- sum(data_exposure_days$exposure_days)
+player_days <- read_delim("data/example_exposure_daily.csv", delim = ";") %>% nrow()
+
+
 
 
 # Participation overview ----------
@@ -34,19 +32,20 @@ player_days <- sum(data_exposure_days$exposure_days)
 
 participation_table <- player_details %>%
   summarise(
-    `Total number of teams` = n_distinct(Team),
-    `Participating teams (consented)` = n_distinct(Team[consent_oft_2024 == "yes"]),
+    `Total number of teams` = n_distinct(team),
+    `Participating teams (consented)` = n_distinct(team[consent == "yes"]),
     `Proportion of teams included` = round(`Participating teams (consented)` / `Total number of teams`, 2),
     `Total number of players` = n(),
-    `Consenting players` = n_distinct(player_id[consent_oft_2024 == "yes"]),
+    `Consenting players` = n_distinct(player_id[consent == "yes"]),
     `Proportion of players included` = round(`Consenting players` / `Total number of players`, 2),
-    `Proportion of players from consenting teams` = round(mean(consent_oft_2024 == "yes"), 2)
+    `Proportion of players from consenting teams` = round(mean(consent == "yes"), 2)
   ) %>%
   t() %>%
   as.data.frame() %>%
   rownames_to_column("Metric") %>%
   rename(Value = V1) %>%
-  mutate(Value = ifelse(grepl("Proportion", Metric), round(as.numeric(Value), 2), as.integer(Value)))
+  mutate(Value = ifelse(grepl("Proportion", Metric), round(as.numeric(Value), 2), as.integer(Value))) %>% 
+  print()
 
 
 # Create styles
@@ -77,29 +76,27 @@ saveWorkbook(wb, file = make_output_path("participation_summary.xlsx"), overwrit
 #calculate players' age in years on first day of tournament
 start_date <-  as.Date("2024-07-19") # First day of OFT 2024
 
-
 player_details <- player_details %>% 
-  rename(birthdate = `Date of Birth` ) %>%
-  mutate(age = sapply(birthdate, calculate_age, specific_day = start_date))
+  mutate(age = sapply(date_birth, calculate_age, specific_day = start_date))
 
 
 player_characteristics_table <- player_details %>%
-  filter(consent_oft_2024 == "yes") %>%
+  filter(consent == "yes") %>%
   summarise(
     Age = list(c(
       Median = round(median(age, na.rm = TRUE)),
       IQR = paste0(round(quantile(age, 0.25, na.rm = TRUE)), "–", round(quantile(age, 0.75, na.rm = TRUE))),
       Range = paste0(round(min(age, na.rm = TRUE)), "–", round(max(age, na.rm = TRUE)))
     )),
-    Height = list(c(
-      Median = round(median(Height, na.rm = TRUE)),
-      IQR = paste0(round(quantile(Height, 0.25, na.rm = TRUE)), "–", round(quantile(Height, 0.75, na.rm = TRUE))),
-      Range = paste0(round(min(Height, na.rm = TRUE)), "–", round(max(Height, na.rm = TRUE)))
+    height = list(c(
+      Median = round(median(height, na.rm = TRUE)),
+      IQR = paste0(round(quantile(height, 0.25, na.rm = TRUE)), "–", round(quantile(height, 0.75, na.rm = TRUE))),
+      Range = paste0(round(min(height, na.rm = TRUE)), "–", round(max(height, na.rm = TRUE)))
     )),
-    Weight = list(c(
-      Median = round(median(Weight, na.rm = TRUE)),
-      IQR = paste0(round(quantile(Weight, 0.25, na.rm = TRUE)), "–", round(quantile(Weight, 0.75, na.rm = TRUE))),
-      Range = paste0(round(min(Weight, na.rm = TRUE)), "–", round(max(Weight, na.rm = TRUE)))
+    weight = list(c(
+      Median = round(median(weight, na.rm = TRUE)),
+      IQR = paste0(round(quantile(weight, 0.25, na.rm = TRUE)), "–", round(quantile(weight, 0.75, na.rm = TRUE))),
+      Range = paste0(round(min(weight, na.rm = TRUE)), "–", round(max(weight, na.rm = TRUE)))
     ))
   ) %>%
   pivot_longer(cols = everything(), names_to = "Variable", values_to = "Stats") %>%

@@ -1,0 +1,22 @@
+node;colour;colour2
+Sudden;#326295;#00B052
+Gradual;#F09316;#00B052
+Repetitive;#86B519;#326295
+Acute;#00B052;#326295
+Training;#4994CE;#8a1a67
+Match;#8a1a67;#8a1a67
+Direct contact;#326295;#4994CE
+No contact;#00B052;#4994CE
+Indirect contact;#F09316;#4994CE
+Collision;#8a1a67;#F09316
+Unknown;#FFCC00;#F09316
+Falling;#F09316;#F09316
+Kicking;#4994CE;#F09316
+Tackle;#00B052;#F09316
+Controlling the ball;#F09316;#F09316
+Running;#326295;#F09316
+Heading;#326295;#F09316
+Landing;#86B519;#F09316
+Hit by ball;#4994CE;#F09316
+Change of direction;#8a1a67;#F09316
+Other;#FFCC00;#F09316

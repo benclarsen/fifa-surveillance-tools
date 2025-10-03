@@ -1,17 +1,14 @@
 # Sankey plot 
 
-library(tidyverse)
-library(extrafont)
-#font_import()
-loadfonts()
+load_or_install(c("tidyverse", "extrafont", "devtools"))
+
+devtools::install_github("davidsjoberg/ggsankey", force = TRUE)
+
 library(ggsankey)
-
-library(ggplot2)
-library(dplyr)
-
+loadfonts()
 
 chart_data <- 
-  read_delim("02_Data/deid/caselist_deid.csv", delim = ",") %>% filter(sex == "men", problem_type == "Injury", timeloss >0, when_occurred != "Other" | is.na(when_occurred)) %>% filter(subsequent_cat != "exacerbation") %>%
+  read_delim("data/example_caselist.csv", delim = ";") %>% filter(problem_type == "Injury", timeloss >0, when_occurred != "Other" | is.na(when_occurred)) %>% filter(subsequent_cat != "exacerbation") %>%
   mutate(" " = "All injuries") %>%
   select(" ", onset, when_occurred,  contact, player_action) %>% 
   rename(training_match = when_occurred)
@@ -152,7 +149,7 @@ colours <- c(
 )
 
 
-data_palette <- read_delim("02_data/raw/palette_nodes.csv", delim = ";")
+data_palette <- read_delim("data/palette_nodes.csv", delim = ";")
 data_palette$node <- recode(data_palette$node, Reetitive = "All injuries", Acute = "All injuries")
 data_palette$node <- recode(data_palette$node,  "Sudden" = "Sudden onset", "Gradual" = "Gradual onset")
 
@@ -211,6 +208,6 @@ pl <- pl + scale_fill_manual(values = colours)
 pl
 
 
-ggsave("04_Analysis/results/men/sankey_men.pdf", pl, width = 16, height = 9, units = "cm")
-ggsave("04_Analysis/results/men/sankey_men.png", pl, device = "png",  width = 16, height = 9, units = "cm", dpi = 600)
+ggsave("results/sankey.pdf", pl, width = 16, height = 9, units = "cm")
+ggsave("results/sankey.png", pl, device = "png",  width = 16, height = 9, units = "cm", dpi = 600)
 
