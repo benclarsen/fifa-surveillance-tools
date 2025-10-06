@@ -10,10 +10,10 @@ load_or_install <- function(packages) {
   }
 }
 
-
-
 # Load required packages for functions in this script
 load_or_install(c("digest", "openxlsx"))
+
+
 
 
 
@@ -48,7 +48,14 @@ setup_project_folders <- function() {
   message("Folder structure created in: ", getwd())
 }
 
-setup_project_folders()
+#To run:
+#setup_project_folders()
+
+
+
+
+
+
 
 # DEIDENTIFY --------
 deidentify <- function(data, id_var, key_path = NULL, hash_algo = "sha256", hash_length = 16) {
@@ -76,6 +83,11 @@ deidentify <- function(data, id_var, key_path = NULL, hash_algo = "sha256", hash
   
   return(list(data = data, key = key))
 }
+
+
+
+
+
 
 # OUTPUT PATH  --------
 make_output_path <- function(filename) {

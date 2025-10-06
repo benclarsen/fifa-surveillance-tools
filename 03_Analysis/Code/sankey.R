@@ -8,7 +8,7 @@ library(ggsankey)
 loadfonts()
 
 chart_data <- 
-  read_delim("data/example_caselist.csv", delim = ";") %>% filter(problem_type == "Injury", timeloss >0, when_occurred != "Other" | is.na(when_occurred)) %>% filter(subsequent_cat != "exacerbation") %>%
+  read_delim("02_Data/example_caselist.csv", delim = ";") %>% filter(problem_type == "Injury", timeloss >0, when_occurred != "Other" | is.na(when_occurred)) %>% filter(subsequent_cat != "exacerbation") %>%
   mutate(" " = "All injuries") %>%
   select(" ", onset, when_occurred,  contact, player_action) %>% 
   rename(training_match = when_occurred)
@@ -149,7 +149,7 @@ colours <- c(
 )
 
 
-data_palette <- read_delim("data/palette_nodes.csv", delim = ";")
+data_palette <- read_delim("02_Data/palette_nodes.csv", delim = ";")
 data_palette$node <- recode(data_palette$node, Reetitive = "All injuries", Acute = "All injuries")
 data_palette$node <- recode(data_palette$node,  "Sudden" = "Sudden onset", "Gradual" = "Gradual onset")
 
@@ -208,6 +208,6 @@ pl <- pl + scale_fill_manual(values = colours)
 pl
 
 
-ggsave("results/sankey.pdf", pl, width = 16, height = 9, units = "cm")
-ggsave("results/sankey.png", pl, device = "png",  width = 16, height = 9, units = "cm", dpi = 600)
+ggsave("03_Analysis/Results/sankey.pdf", pl, width = 16, height = 9, units = "cm")
+ggsave("03_Analysis/Results/sankey.png", pl, device = "png",  width = 16, height = 9, units = "cm", dpi = 600)
 

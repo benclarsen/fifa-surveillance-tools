@@ -1,10 +1,12 @@
 
 
 # Load necessary libraries
-library(tidyverse)  # Includes ggplot2 and dplyr
-library(ggrepel)    # For better label placement
-library(png)        # For reading PNG files
-library(grid)       # For creating graphical objects
+     
+load_or_install(c("tidyverse",
+                  "ggrepel", 
+                  "png", # For reading PNG files
+                  "grid" # For creating graphical objects
+                  ))
 
 # Create the plot background ------------
 df <- expand.grid(x = 1:1000, y = 1:1000) %>%
@@ -14,8 +16,8 @@ midpoint <- 0.66
 
 background <- ggplot(df, aes(x = x, y = y, fill = value)) +
   geom_raster(interpolate = TRUE) +
-  scale_fill_gradientn(colors = c("white", "gold", "#ff9900"), values = c(0, midpoint, 1)) + # Original colours (e.g. IOC consensus)
-  #scale_fill_gradientn(colors = c("#C6D9FF",  "#3A92FF"), values = c(0, 1)) +. # FIFA colours (e.g. Serner et al 2024)
+  #scale_fill_gradientn(colors = c("white", "gold", "#ff9900"), values = c(0, midpoint, 1)) + # Original colours (e.g. IOC consensus)
+  scale_fill_gradientn(colors = c("#C6D9FF",  "#3A92FF"), values = c(0, 1)) + # FIFA colours (e.g. Serner et al 2024)
   theme_void() +
   theme(
     legend.position = "none",
@@ -27,10 +29,10 @@ background <- ggplot(df, aes(x = x, y = y, fill = value)) +
   coord_cartesian(expand = FALSE)
 
 # Save the background plot as a PNG file with transparent background
-ggsave("results/matrix_background.png", plot = background, width = 7, height = 7, units = "in", dpi = 600, bg = "transparent")
+ggsave("03_Analysis/matrix_background.png", plot = background, width = 7, height = 7, units = "in", dpi = 600, bg = "transparent")
 
 # Read the PNG file and create a raster grob from the image
-img_grob <- rasterGrob(readPNG("results/matrix_background.png"), width = unit(1, "npc"), height = unit(1, "npc"))
+img_grob <- rasterGrob(readPNG("03_Analysis/Results/matrix_background.png"), width = unit(1, "npc"), height = unit(1, "npc"))
 
 
 
@@ -131,8 +133,8 @@ create_matrix_data <- function(caselist, exposure, grouping_vars = c()) {
 
 
 exposure_input <- sum(data_exposure$total)
-caselist_input <- caselist %>% filter(timeloss_cat == "timeloss")
-grouping_vars <- c("osiics_15_body_part")
+caselist_input <- caselist %>% filter(problem_type == "Injury", timeloss_cat == "timeloss")
+grouping_vars <- c("osiics_15_level_1")
 
 
 
@@ -181,8 +183,8 @@ add_reference_line <- function(value, ylim, xlim) {
 }
 
 # Define reference values for lines on the plot
- values <- c(5, 10, 20, 30, 40)  # ADAPT TO DATA - These are normal for FIFA tournaments
-#values <- c(10, 20, 50, 100)  # ADAPT TO DATA - These are adapted to the example dataset
+# values <- c(5, 10, 20, 30, 40)  # ADAPT TO DATA - These are normal for FIFA tournaments
+values <- c(10, 20, 50, 100)  # ADAPT TO DATA - These are adapted to the example dataset
 
 # Create the main plot with matrix data
 matrix_plot <- ggplot(matrix_data, aes(x = x, y = y)) +
@@ -210,7 +212,7 @@ matrix_plot <- ggplot(matrix_data, aes(x = x, y = y)) +
   
   # Format axes with specified limits and breaks  
   scale_x_continuous(expand=c(0 ,0), limits=c(0 ,xlim), breaks=seq(0 ,xlim ,by=1), name="Incidence rate (per 1000 h)") +  # ADAPT TO DATA
-  scale_y_continuous(expand=c(0 ,0), limits=c(0 ,ylim), breaks=seq(0 ,ylim ,by=5), name="Average time loss (days)") +  # ADAPT TO DATA
+  scale_y_continuous(expand=c(0 ,0), limits=c(0 ,ylim), breaks=seq(0 ,ylim ,by=20), name="Average time loss (days)") +  # ADAPT TO DATA
   
   # Define theme settings for aesthetics and layout 
   theme_void() +   # Start with a void theme (no gridlines or axes)
@@ -234,7 +236,7 @@ matrix_plot # view plot
 
 
 # Save the final plot as a PNG file with specified dimensions and resolution.
-png("results/risk_matrix_beach_soccer.png", width=8,height=8 ,units="cm" ,res=600)
+png("03_Analysis/Results/risk_matrix.png", width=8,height=8 ,units="cm" ,res=600)
 
 print(matrix_plot)   # Print the plot to the PNG device 
 

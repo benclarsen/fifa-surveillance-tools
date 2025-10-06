@@ -1,6 +1,6 @@
 
 # Load required packages
-load_or_install(c("dplyr", "stats", "boot", "tibble", "openxlsx"))
+load_or_install(c("tidyverse", "boot", "tibble", "openxlsx"))
 
 
                 
@@ -19,10 +19,12 @@ calculate_age <- function(birthdate, specific_day) {
 }
 # Example: calculate players' age in years on first day of tournament
 
-start_date <-  as.Date("2024-07-19")
-birthdate <- as.Date("1978-07-21")
+# start_date <-  as.Date("2024-07-19") # First day of competition
+# birthdate <- as.Date("1978-07-21")
+# calculate_age(birthdate, start_date)
 
-calculate_age(birthdate, start_date)
+
+
 
 
 # Incidence and Severity Calculation Function ------

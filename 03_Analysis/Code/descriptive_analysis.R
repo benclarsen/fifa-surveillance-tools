@@ -1,28 +1,28 @@
 
-
+source("code/osiics_15.R")
 # Define output directory and project name
 
-output_dir <- "results" 
+output_dir <- "03_Analysis/Results" 
 project_name <- "test"
 
 
 
 ## Load and prepare data -----
 ### Player data -------------
-player_details <- read_delim("data/example_player_details.csv", delim = ";") 
+player_details <- read_delim("02_Data/example_player_details.csv", delim = ";") 
 
 ###  Case data --------
-caselist <- read_delim("data/example_caselist.csv", delim = ";") %>% filter(subsequent_cat != "exacerbation")
+caselist <- read_delim("02_Data/example_caselist.csv", delim = ";") %>% filter(subsequent_cat != "exacerbation")
 
 ### Exposure data --------
-data_exposure <- read_delim("data/example_exposure_daily.csv", delim = ";") %>% 
+data_exposure <- read_delim("02_Data/example_exposure_daily.csv", delim = ";") %>% 
   summarise(
     match = sum(match_minutes)/60,
     training = sum(training_minutes)/60) %>%
   mutate(total = match + training
   ) %>% print()
 
-player_days <- read_delim("data/example_exposure_daily.csv", delim = ";") %>% nrow()
+player_days <- read_delim("02_Data/example_exposure_daily.csv", delim = ";") %>% nrow()
 
 
 
@@ -248,27 +248,30 @@ save_overall_results_excel(result, make_output_path("overall_results.xlsx"))
 
 # Injury table 1 (1-3-4)------------
 
+caselist <- left_join(caselist, osiics_15)
+
+
 # Time loss - All injuries
 generate_table_1_3_4(
   caselist_input = caselist %>% filter(
     problem_type == "Injury", 
     timeloss_cat == "timeloss"),
   exposure_input = sum(data_exposure$match),
-  output_path = make_output_path("table_1_tl_all_v2.xlsx")
+  output_path = make_output_path("table_injury_all_tl_1_3_4.xlsx")
 )
 
 # Time loss - Match injuries
 generate_table_1_3_4(
   caselist_input = caselist %>% filter(problem_type == "Injury", timeloss_cat == "timeloss", when_occurred == "Match"),
   exposure_input = sum(data_exposure$match),
-  output_path = make_output_path("table_1_tl_match.xlsx")
+  output_path = make_output_path("table_injury_match_tl_1_3_4.xlsx")
 )
 
 # Time loss - Training injuries
 generate_table_1_3_4(
   caselist_input = caselist %>% filter(problem_type == "Injury", timeloss_cat == "timeloss", when_occurred == "Training"),
   exposure_input = sum(data_exposure$training),
-  output_path = make_output_path("table_1_tl_training.xlsx")
+  output_path = make_output_path("table_injury_training_tl_1_3_4.xlsx")
 )
 
 
@@ -276,21 +279,21 @@ generate_table_1_3_4(
 generate_table_1_3_4(
   caselist_input = caselist %>% filter(problem_type == "Injury"),
   exposure_input = sum(data_exposure$match),
-  output_path = make_output_path("table_1_ma_all.xlsx")
+  output_path = make_output_path("table_injury_all_ma_1_3_4.xlsx")
 )
 
 # Medical attention  - Match injuries
 generate_table_1_3_4(
   caselist_input = caselist %>% filter(problem_type == "Injury",  when_occurred == "Match"),
   exposure_input = sum(data_exposure$match),
-  output_path = make_output_path("table_1_ma_match.xlsx")
+  output_path = make_output_path("table_injury_match_ma_1_3_4.xlsx")
 )
 
 # Medical attention  - Training injuries
 generate_table_1_3_4(
   caselist_input = caselist %>% filter(problem_type == "Injury",  when_occurred == "Training"),
   exposure_input = sum(data_exposure$training),
-  output_path = make_output_path("table_1_ma_training.xlsx")
+  output_path = make_output_path("table_injury_training_ma_1_3_4.xlsx")
 )
 
 
@@ -300,7 +303,7 @@ generate_table_1_3_4(
 generate_table_2_3(
   caselist_input = caselist %>% filter(problem_type == "Injury", timeloss_cat == "timeloss"),
   exposure_input = sum(data_exposure$match),
-  output_path = make_output_path("table_2_tl_all.xlsx")
+  output_path = make_output_path("table_injury_all_tl_2_3.xlsx")
 )
 
 
@@ -308,14 +311,14 @@ generate_table_2_3(
 generate_table_2_3(
   caselist_input = caselist %>% filter(problem_type == "Injury", timeloss_cat == "timeloss", when_occurred == "Match"),
   exposure_input = sum(data_exposure$match),
-  output_path = make_output_path("table_2_tl_match.xlsx")
+  output_path = make_output_path("table_injury_match_tl_2_3.xlsx")
 )
 
 # Time loss - Training injuries
 generate_table_2_3(
   caselist_input = caselist %>% filter(problem_type == "Injury", timeloss_cat == "timeloss", when_occurred == "Training"),
   exposure_input = sum(data_exposure$training),
-  output_path = make_output_path("table_2_tl_training.xlsx")
+  output_path = make_output_path("table_injury_training_tl_2_3.xlsx")
 )
 
 
@@ -323,21 +326,21 @@ generate_table_2_3(
 generate_table_2_3(
   caselist_input = caselist %>% filter(problem_type == "Injury"),
   exposure_input = sum(data_exposure$match),
-  output_path = make_output_path("table_2_ma_all.xlsx")
+  output_path = make_output_path("table_injury_all_ma_2_3.xlsx")
 )
 
 # Medical attention  - Match injuries
 generate_table_2_3(
   caselist_input = caselist %>% filter(problem_type == "Injury",  when_occurred == "Match"),
   exposure_input = sum(data_exposure$match),
-  output_path = make_output_path("table_2_ma_match.xlsx")
+  output_path = make_output_path("table_injury_match_ma_2_3.xlsx")
 )
 
 # Medical attention  - Training injuries
 generate_table_2_3(
   caselist_input = caselist %>% filter(problem_type == "Injury",  when_occurred == "Training"),
   exposure_input = sum(data_exposure$training),
-  output_path = make_output_path("table_2_ma_training.xlsx")
+  output_path = make_output_path("table_injury_training_ma_2_3.xlsx")
 )
 
 
@@ -346,7 +349,7 @@ generate_table_2_3(
 generate_table_1_3_4(
   caselist_input = caselist %>% filter(problem_type == "Illness", timeloss_cat == "timeloss"),
   exposure_input = player_days,
-  output_path = make_output_path("table_tl_all_illness.xlsx")
+  output_path = make_output_path("table_illness_all_tl_1_3_4.xlsx")
 )
 
 
@@ -356,14 +359,6 @@ generate_table_1_3_4(
 generate_table_1_3_4(
   caselist_input = caselist %>% filter(problem_type == "Mental health problem"),
   exposure_input = player_days,
-  output_path = make_output_path("table_ma_all_mh.xlsx")
+  output_path = make_output_path("table_mh_all_ma_1_3_4.xlsx")
 )
-
-
-
-# To Do: ----
-# Move functions to own scripts (separated into themes e.g. setup,  wrangling, tables, figures)
-# Add factor levels to table functions
-# Create functions for report tables and figures
-# Run analyses as a .rmd file - one for the report and one for a paper
 

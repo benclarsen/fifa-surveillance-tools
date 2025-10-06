@@ -2,12 +2,12 @@
 
 
 # Load required libraries
-load_or_install("readr", "tidyverse", "stringr")
+load_or_install(c("readr", "tidyverse", "stringr"))
 
 
 
 my_locale <- readr::locale(encoding = "UTF-8")
-osiics_15 <- readr::read_delim("data/osiics_15.csv", delim = ";", locale = my_locale) 
+osiics_15 <- readr::read_delim("02_Data/osiics_15.csv", delim = ";", locale = my_locale) 
 
 # Clean whitespace from classification fields
 osiics_15 <- osiics_15 %>%
