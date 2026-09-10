@@ -107,9 +107,21 @@ calculate_burden <- function(caselist,
     tibble::tibble(.overall = TRUE)
   }
   
+  empty_result <- tibble::tibble(
+    burden_rate = numeric(0),
+    lower_bound = numeric(0),
+    upper_bound = numeric(0)
+  )
+  
+  # No groups means no cases. Return the right columns with no rows, so callers
+  # can still name them.
+  if (nrow(groups) == 0) {
+    return(bind_cols(groups, empty_result))
+  }
+  
   set.seed(seed)
   
-  results <- lapply(seq_len(nrow(groups)), function(i) {
+  results <- bind_rows(lapply(seq_len(nrow(groups)), function(i) {
     
     rows <- if (length(grouping_vars) > 0) {
       inner_join(per_player, groups[i, ], by = grouping_vars)
@@ -118,9 +130,7 @@ calculate_burden <- function(caselist,
     }
     
     burden_ci(rows$timeloss, exposure, replicates)
-  })
-  
-  results <- bind_rows(results)
+  }))
   
   if (length(grouping_vars) > 0) {
     bind_cols(groups, results)

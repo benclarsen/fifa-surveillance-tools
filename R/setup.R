@@ -61,6 +61,19 @@ make_output_path <- function(filename, output_dir = get_setting("output_dir")) {
 }
 
 
+# Write a result table to the competition's results folder.
+write_result <- function(data, name) {
+  
+  path <- make_output_path(paste0(name, ".csv"))
+  readr::write_csv(data, path, na = "")
+  
+  message("Wrote ", path)
+  
+  invisible(path)
+}
+
+
+
 ## Configuration lookup ----
 
 # Look up a value defined in the competition's config.R, falling back to a
@@ -76,4 +89,37 @@ get_setting <- function(name, default = NULL) {
   }
   
   default
+}
+
+
+
+## Reading competition data ----
+
+# Read a file from the competition's sensitive folder.
+read_sensitive <- function(filename, delim = ";") {
+  readr::read_delim(
+    file.path(get_setting("dir_sensitive"), filename),
+    delim  = delim,
+    locale = readr::locale(encoding = "UTF-8"),
+    show_col_types = FALSE
+  )
+}
+
+
+# Read a de-identified file.
+read_deid <- function(filename, delim = ",") {
+  readr::read_delim(
+    file.path(get_setting("dir_deid"), filename),
+    delim  = delim,
+    locale = readr::locale(encoding = "UTF-8"),
+    show_col_types = FALSE
+  )
+}
+
+
+# Source files write dates as dd/mm/yyyy, but readr sometimes recognises a date
+# column on its own. Accept either.
+parse_date_dmy <- function(x) {
+  if (inherits(x, "Date")) return(x)
+  lubridate::dmy(x)
 }

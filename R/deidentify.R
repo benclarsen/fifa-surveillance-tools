@@ -1,213 +1,168 @@
+# De-identification ----
+#
+# Replaces a direct identifier with a salted hash and writes a key file that
+# allows re-identification.
+#
+# The result is PSEUDONYMISED, not anonymous. The de-identified files still
+# carry team, dates and clinical detail, and the key reverses the process for
+# anyone holding it. Keys live in 05_Keys and move to the secure zone when the
+# competition is archived.
+#
+# The salt is generated once per competition and stored beside the keys. The
+# same salt must be used for every file in a competition, or pseudonyms will
+# not match between files and the files will not join. Without a salt, a hash
+# of an enumerable player ID can be reversed by hashing every possible ID -
+# which is why one is now used.
 
 
+## Salt ----
 
-# ----------------------------
-# FUNCTION: deidentify
-# ----------------------------
-# De-identify a dataset by hashing a unique identifier column and
-# create a re-identification key saved to Excel with controllable naming.
-# Optionally save the de-identified dataset to disk.
-#
-# Arguments:
-#   data            : data.frame/tibble with an ID column (id_var)
-#   id_var          : name of the ID column (character scalar)
-#
-#   # Key file options (Excel)
-#   key_path        : OPTIONAL full path to the Excel key file (e.g., "keys/reid_key_U17_WorldCup_2025.xlsx")
-#   key_dir         : OPTIONAL directory to store the key (e.g., "keys/")
-#   key_filename    : OPTIONAL filename for the key (e.g., "reid_key_U17_WorldCup_2025.xlsx")
-#   tournament_name : OPTIONAL string to auto-generate key file name if key_filename not provided
-#   overwrite       : logical, allow overwriting existing KEY file (default TRUE)
-#
-#   # Hashing options
-#   hash_algo       : digest algorithm (default "sha256")
-#   hash_length     : number of characters to keep from hash (default 16)
-#   salt            : OPTIONAL salt string to reduce cross-project linkability (default NULL)
-#
-#   # Saving the updated (de-identified) dataset
-#   save_data_path   : OPTIONAL full path to write the de-identified dataset
-#                      (e.g., "data/processed/player_data_deid.csv")
-#   save_data_format : OPTIONAL one of "csv", "xlsx", "rds".
-#                      If NULL, it will be inferred from save_data_path extension.
-#   save_overwrite   : logical, allow overwriting existing DATA file (default TRUE)
-#
-# Returns:
-#   list(
-#     data     = deidentified_data (data.frame),
-#     key      = reidentification_key (data.frame),
-#     key_path = path used to save key (or NA if not saved),
-#     data_path = path used to save deidentified dataset (or NA if not saved)
-#   )
-#
+# Read the competition's salt, creating it on first use.
+get_competition_salt <- function(path = file.path(get_setting("dir_keys"), "salt.txt")) {
+  
+  if (file.exists(path)) {
+    return(readLines(path, warn = FALSE)[1])
+  }
+  
+  dir.create(dirname(path), recursive = TRUE, showWarnings = FALSE)
+  
+  salt <- if (requireNamespace("openssl", quietly = TRUE)) {
+    paste(as.character(openssl::rand_bytes(32)), collapse = "")
+  } else {
+    set.seed(NULL)   # reseed from the clock and process id
+    paste(sample(c(letters, LETTERS, 0:9), 40, replace = TRUE), collapse = "")
+  }
+  
+  writeLines(salt, path)
+  
+  message("New de-identification salt written to: ", path,
+          "\nKeep it with the keys. Losing it does not break re-identification, ",
+          "but changing it makes new files unjoinable to old ones.")
+  
+  salt
+}
 
 
+## De-identify ----
 
-deidentify <- function(
-    data,
-    id_var,
-    # key controls
-    key_path = NULL,
-    key_dir = NULL,
-    key_filename = NULL,
-    tournament_name = NULL,
-    overwrite = TRUE,
-    # hashing
-    hash_algo = "sha256",
-    hash_length = 16,
-    salt = NULL,
-    # saving data controls
-    save_data_path = NULL,
-    save_data_format = NULL,
-    save_overwrite = TRUE
-) {
-  # ---- validation: columns & packages ----
+# Replace `id_var` with a salted hash and write the key to Excel.
+# Returns the de-identified data and the key. Writing the data itself is the
+# caller's job.
+deidentify <- function(data,
+                       id_var,
+                       key_path,
+                       salt        = get_competition_salt(),
+                       hash_algo   = "sha256",
+                       hash_length = 16,
+                       overwrite   = TRUE) {
+  
+  if (!is.character(id_var) || length(id_var) != 1) {
+    stop("`id_var` must be a single column name.")
+  }
+  
   if (!id_var %in% names(data)) {
-    stop(sprintf("Column '%s' not found in the dataset.", id_var))
+    stop("Column '", id_var, "' not found in the dataset.")
   }
-  if (!requireNamespace("digest", quietly = TRUE)) {
-    stop("Package 'digest' is required. Install with install.packages('digest').")
-  }
-  if (!requireNamespace("openxlsx", quietly = TRUE)) {
-    stop("Package 'openxlsx' is required. Install with install.packages('openxlsx').")
-  }
+  
   if (!is.numeric(hash_length) || length(hash_length) != 1 || hash_length <= 0) {
     stop("`hash_length` must be a single positive number.")
   }
-  if (!is.character(id_var) || length(id_var) != 1) {
-    stop("`id_var` must be a single column name (character).")
+  
+  ids <- as.character(data[[id_var]])
+  
+  n_missing <- sum(is.na(ids))
+  
+  if (n_missing > 0) {
+    warning(n_missing, " rows have no ", id_var,
+            ". They are left missing rather than given a pseudonym.",
+            call. = FALSE)
   }
   
-  # ---- normalize ID column to character for stable hashing ----
-  id_vals <- data[[id_var]]
-  if (is.factor(id_vals)) id_vals <- as.character(id_vals)
-  if (!is.character(id_vals)) id_vals <- as.character(id_vals)
-  data[[id_var]] <- id_vals
+  unique_ids <- unique(ids[!is.na(ids)])
   
-  # ---- collect unique IDs ----
-  unique_ids <- unique(data[[id_var]])
+  hashed <- vapply(
+    unique_ids,
+    function(x) substr(digest::digest(paste0(x, "::", salt), algo = hash_algo), 1, hash_length),
+    character(1),
+    USE.NAMES = FALSE
+  )
   
-  # ---- hashing helper (with optional salt) ----
-  hash_one <- function(x) {
-    to_hash <- if (is.null(salt)) x else paste0(x, "::", salt)
-    substr(digest::digest(to_hash, algo = hash_algo), 1, hash_length)
+  if (any(duplicated(hashed))) {
+    stop("Hash collision at ", hash_length, " characters. Increase `hash_length`.")
   }
   
-  hashed_ids <- vapply(unique_ids, hash_one, FUN.VALUE = character(1))
-  
-  # ---- collision check within this run ----
-  if (any(duplicated(hashed_ids))) {
-    warning("Detected hash collisions within truncated hashes. Consider increasing `hash_length` or changing `salt`.")
-  }
-  
-  # ---- build key table ----
   key <- data.frame(
     original_id = unique_ids,
-    hashed_id   = hashed_ids,
+    hashed_id   = hashed,
     stringsAsFactors = FALSE
   )
   
-  # ---- map hashed IDs into data ----
-  data[[id_var]] <- key$hashed_id[match(data[[id_var]], key$original_id)]
+  data[[id_var]] <- key$hashed_id[match(ids, key$original_id)]
   
-  # ---- resolve KEY file path (Excel) ----
-  if (!is.null(key_path)) {
-    final_key_path <- key_path
-  } else {
-    # Determine directory
-    if (is.null(key_dir)) key_dir <- "."
-    if (!dir.exists(key_dir)) {
-      dir.create(key_dir, recursive = TRUE, showWarnings = FALSE)
-    }
-    # Determine filename
-    if (is.null(key_filename)) {
-      ts <- format(Sys.time(), "%Y%m%d_%H%M%S")
-      base <- if (!is.null(tournament_name)) {
-        paste0("reid_key_", gsub("[^A-Za-z0-9_\\-]", "_", tournament_name))
-      } else {
-        "reid_key"
-      }
-      key_filename <- paste0(base, "_", ts, ".xlsx")
-    }
-    final_key_path <- file.path(key_dir, key_filename)
+  write_key_file(key, key_path, id_var, hash_algo, hash_length, overwrite)
+  
+  list(data = data, key = key, key_path = key_path)
+}
+
+
+## Key file ----
+
+write_key_file <- function(key, path, id_var, hash_algo, hash_length, overwrite) {
+  
+  if (file.exists(path) && !overwrite) {
+    stop("Key file '", path, "' exists and `overwrite = FALSE`.")
   }
   
-  # ---- write KEY Excel ----
-  if (!is.null(final_key_path) && nzchar(final_key_path)) {
-    if (file.exists(final_key_path) && !overwrite) {
-      stop(sprintf("Key file '%s' exists and `overwrite = FALSE`.", final_key_path))
-    }
-    
-    wb <- openxlsx::createWorkbook()
-    openxlsx::addWorksheet(wb, "key")
-    openxlsx::writeData(wb, sheet = "key", x = key)
-    
-    meta <- data.frame(
-      field = c("generated_at", "hash_algo", "hash_length", "salt_present", "id_var", "n_unique_ids"),
-      value = c(format(Sys.time(), "%Y-%m-%d %H:%M:%S"),
-                hash_algo,
-                hash_length,
-                !is.null(salt),
-                id_var,
-                length(unique_ids)),
-      stringsAsFactors = FALSE
-    )
-    openxlsx::addWorksheet(wb, "metadata")
-    openxlsx::writeData(wb, sheet = "metadata", x = meta)
-    
-    openxlsx::saveWorkbook(wb, file = final_key_path, overwrite = TRUE)
-  } else {
-    final_key_path <- NA_character_
-  }
+  dir.create(dirname(path), recursive = TRUE, showWarnings = FALSE)
   
-  # ---- save the UPDATED (de-identified) DATA if requested ----
-  final_data_path <- NA_character_
-  if (!is.null(save_data_path) && nzchar(save_data_path)) {
-    # Create parent dir if needed
-    data_dir <- dirname(save_data_path)
-    if (!dir.exists(data_dir)) {
-      dir.create(data_dir, recursive = TRUE, showWarnings = FALSE)
-    }
-    
-    # Infer format from extension if save_data_format not provided
-    if (is.null(save_data_format)) {
-      ext <- tolower(tools::file_ext(save_data_path))
-      if (ext %in% c("csv", "xlsx", "rds")) {
-        save_data_format <- ext
-      } else {
-        stop("Could not infer format from 'save_data_path'. Provide `save_data_format` as 'csv', 'xlsx', or 'rds'.")
-      }
-    } else {
-      save_data_format <- tolower(save_data_format)
-      if (!save_data_format %in% c("csv", "xlsx", "rds")) {
-        stop("`save_data_format` must be one of: 'csv', 'xlsx', 'rds'.")
-      }
-    }
-    
-    if (file.exists(save_data_path) && !save_overwrite) {
-      stop(sprintf("Data file '%s' exists and `save_overwrite = FALSE`.", save_data_path))
-    }
-    
-    if (save_data_format == "csv") {
-      utils::write.csv(data, file = save_data_path, row.names = FALSE, na = "")
-    } else if (save_data_format == "xlsx") {
-      wb2 <- openxlsx::createWorkbook()
-      openxlsx::addWorksheet(wb2, "data")
-      openxlsx::writeData(wb2, "data", data)
-      openxlsx::saveWorkbook(wb2, file = save_data_path, overwrite = TRUE)
-    } else if (save_data_format == "rds") {
-      saveRDS(data, file = save_data_path)
-    }
-    final_data_path <- save_data_path
-  }
+  metadata <- data.frame(
+    field = c("generated_at", "competition", "id_var",
+              "hash_algo", "hash_length", "n_unique_ids"),
+    value = c(format(Sys.time(), "%Y-%m-%d %H:%M:%S"),
+              get_setting("competition_code", "unknown"),
+              id_var,
+              hash_algo,
+              as.character(hash_length),
+              as.character(nrow(key))),
+    stringsAsFactors = FALSE
+  )
   
-  # ---- return ----
-  return(list(
-    data = data,                 # the original dataset with the ID column replaced by hashed IDs
-    key = key,                   # re-identification key (original_id -> hashed_id)
-    key_path = final_key_path,   # where the key was saved (or NA)
-    data_path = final_data_path  # where the updated dataset was saved (or NA)
-  ))
+  wb <- openxlsx::createWorkbook()
+  
+  openxlsx::addWorksheet(wb, "key")
+  openxlsx::writeData(wb, "key", key)
+  
+  openxlsx::addWorksheet(wb, "metadata")
+  openxlsx::writeData(wb, "metadata", metadata)
+  
+  openxlsx::saveWorkbook(wb, file = path, overwrite = TRUE)
+  
+  invisible(path)
 }
 
 
 
+## Standard de-identify and save ----
+
+# De-identify a dataset and write both the de-identified copy and its key to
+# the competition's standard locations.
+deidentify_and_save <- function(data, name, id_var = "player_id") {
+  
+  result <- deidentify(
+    data,
+    id_var   = id_var,
+    key_path = file.path(
+      get_setting("dir_keys"),
+      paste0(get_setting("competition_code"), "_", name, "_key.xlsx")
+    )
+  )
+  
+  dir.create(get_setting("dir_deid"), recursive = TRUE, showWarnings = FALSE)
+  
+  path <- file.path(get_setting("dir_deid"), paste0(name, ".csv"))
+  readr::write_csv(result$data, path, na = "")
+  
+  message("Wrote ", path)
+  
+  invisible(result$data)
+}

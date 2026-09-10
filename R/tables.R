@@ -73,22 +73,22 @@ generate_participation_table <- function(player_details) {
 
 
 ## Player characteristics ----
-
-generate_player_characteristics_table <- function(player_details,
-                                                  start_date = get_setting("start_date")) {
+generate_player_characteristics_table <- function(player_details) {
   
-  if (!inherits(player_details$date_birth, "Date")) {
-    stop("`date_birth` must be a Date. Parse it where the file is read, not here.")
+  if (!"age" %in% names(player_details)) {
+    stop("`player_details` has no `age` column. Age is computed in ",
+         "01_prepare_data.R, before de-identification, and date_birth is dropped there.")
   }
   
   players <- filter(player_details, consent %in% "yes")
   
   bind_rows(
-    describe_variable(calculate_age(players$date_birth, start_date), "Age"),
+    describe_variable(players$age,    "Age"),
     describe_variable(players$height, "Height (cm)"),
     describe_variable(players$weight, "Body mass (kg)")
   )
 }
+
 
 
 # Median, interquartile range and range for one variable.
