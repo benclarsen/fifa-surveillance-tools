@@ -4,8 +4,9 @@
      
 load_or_install(c("tidyverse",
                   "ggrepel", 
-                  "png", # For reading PNG files
-                  "grid" # For creating graphical objects
+                  "png", 
+                  "grid",
+                  "cowplot"
                   ))
 
 # Create the plot background ------------
@@ -16,7 +17,7 @@ midpoint <- 0.66
 
 background <- ggplot(df, aes(x = x, y = y, fill = value)) +
   geom_raster(interpolate = TRUE) +
-  #scale_fill_gradientn(colors = c("white", "gold", "#ff9900"), values = c(0, midpoint, 1)) + # Original colours (e.g. IOC consensus)
+  #scale_fill_gradientn(colors = c("white", "gold", "#ff9900"), values = c(0, midpoint, 1)) + # Original colours (e.g. OSTRC papers, IOC consensus)
   scale_fill_gradientn(colors = c("#C6D9FF",  "#3A92FF"), values = c(0, 1)) + # FIFA colours (e.g. Serner et al 2024)
   theme_void() +
   theme(
@@ -29,7 +30,7 @@ background <- ggplot(df, aes(x = x, y = y, fill = value)) +
   coord_cartesian(expand = FALSE)
 
 # Save the background plot as a PNG file with transparent background
-ggsave("03_Analysis/matrix_background.png", plot = background, width = 7, height = 7, units = "in", dpi = 600, bg = "transparent")
+ggsave("03_Analysis/Results/matrix_background.png", plot = background, width = 7, height = 7, units = "in", dpi = 600, bg = "transparent")
 
 # Read the PNG file and create a raster grob from the image
 img_grob <- rasterGrob(readPNG("03_Analysis/Results/matrix_background.png"), width = unit(1, "npc"), height = unit(1, "npc"))
@@ -132,36 +133,37 @@ create_matrix_data <- function(caselist, exposure, grouping_vars = c()) {
 
 
 
+# By body area ---------
+
 exposure_input <- sum(data_exposure$total)
 caselist_input <- caselist %>% filter(problem_type == "Injury", timeloss_cat == "timeloss")
-grouping_vars <- c("osiics_15_level_1")
+grouping_vars <- c("osiics_16_level_1")
 
 
 
 
 
-matrix_data <- create_matrix_data(caselist_input , exposure_input, grouping_vars )
-print(matrix_data)
+matrix_data_area <- create_matrix_data(caselist_input , exposure_input, grouping_vars )
+print(matrix_data_area)
+matrix_data_area <- matrix_data_area %>% filter(names != "Medical")
 
 
-matrix_data <- matrix_data %>% filter(names != "Medical")
-
+matrix_data_tissue <- create_matrix_data(caselist_input , exposure_input, grouping_vars )
+print(matrix_data_tissue)
 
 
 
 
 # Set axis limits (automatic)
-xlim <- max(matrix_data$x)*1.1
-ylim <- max(matrix_data$y, na.rm = TRUE)*1.1
+matrix_limits_data <- rbind(matrix_data_area, matrix_data_tissue) %>% print()
+
+xlim <- max(matrix_limits_data$x)*1.1
+ylim <- max(matrix_limits_data$y, na.rm = TRUE)*1.1
 
 
-
-# Set axis limits (manual)
-# xlim <- 14
-# ylim <- 80.5
 
 # Adjust matrix data to ensure error bars do not extend beyond axis limits
-matrix_data <- matrix_data %>%
+matrix_data_area <- matrix_data_area %>%
   mutate(
     xmin = pmax(xmin, 0),      # Use pmax to limit xmin to 0
     ymin = pmax(ymin, 0),      # Use pmax to limit ymin to 0
@@ -187,7 +189,7 @@ add_reference_line <- function(value, ylim, xlim) {
 values <- c(10, 20, 50, 100)  # ADAPT TO DATA - These are adapted to the example dataset
 
 # Create the main plot with matrix data
-matrix_plot <- ggplot(matrix_data, aes(x = x, y = y)) +
+matrix_plot_area <- ggplot(matrix_data_area, aes(x = x, y = y)) +
   
   annotation_custom(img_grob, xmin = 0, xmax = xlim, ymin = 0, ymax = ylim) +   # Add background image
   
@@ -200,7 +202,7 @@ matrix_plot <- ggplot(matrix_data, aes(x = x, y = y)) +
   geom_point(fill = "white", shape = 21, size = 2.1, colour="black") +  
   
   # Data labels positioned above and to the right of the points using ggrepel for better placement 
-  geom_text_repel(data=matrix_data,
+  geom_text_repel(data=matrix_data_area,
                   aes(label=names),
                   size=2.3,
                   nudge_y=0.8,
@@ -211,7 +213,121 @@ matrix_plot <- ggplot(matrix_data, aes(x = x, y = y)) +
                   family="Open Sans") +
   
   # Format axes with specified limits and breaks  
-  scale_x_continuous(expand=c(0 ,0), limits=c(0 ,xlim), breaks=seq(0 ,xlim ,by=1), name="Incidence rate (per 1000 h)") +  # ADAPT TO DATA
+  scale_x_continuous(expand=c(0 ,0), limits=c(0 ,xlim), breaks=seq(0 ,xlim ,by=0.5), name="Incidence rate (per 1000 h)") +  # ADAPT TO DATA
+  scale_y_continuous(expand=c(0 ,0), limits=c(0 ,ylim), breaks=seq(0 ,ylim ,by=20), name="Average time loss (days)") +  # ADAPT TO DATA
+  
+  # Define theme settings for aesthetics and layout 
+  theme_void() +   # Start with a void theme (no gridlines or axes)
+  theme(
+    plot.margin=unit(c(t=0.3,r=0.3,l=0.3,b=0.3),"cm"),   # Set margins around the plot area 
+    panel.border=element_rect(colour="black", fill=NA,size=0.8),   # Add border around the plotting area 
+    axis.text.x=element_text(size=8 ,colour="black" ,margin=margin(t=3)),   # Style for x-axis text 
+    axis.text.y=element_text(size=8 ,colour="black" ,margin=margin(r=3)),   # Style for y-axis text 
+    axis.title.x=element_text(size=8 ,colour="black" ,margin=margin(t=7)),   # Style for x-axis title 
+    axis.title.y=element_text(size=8 ,colour="black" ,angle=90 ,vjust=1 ,margin=margin(r=7)),   # Style for y-axis title 
+    axis.ticks.length=unit(.1,"cm"),   # Length of tick marks on axes 
+    axis.ticks.x=element_line(color="black"),   # Color of ticks on x-axis 
+    axis.ticks.y=element_line(color="black"),   # Color of ticks on y-axis 
+    text=element_text(family="Open Sans"),   # Font family for all text elements 
+    legend.position="none",   # Hide legend 
+    aspect.ratio=1             # Maintain equal aspect ratio 
+  )
+# 
+# 
+# matrix_plot_area # view plot
+# 
+# 
+# # Save the final plot as a PNG file with specified dimensions and resolution.
+# png("03_Analysis/Results/risk_matrix_area.png", width=8,height=8 ,units="cm" ,res=600)
+# 
+# print(matrix_plot_area)   # Print the plot to the PNG device 
+# 
+# dev.off()   # Close the PNG device to finalize and save the file.
+# 
+
+
+
+
+
+
+
+# By tissue_type ---------------
+
+
+library(ggrepel)
+exposure_input <- sum(data_exposure$total)
+caselist_input <- caselist %>% filter(problem_type == "Injury", timeloss_cat == "timeloss")
+grouping_vars <- c("osiics_16_level_2")
+
+
+
+
+
+
+# Uncheck below if only producing for tissue type (no body area)
+
+# Set axis limits (automatic)
+# xlim <- max(matrix_data$x)*1.1
+# ylim <- max(matrix_data$y, na.rm = TRUE)*1.1
+# 
+
+
+# Set axis limits (manual)
+# xlim <- 14
+# ylim <- 80.5
+
+# Adjust matrix data to ensure error bars do not extend beyond axis limits
+matrix_data_tissue <- matrix_data_tissue %>%
+  mutate(
+    xmin = pmax(xmin, 0),      # Use pmax to limit xmin to 0
+    ymin = pmax(ymin, 0),      # Use pmax to limit ymin to 0
+    xmax = pmin(xmax, xlim),   # Use pmin to limit xmax to xlim
+    ymax = pmin(ymax, ylim)    # Use pmin to limit ymax to ylim
+  ) %>%
+  arrange(desc(burden)) %>%
+  slice_head(n = 7)   # Keep only the top 7 rows
+
+
+# Function for adding reference lines
+add_reference_line <- function(value, ylim, xlim) {
+  list(
+    geom_function(fun = function(x) value / x, color = "black", size = 0.2, alpha = 0.3, n = 1000,
+                  xlim = c(value / ylim, xlim)),
+    annotate("text", x = value / ylim - 0.005 * xlim, y = 0.98 * ylim,
+             label = as.character(value), size = 1.8, alpha = 0.4, hjust = 1)
+  )
+}
+
+# Define reference values for lines on the plot
+# values <- c(5, 10, 20, 30, 40)  # ADAPT TO DATA - These are normal for FIFA tournaments
+values <- c(10, 20, 50, 100)  # ADAPT TO DATA - These are adapted to the example dataset
+
+# Create the main plot with matrix data
+matrix_plot_tissue <- ggplot(matrix_data_tissue, aes(x = x, y = y)) +
+  
+  annotation_custom(img_grob, xmin = 0, xmax = xlim, ymin = 0, ymax = ylim) +   # Add background image
+  
+  do.call(c, lapply(values, add_reference_line, ylim=ylim, xlim=xlim)) +   # Add reference lines
+  
+  geom_errorbar(aes(ymin = ymin, ymax = ymax), width = 0, colour = "black", size = 0.3) +  
+  
+  geom_errorbarh(aes(xmin = xmin, xmax = xmax), height = 0, colour = "black", size = 0.3) + 
+  
+  geom_point(fill = "white", shape = 21, size = 2.1, colour="black") +  
+  
+  # Data labels positioned above and to the right of the points using ggrepel for better placement 
+  geom_text_repel(data=matrix_data_tissue,
+                  aes(label=names),
+                  size=2.3,
+                  nudge_y=0.8,
+                  nudge_x=0.05,
+                  segment.alpha=0.5,
+                  point.padding=0.3,
+                  colour="black",
+                  family="Open Sans") +
+  
+  # Format axes with specified limits and breaks  
+  scale_x_continuous(expand=c(0 ,0), limits=c(0 ,xlim), breaks=seq(0 ,xlim ,by=0.5), name="Incidence rate (per 1000 h)") +  # ADAPT TO DATA
   scale_y_continuous(expand=c(0 ,0), limits=c(0 ,ylim), breaks=seq(0 ,ylim ,by=20), name="Average time loss (days)") +  # ADAPT TO DATA
   
   # Define theme settings for aesthetics and layout 
@@ -232,12 +348,47 @@ matrix_plot <- ggplot(matrix_data, aes(x = x, y = y)) +
   )
 
 
-matrix_plot # view plot
+#matrix_plot_tissue # view plot
 
 
 # Save the final plot as a PNG file with specified dimensions and resolution.
-png("03_Analysis/Results/risk_matrix.png", width=8,height=8 ,units="cm" ,res=600)
+# png("03_Analysis/Results/risk_matrix_tissue.png", width=8,height=8 ,units="cm" ,res=600)
+# 
+# print(matrix_plot_tissue)   # Print the plot to the PNG device 
+# 
+# dev.off()   # Close the PNG device to finalize and save the file.
 
-print(matrix_plot)   # Print the plot to the PNG device 
 
-dev.off()   # Close the PNG device to finalize and save the file.
+
+# Matrix_plot combined
+
+p1 <- matrix_plot_area +
+  labs(title = "Body area") +
+  theme(
+        plot.title = element_text(size=9 ,colour="black" ,hjust=0 ,face = "bold", margin=margin(b=8)))
+
+
+p2 <- matrix_plot_tissue +
+  labs(title = "Tissue type") +
+  theme(
+    # axis.text.y = element_blank(),
+        axis.title.y = element_blank(),
+        #axis.ticks.y = element_blank(),
+        plot.title = element_text(size=9 ,colour="black" ,hjust=0 ,face = "bold", margin=margin(b=8)))
+
+# gridExtra::grid.arrange(p1, p2, ncol = 2)
+
+aligned <- cowplot::align_plots(p1, p2, align = "hv", axis = "lr")  # "tb" aligns top/bottom axes
+
+matrix_plot <- cowplot::plot_grid(aligned[[1]], aligned[[2]], ncol = 2, rel_widths = c(1, 1))
+
+
+# Save the final plot as a PNG file with specified dimensions and resolution.
+
+ggsave(
+  filename = "03_Analysis/Results/risk_matrix.png",
+  plot     = matrix_plot,   # your ggplot or grid object
+  width    = 8,               # in inches
+  dpi      = 600              # resolution in dots per inch
+)
+

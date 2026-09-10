@@ -8,7 +8,7 @@ library(ggsankey)
 loadfonts()
 
 chart_data <- 
-  read_delim("02_Data/example_caselist.csv", delim = ";") %>% filter(problem_type == "Injury", timeloss >0, when_occurred != "Other" | is.na(when_occurred)) %>% filter(subsequent_cat != "exacerbation") %>%
+  read_delim("02_Data/Sensitive/caselist.csv", delim = ";") %>% filter(problem_type == "Injury", timeloss >0, when_occurred != "Other" | is.na(when_occurred)) %>% filter(subsequent_cat != "exacerbation") %>%
   mutate(" " = "All injuries") %>%
   select(" ", onset, when_occurred,  contact, player_action) %>% 
   rename(training_match = when_occurred)
@@ -23,9 +23,9 @@ chart_data$onset <-
 chart_data$contact <-
   recode(
     chart_data$contact,
-    "Yes, direct contact (to injured body part)" = "Direct contact"
-    , "Yes, indirect contact (to other body part)" = "Indirect contact"
-    , "No" = "No contact"
+    "direct contact" = "Direct contact"
+    , "indirect contact" = "Indirect contact"
+    , "no contact" = "No contact"
   )
 
 chart_data$player_action <- replace_na(chart_data$player_action, "Other")
@@ -149,7 +149,7 @@ colours <- c(
 )
 
 
-data_palette <- read_delim("02_Data/palette_nodes.csv", delim = ";")
+data_palette <- read_delim("~/Library/CloudStorage/OneDrive-FIFA.org/Projects (FIFA)/Competition surveillance projects - current/fifa-surveillance-tools/02_Data/palette_nodes.csv", delim = ";")
 data_palette$node <- recode(data_palette$node, Reetitive = "All injuries", Acute = "All injuries")
 data_palette$node <- recode(data_palette$node,  "Sudden" = "Sudden onset", "Gradual" = "Gradual onset")
 

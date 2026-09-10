@@ -11,7 +11,7 @@ load_or_install <- function(packages) {
 }
 
 # Load required packages for functions in this script
-load_or_install(c("digest", "openxlsx"))
+load_or_install(c("tidyverse", "digest", "openxlsx"))
 
 
 
@@ -25,7 +25,7 @@ setup_project_folders <- function() {
   folders <- c(
     "00_Admin",
     "01_Materials",
-    "02_Data/identifiable",
+    "02_Data/sensitive",
     "02_Data/deid",
     "03_Analysis/Code",
     "03_Analysis/Code/Preprocessing",
@@ -40,16 +40,15 @@ setup_project_folders <- function() {
   }
   
   # Create README in analysis folder
-  readme_path <- file.path("04_Analysis", "README.md")
+  readme_path <- file.path("03_Analysis", "README.md")
   if (!file.exists(readme_path)) {
     writeLines("# Analysis Folder\n\nContains data, code, and results.", readme_path)
   }
   
   message("Folder structure created in: ", getwd())
 }
-
 #To run:
-#setup_project_folders()
+setup_project_folders()
 
 
 
@@ -58,41 +57,14 @@ setup_project_folders <- function() {
 
 
 # DEIDENTIFY --------
-deidentify <- function(data, id_var, key_path = NULL, hash_algo = "sha256", hash_length = 16) {
-  if (!id_var %in% names(data)) {
-    stop(paste("Column", id_var, "not found in the dataset."))
-  }
-  
-  unique_ids <- unique(data[[id_var]])
-  
-  hashed_ids <- vapply(unique_ids, function(x) {
-    substr(digest::digest(x, algo = hash_algo), 1, hash_length)
-  }, FUN.VALUE = character(1))
-  
-  key <- data.frame(
-    original_id = unique_ids,
-    hashed_id = hashed_ids,
-    stringsAsFactors = FALSE
-  )
-  
-  data[[id_var]] <- key$hashed_id[match(data[[id_var]], key$original_id)]
-  
-  if (!is.null(key_path)) {
-    openxlsx::write.xlsx(key, file = key_path, overwrite = TRUE)
-  }
-  
-  return(list(data = data, key = key))
-}
-
-
-
+source("~/Library/CloudStorage/OneDrive-FIFA.org/Projects (FIFA)/Competition surveillance projects - current/fifa-surveillance-tools/03_Analysis/Code/deidentify.R")
 
 
 
 # OUTPUT PATH  --------
 make_output_path <- function(filename) {
   if (!dir.exists(output_dir)) dir.create(output_dir)
-  file.path(output_dir, paste0(project_name, "_", filename))
+  file.path(output_dir, filename)
 }
 
 # Example: 

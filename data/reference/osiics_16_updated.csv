@@ -1,0 +1,1764 @@
+osiics_16_code;problem_type;osiics_16_level_1;osiics_16_level_2;osiics_16_level_3;osiics_16_level_4
+HMT;Injury;Head;Muscle/tendon;Muscle injury;Muscular trigger point referred headache
+HMY;Injury;Head;Muscle/tendon;Muscle injury;Facial muscle trigger points
+HNCA;Injury;Head;Nervous;Brain/spinal cord injury;Concussion with imaging abnormality
+HNC2;Injury;Head;Nervous;Brain/spinal cord injury;Concussion with criteria-2 video signs
+HNI;Injury;Head;Nervous;Brain/spinal cord injury;Intracranial bleed
+HNV;Injury;Head;Nervous;Brain/spinal cord injury;Acute concussion with visual symptoms
+HNCT;Injury;Head;Nervous;Brain/spinal cord injury;Traumatic encephalopathy syndrome
+HNCN;Injury;Head;Nervous;Brain/spinal cord injury;Concussion with no concerning history or signs
+HNCH;Injury;Head;Nervous;Brain/spinal cord injury;Concussion in a player with a concerning history
+HNCD;Injury;Head;Nervous;Brain/spinal cord injury;Concussion with delayed symptom presentation
+HNC1;Injury;Head;Nervous;Brain/spinal cord injury;Concussion with criteria-1 video signs
+HN4;Injury;Head;Nervous;Brain/spinal cord injury;Cranial nerve injury
+HN3;Injury;Head;Nervous;Brain/spinal cord injury;Chronic brain injury
+HN2;Injury;Head;Nervous;Brain/spinal cord injury;Concussion/brain injury
+HN1;Injury;Head;Nervous;Brain/spinal cord injury;Concussion
+HNCB;Injury;Head;Nervous;Brain/spinal cord injury;Concussion with abnormal biomarkers
+HFX;Injury;Head;Bone;Fracture;Head/facial fracture
+HFS;Injury;Head;Bone;Fracture;Skull/cranial fracture
+HFT;Injury;Head;Bone;Fracture;Avulsed/fractured tooth
+HFE;Injury;Head;Bone;Fracture;Orbital floor fracture
+HFMC;Injury;Head;Bone;Fracture;Compound fractured mandible
+HFM;Injury;Head;Bone;Fracture;Maxillary fracture
+HFZ;Injury;Head;Bone;Fracture;Zygoma fracture
+HFEM;Injury;Head;Bone;Fracture;Medial wall orbit fracture
+HF4;Injury;Head;Bone;Fracture;Orbital fracture
+HF3;Injury;Head;Bone;Fracture;Mandible fracture
+HF2;Injury;Head;Bone;Fracture;Fractured frontal bone
+HF1;Injury;Head;Bone;Fracture;Nose fracture
+HFEZ;Injury;Head;Bone;Fracture;Other orbital fracture not otherwise specified
+HFD;Injury;Head;Bone;Fracture;Fractured tooth
+HLT;Injury;Head;Ligament/joint capsule;Joint sprain;Jaw sprain/temporomandibular joint (tmj) symptoms
+HLJ;Injury;Head;Ligament/joint capsule;Joint sprain;Jaw bruising/haematoma
+HLS;Injury;Head;Ligament/joint capsule;Joint sprain;Facial joint sprain/injury
+HDT;Injury;Head;Ligament/joint capsule;Joint sprain;Avulsed tooth
+HDX;Injury;Head;Ligament/joint capsule;Joint sprain;Facial dislocation
+HD1;Injury;Head;Ligament/joint capsule;Joint sprain;Jaw dislocation
+HVB;Injury;Head;Vessels;Vascular trauma;Epistaxis
+HVX;Injury;Head;Superficial tissues/skin;Contusion (superficial);Other bruising/haematoma not otherwise specified
+HVS;Injury;Head;Vessels;Vascular trauma;Septal haematoma
+HVM;Injury;Head;Superficial tissues/skin;Contusion (superficial);Mouth bruising/haematoma
+HVP;Injury;Head;Superficial tissues/skin;Contusion (superficial);Periorbital bruising/haematoma
+HVO;Injury;Head;Superficial tissues/skin;Contusion (superficial);Ear bruising/haematoma
+HVN;Injury;Head;Superficial tissues/skin;Contusion (superficial);Nose contusion/haematoma
+HVL;Injury;Head;Superficial tissues/skin;Contusion (superficial);Scalp bruising/haematoma
+HVC;Injury;Head;Superficial tissues/skin;Contusion (superficial);Cauliflower ear (chronic)
+HV1;Injury;Head;Superficial tissues/skin;Contusion (superficial);Head/facial contusion/haematoma
+HVE;Injury;Head;Superficial tissues/skin;Contusion (superficial);Eye bruising/haematoma
+HKXN;Injury;Head;Muscle/tendon;Laceration;Head laceration location unspecified/or multiple not requiring suturing
+HKM;Injury;Head;Muscle/tendon;Laceration;Mucosal laceration not requiring suturing
+HKMS;Injury;Head;Muscle/tendon;Laceration;Mucosal laceration requiring suturing
+HKN;Injury;Head;Muscle/tendon;Laceration;Nose laceration not requiring suturing
+HKNS;Injury;Head;Muscle/tendon;Laceration;Nose laceration requiring suturing
+HKP;Injury;Head;Muscle/tendon;Laceration;Perforating mouth laceration
+HKPS;Injury;Head;Muscle/tendon;Laceration;Perforating mouth laceration requiring suturing
+HKS;Injury;Head;Muscle/tendon;Laceration;Scalp laceration
+HKT;Injury;Head;Muscle/tendon;Laceration;Tongue laceration
+HKTS;Injury;Head;Muscle/tendon;Laceration;Tongue laceration requiring suturing
+HKXQ;Injury;Head;Muscle/tendon;Laceration;Complication of head laceration including infection
+HKXS;Injury;Head;Muscle/tendon;Laceration;Head laceration location unspecified/or multiple requiring suturing
+HKZ;Injury;Head;Muscle/tendon;Laceration;Facial laceration not requiring suturing
+HKLN;Injury;Head;Muscle/tendon;Laceration;Eyelid laceration not requiring suturing
+HKB;Injury;Head;Muscle/tendon;Laceration;Eyebrow laceration not requiring suturing
+HKZS;Injury;Head;Muscle/tendon;Laceration;Facial laceration requiring suturing
+HKTN;Injury;Head;Muscle/tendon;Laceration;Tongue laceration not requiring suturing
+HK2;Injury;Head;Muscle/tendon;Laceration;Eyelid laceration
+HKKS;Injury;Head;Muscle/tendon;Laceration;Lip laceration requiring suturing
+HK1;Injury;Head;Muscle/tendon;Laceration;Head/facial laceration
+HKC;Injury;Head;Muscle/tendon;Laceration;Cheek laceration not requiring suturing
+HKBS;Injury;Head;Muscle/tendon;Laceration;Eyebrow laceration requiring suturing
+HKCS;Injury;Head;Muscle/tendon;Laceration;Cheek laceration requiring suturing
+HKE;Injury;Head;Muscle/tendon;Laceration;Eyelid laceration requiring suturing
+HKK;Injury;Head;Muscle/tendon;Laceration;Lip laceration
+HKES;Injury;Head;Muscle/tendon;Laceration;Ear laceration requiring suturing
+HKF;Injury;Head;Muscle/tendon;Laceration;Forehead laceration not requiring suturing
+HKHS;Injury;Head;Muscle/tendon;Laceration;Forehead laceration requiring suturing
+HKJ;Injury;Head;Muscle/tendon;Laceration;Chin laceration
+HKE1;Injury;Head;Muscle/tendon;Laceration;Ear laceration
+HIK;Injury;Head;Superficial tissues/skin;Abrasion;Lip abrasion not requiring suturing
+HIS;Injury;Head;Superficial tissues/skin;Abrasion;Scalp abrasion
+HIM;Injury;Head;Superficial tissues/skin;Abrasion;Mouth abrasion
+HIJ;Injury;Head;Superficial tissues/skin;Abrasion;Chin abrasion
+HIH;Injury;Head;Superficial tissues/skin;Abrasion;Forehead abrasion
+HIF;Injury;Head;Superficial tissues/skin;Abrasion;Facial abrasion not otherwise specified
+HIC;Injury;Head;Superficial tissues/skin;Abrasion;Cheek abrasion
+HIB;Injury;Head;Superficial tissues/skin;Abrasion;Eyebrow abrasion
+HIE;Injury;Head;Superficial tissues/skin;Abrasion;Ear abrasion
+HIN;Injury;Head;Superficial tissues/skin;Abrasion;Nose abrasion
+HOE;Injury;Head;Internal organs;Organ trauma;Ear trauma
+HOX;Injury;Head;Internal organs;Organ trauma;Head organ damage
+HOU;Injury;Head;Internal organs;Organ trauma;Corneal abrasion
+HORH;Injury;Head;Internal organs;Organ trauma;Traumatic retinal haemorrhage
+HOR;Injury;Head;Internal organs;Organ trauma;Retinal detachment
+HOO;Injury;Head;Internal organs;Organ trauma;Eye foreign body - not otherwise specified
+HOL;Injury;Head;Internal organs;Organ trauma;Contact lens displacement
+HOF;Injury;Head;Internal organs;Organ trauma;Eye foreign body - corneal
+HODL;Injury;Head;Internal organs;Organ trauma;Subluxed tooth
+HOC;Injury;Head;Internal organs;Organ trauma;Conjunctival haematoma
+HO2;Injury;Head;Internal organs;Organ trauma;Perforated ear drum
+HO1;Injury;Head;Internal organs;Organ trauma;Eye injury/trauma
+HOH;Injury;Head;Internal organs;Organ trauma;Hyphema
+HP1;Injury;Head;Non-specific;Injury without tissue type specified;Functional head pain
+HPY;Injury;Head;Non-specific;Injury without tissue type specified;Facial muscle strain
+HZ1;Injury;Head;Non-specific;Unknown;Headache/pain undiagnosed
+HZC2;Injury;Head;Non-specific;Unknown;Head impact (not concussion) with criteria-2 video signs
+HZN;Injury;Head;Non-specific;Unknown;Head/neck impact not diagnosed as concussion
+HZX;Injury;Head;Non-specific;Unknown;Head injuries
+NMT;Injury;Neck;Muscle/tendon;Muscle injury;Neck muscle soreness/spasm/torticollis
+NM1;Injury;Neck;Muscle/tendon;Muscle injury;Neck muscle strain
+NH1;Injury;Neck;Superficial tissues/skin;Contusion (superficial);Neck contusion/haematoma
+NNX;Injury;Neck;Nervous;Brain/spinal cord injury;Neurological neck injury
+NN4;Injury;Neck;Nervous;Brain/spinal cord injury;Cervical spinal cord concussion
+NN3;Injury;Neck;Nervous;Brain/spinal cord injury;Cervical spinal canal stenosis
+NN1;Injury;Neck;Nervous;Peripheral nerve injury;Cervical nerve root compression/stretch
+NN2;Injury;Neck;Nervous;Brain/spinal cord injury;Cervical spinal cord injury
+NF1;Injury;Neck;Bone;Fracture;Stable cervical fracture/s
+NF2;Injury;Neck;Bone;Fracture;Unstable cervical fracture/s
+NFC;Injury;Neck;Bone;Fracture;Cervical fracture/s
+NFS;Injury;Neck;Bone;Fracture;Avulsion fracture/s cervical spine (e.g. spinous process fracture)
+NFX;Injury;Neck;Bone;Fracture;Neck fracture
+NSX;Injury;Neck;Bone;Bone stress injury;Cervical stress fracture
+NC1;Injury;Neck;Cartilage/synovium/bursa;Cartilage injury;Cervical disc injury
+NC2;Injury;Neck;Cartilage/synovium/bursa;Cartilage injury;Cervical disc degeneration
+NCP;Injury;Neck;Cartilage/synovium/bursa;Cartilage injury;Cervical disc prolapse
+NCL;Injury;Neck;Cartilage/synovium/bursa;Cartilage injury;Cervical disc sprain
+NAX;Injury;Neck;Cartilage/synovium/bursa;Arthritis;Cervical spinal column degenerative disc disease/arthritis
+NA1;Injury;Neck;Cartilage/synovium/bursa;Arthritis;Cervical facet joint arthritis
+NL1;Injury;Neck;Ligament/joint capsule;Joint sprain;Facet joint/neck ligament sprain
+NLW;Injury;Neck;Ligament/joint capsule;Joint sprain;Whiplash/neck sprain
+NUS;Injury;Neck;Ligament/joint capsule;Chronic instability;Cervical subluxation/instability
+NQF;Injury;Neck;Cartilage/synovium/bursa;Synovitis/capsulitis;Cervical spine facet joint synovitis/pain
+NKX;Injury;Neck;Muscle/tendon;Laceration;Neck laceration
+NKXQ;Injury;Neck;Muscle/tendon;Laceration;Complication of neck laceration including infection
+NKXS;Injury;Neck;Muscle/tendon;Laceration;Neck laceration requiring suturing
+NK1;Injury;Neck;Muscle/tendon;Laceration;Neck laceration not requiring suturing
+NIX;Injury;Neck;Superficial tissues/skin;Abrasion;Neck abrasion
+NO1;Injury;Neck;Internal organs;Organ trauma;Foreign body in larynx
+NOF;Injury;Neck;Internal organs;Organ trauma;Laryngeal fracture
+NOL;Injury;Neck;Internal organs;Organ trauma;Laryngeal trauma
+NOX;Injury;Neck;Internal organs;Organ trauma;Neck organ damage
+NPM;Injury;Neck;Non-specific;Injury without tissue type specified;Neck muscle and/or tendon strain/spasm/trigger points
+NP1;Injury;Neck;Non-specific;Injury without tissue type specified;Cervical functional pain
+NPH;Injury;Neck;Non-specific;Injury without tissue type specified;Cervicogenic headache
+NZZ;Injury;Neck;Non-specific;Unknown;Neck injuries
+NZX;Injury;Neck;Non-specific;Unknown;Neck pain/injury not otherwise specified
+NZO;Injury;Neck;Non-specific;Unknown;Post neck surgery
+NZ1;Injury;Neck;Non-specific;Unknown;Neck pain undiagnosed
+NZS;Injury;Neck;Non-specific;Unknown;Structural abnormality cervical spine
+SML;Injury;Shoulder;Muscle/tendon;Muscle injury;Latissimus dorsi muscle strain
+SMZ;Injury;Shoulder;Muscle/tendon;Muscle injury;Other shoulder muscle injury not elsewhere specified
+SMY;Injury;Shoulder;Muscle/tendon;Muscle injury;Shoulder muscle trigger points/posterior muscle soreness
+SMP;Injury;Shoulder;Muscle/tendon;Muscle injury;Pectoralis major muscle strain
+SMD;Injury;Shoulder;Muscle/tendon;Muscle injury;Deltoid muscle injury
+SM1;Injury;Shoulder;Muscle/tendon;Muscle injury;Muscle strain, shoulder region
+SMR;Injury;Shoulder;Muscle/tendon;Muscle injury;Rotator cuff muscle injury
+SH1;Injury;Shoulder;Superficial tissues/skin;Contusion (superficial);Shoulder contusion/haematoma
+SHA;Injury;Shoulder;Superficial tissues/skin;Contusion (superficial);A/C Joint contusion
+SHD;Injury;Shoulder;Muscle/tendon;Muscle contusion;Deltoid haematoma
+SHM;Injury;Shoulder;Muscle/tendon;Muscle contusion;Shoulder muscle haematoma
+SHZ;Injury;Shoulder;Superficial tissues/skin;Contusion (superficial);Shoulder region contusion
+STI;Injury;Shoulder;Muscle/tendon;Tendinopathy;Other infraspinatus tendon injury not otherwise specified
+ST1;Injury;Shoulder;Muscle/tendon;Tendinopathy;Rotator cuff tendon pathology
+ST3;Injury;Shoulder;Muscle/tendon;Tendinopathy;Calcific tendinopathy
+STB;Injury;Shoulder;Muscle/tendon;Tendinopathy;Proximal biceps tendon injury
+STC;Injury;Shoulder;Muscle/tendon;Tendinopathy;Subscapularis tendon injury
+STD;Injury;Shoulder;Muscle/tendon;Tendinopathy;Subacromial impingement
+STP;Injury;Shoulder;Muscle/tendon;Tendinopathy;Other pec major tendon injury not otherwise specified
+STF;Injury;Shoulder;Muscle/tendon;Tendinopathy;Acute anterior internal impingement
+ST2;Injury;Shoulder;Muscle/tendon;Tendinopathy;Biceps tendinopathy
+STIX;Injury;Shoulder;Muscle/tendon;Tendinopathy;Infraspinatus tendon injury
+STM;Injury;Shoulder;Muscle/tendon;Tendinopathy;Multiple tendon injury
+STO;Injury;Shoulder;Muscle/tendon;Tendinopathy;Other biceps tendon injury not otherwise specified
+STZ;Injury;Shoulder;Muscle/tendon;Tendinopathy;Shoulder tendon injury not otherwise specified
+STU;Injury;Shoulder;Muscle/tendon;Tendinopathy;Other subscapularis tendon injury not otherwise specified
+STS;Injury;Shoulder;Muscle/tendon;Tendinopathy;Supraspinatus tendinopathy
+STE;Injury;Shoulder;Muscle/tendon;Tendinopathy;Shoulder impingement/synovitis
+ST4;Injury;Shoulder;Muscle/tendon;Tendinopathy;Supraspinatus tendon tear partial thickness
+SRS;Injury;Shoulder;Muscle/tendon;Tendon rupture;Supraspinatus tendon rupture full thickness
+SR1;Injury;Shoulder;Muscle/tendon;Tendon rupture;Subscapularis tendon rupture
+SRI;Injury;Shoulder;Muscle/tendon;Tendon rupture;Infraspinatus tendon rupture
+SR3;Injury;Shoulder;Muscle/tendon;Tendon rupture;Pec major tendon rupture
+SR2;Injury;Shoulder;Muscle/tendon;Tendon rupture;Rupture of long head of biceps tendon
+SN3;Injury;Shoulder;Nervous;Peripheral nerve injury;Thoracic outlet syndrome (neural)
+SN1;Injury;Shoulder;Nervous;Peripheral nerve injury;Brachial plexus traction injury/burner/stinger
+SN2;Injury;Shoulder;Nervous;Peripheral nerve injury;Isolated axillary nerve palsy
+SNX;Injury;Shoulder;Nervous;Peripheral nerve injury;Shoulder neurological injury
+SN4;Injury;Shoulder;Nervous;Peripheral nerve injury;Suprascapular nerve entrapment or palsy
+SF2;Injury;Shoulder;Bone;Fracture;Scapula fracture
+SFS;Injury;Shoulder;Bone;Fracture;Hill sachs compression fracture
+SFA;Injury;Shoulder;Bone;Fracture;Fracture dislocation A/C joint
+SFX;Injury;Shoulder;Bone;Fracture;Shoulder fractures
+SFR;Injury;Shoulder;Bone;Fracture;Refracture clavicle through callus
+SFO;Injury;Shoulder;Bone;Fracture;Fracture outer third clavicle
+SFM;Injury;Shoulder;Bone;Fracture;Fracture middle third clavicle
+SFI;Injury;Shoulder;Bone;Fracture;Fracture inner third clavicle
+SFHT;Injury;Shoulder;Bone;Fracture;Fracture greater tuberosity humerus
+SFC;Injury;Shoulder;Bone;Fracture;Clavicular fracture
+SFB;Injury;Shoulder;Bone;Fracture;Fractured glenoid /bony bankart lesion
+SF3;Injury;Shoulder;Bone;Fracture;Fracture neck of humerus
+SSZ;Injury;Shoulder;Bone;Bone stress injury;Other bony/overuse injuries not elsewhere classified
+SSX;Injury;Shoulder;Bone;Bone stress injury;Shoulder stress/overuse injuries incl stress fractures
+SSF;Injury;Shoulder;Bone;Bone stress injury;Shoulder bony stress/overuse injury
+SS1;Injury;Shoulder;Bone;Bone stress injury;Stress fracture coracoid process
+SSA;Injury;Shoulder;Bone;Bone stress injury;A/C joint stress/overuse injury
+UN1;Injury;Upper arm;Nervous;Peripheral nerve injury;Median nerve injury - upper arm
+UNU;Injury;Upper arm;Nervous;Peripheral nerve injury;Ulnar nerve injury - upper arm
+SCP;Injury;Shoulder;Cartilage/synovium/bursa;Cartilage injury;Posterior shoulder dislocation with posterior labral lesion
+SC1;Injury;Shoulder;Cartilage/synovium/bursa;Cartilage injury;Shoulder chondral lesion
+SCB;Injury;Shoulder;Cartilage/synovium/bursa;Cartilage injury;Shoulder dislocation with labral bankart lesion
+SCL;Injury;Shoulder;Cartilage/synovium/bursa;Cartilage injury;Glenohumeral joint sprain with chondral/labral damage (incl slap tear)
+SCS;Injury;Shoulder;Cartilage/synovium/bursa;Cartilage injury;Superior Labrum Anterior and Posterior (SLAP) lesion shoulder
+SCH;Injury;Shoulder;Cartilage/synovium/bursa;Cartilage injury;Shoulder dislocation with humeral avulsion of the glenohumeral ligament (hagl)
+SAA;Injury;Shoulder;Cartilage/synovium/bursa;Arthritis;A/C joint arthritis
+SA1;Injury;Shoulder;Cartilage/synovium/bursa;Arthritis;Glenohumeral osteoarthritis
+SA2;Injury;Shoulder;Cartilage/synovium/bursa;Arthritis;A/C joint chronic pain
+SAO;Injury;Shoulder;Cartilage/synovium/bursa;Arthritis;Osteolysis of distal clavicle
+SAX;Injury;Shoulder;Cartilage/synovium/bursa;Arthritis;Shoulder osteoarthritis
+SQF;Injury;Shoulder;Cartilage/synovium/bursa;Synovitis/capsulitis;Adhesive capsulitis/frozen shoulder
+SQP;Injury;Shoulder;Cartilage/synovium/bursa;Synovitis/capsulitis;Acute posterior internal impingement
+SQE;Injury;Shoulder;Cartilage/synovium/bursa;Synovitis/capsulitis;Internal impingement of the shoulder
+SQC;Injury;Shoulder;Cartilage/synovium/bursa;Synovitis/capsulitis;Cervical rib
+SQB;Injury;Shoulder;Cartilage/synovium/bursa;Synovitis/capsulitis;Chronic internal impingement
+SBC;Injury;Shoulder;Cartilage/synovium/bursa;Bursitis;Other chronic subacromial impingement
+SBI;Injury;Shoulder;Cartilage/synovium/bursa;Bursitis;Instability associated subacromial impingement
+SBS;Injury;Shoulder;Cartilage/synovium/bursa;Bursitis;Acute subacromial impingement
+SL1;Injury;Shoulder;Ligament/joint capsule;Joint sprain;Glenohumeral joint sprains
+SL2;Injury;Shoulder;Ligament/joint capsule;Joint sprain;Acromioclavicular (A/C) joint sprain
+SLA;Injury;Shoulder;Ligament/joint capsule;Joint sprain;Grade 1 A/C joint sprain
+SLD;Injury;Shoulder;Ligament/joint capsule;Joint sprain;Grade 3 A/C joint dislocation
+SLI;Injury;Shoulder;Ligament/joint capsule;Joint sprain;Glenohumeral ligament sprain
+SLJ;Injury;Shoulder;Ligament/joint capsule;Joint sprain;Grade 2 A/C joint sprain
+SDU;Injury;Shoulder;Ligament/joint capsule;Joint sprain;Shoulder dislocation with other or unspecified neurological injury
+SD1;Injury;Shoulder;Ligament/joint capsule;Joint sprain;Dislocated shoulder
+SD2;Injury;Shoulder;Ligament/joint capsule;Joint sprain;Grade 4-6 A/C joint dislocation
+SDA;Injury;Shoulder;Ligament/joint capsule;Joint sprain;Shoulder dislocation (anterior)
+SDG;Injury;Shoulder;Ligament/joint capsule;Joint sprain;Glenohumeral ligament tear
+SDI;Injury;Shoulder;Ligament/joint capsule;Joint sprain;Inferior shoulder dislocation
+SDN;Injury;Shoulder;Ligament/joint capsule;Joint sprain;Shoulder dislocation with axillary nerve injury
+SDP;Injury;Shoulder;Ligament/joint capsule;Joint sprain;Posterior shoulder dislocation
+SDS;Injury;Shoulder;Ligament/joint capsule;Joint sprain;Acute shoulder subluxation
+SU1;Injury;Shoulder;Ligament/joint capsule;Chronic instability;Chronic shoulder instability
+SUA;Injury;Shoulder;Ligament/joint capsule;Chronic instability;Anterior shoulder instability
+SUC;Injury;Shoulder;Ligament/joint capsule;Chronic instability;A/C Joint instability/recurrent sprains
+SUP;Injury;Shoulder;Ligament/joint capsule;Chronic instability;Posterior shoulder instability
+SVT;Injury;Shoulder;Vessels;Vascular trauma;Shoulder vascular thoracic outlet injury
+SVV;Injury;Shoulder;Vessels;Vascular trauma;Subclavian vein obstruction
+SKXQ;Injury;Shoulder;Muscle/tendon;Laceration;Complication of shoulder laceration including infection
+SKXS;Injury;Shoulder;Muscle/tendon;Laceration;Shoulder laceration requiring suturing
+SK1;Injury;Shoulder;Muscle/tendon;Laceration;Shoulder laceration not requiring suturing
+SIX;Injury;Shoulder;Superficial tissues/skin;Abrasion;Shoulder soft tissue abrasion
+SPZ;Injury;Shoulder;Non-specific;Injury without tissue type specified;Shoulder pain without tissue type specified
+SZ1;Injury;Shoulder;Non-specific;Unknown;Shoulder pain undiagnosed
+SZS;Injury;Shoulder;Non-specific;Unknown;Post shoulder surgery
+SZR;Injury;Shoulder;Non-specific;Unknown;Post shoulder reconstruction
+SZP;Injury;Shoulder;Non-specific;Unknown;Shoulder pain/injury not otherwise specified
+SZA;Injury;Shoulder;Non-specific;Unknown;Post A/C joint surgery
+UMD;Injury;Upper arm;Muscle/tendon;Muscle injury;Upper arm delayed onset muscle soreness (DOMS)
+UMT;Injury;Upper arm;Muscle/tendon;Muscle injury;Triceps muscle strain
+UM1;Injury;Upper arm;Muscle/tendon;Muscle injury;Biceps muscle strain
+UMY;Injury;Upper arm;Muscle/tendon;Muscle injury;Upper arm muscle trigger points/pain
+UMX;Injury;Upper arm;Muscle/tendon;Muscle injury;Upper arm muscle strain/spasm/trigger points
+UH1;Injury;Upper arm;Muscle/tendon;Muscle contusion;Biceps haematoma
+UH3;Injury;Upper arm;Muscle/tendon;Muscle contusion;Triceps haematoma
+UHM;Injury;Upper arm;Muscle/tendon;Muscle contusion;Upper arm myositis ossificans
+UHZ;Injury;Upper arm;Superficial tissues/skin;Contusion (superficial);Other upper arm soft tissue bruising/haematoma
+UHX;Injury;Upper arm;Superficial tissues/skin;Contusion (superficial);Upper arm soft tissue bruising/haematoma
+UHT;Injury;Upper arm;Superficial tissues/skin;Contusion (superficial);Upper arm muscle bruising/haematoma
+UT8;Injury;Upper arm;Muscle/tendon;Tendinopathy;Upper arm tendon injury
+UR1;Injury;Upper arm;Muscle/tendon;Tendon rupture;Pectoralis major tendon injury
+UNS;Injury;Upper arm;Nervous;Peripheral nerve injury;Musculocutaneous nerve injury - upper arm
+UNR;Injury;Upper arm;Nervous;Peripheral nerve injury;Radial nerve injury - upper arm
+UNX;Injury;Upper arm;Nervous;Peripheral nerve injury;Upper arm neurological injury
+EN1;Injury;Elbow;Nervous;Peripheral nerve injury;Ulnar neuropathy, elbow
+EN2;Injury;Elbow;Nervous;Peripheral nerve injury;Other nerve entrapment, elbow
+UFH;Injury;Upper arm;Bone;Fracture;Humerus fracture
+UF1;Injury;Upper arm;Bone;Fracture;Midshaft humerus fracture
+UFX;Injury;Upper arm;Bone;Fracture;Upper arm fracture
+US1;Injury;Upper arm;Bone;Bone stress injury;Stress fracture humerus
+USX;Injury;Upper arm;Bone;Bone stress injury;Upper arm bony stress /overuse injury
+USF;Injury;Upper arm;Bone;Bone stress injury;Humerus stress fracture involving cortex
+UJX;Injury;Upper arm;Bone;Bone contusion;Humerus bone contusion
+RNX;Injury;Forearm;Nervous;Peripheral nerve injury;Forearm neurological injury
+UK1;Injury;Upper arm;Muscle/tendon;Laceration;Upper arm laceration
+UIX;Injury;Upper arm;Superficial tissues/skin;Abrasion;Upper arm abrasion
+UISP;Injury;Upper arm;Superficial tissues/skin;Abrasion;Upper arm skin pressure injury
+UWS;Injury;Upper arm;Stump;Stump injury;Stump pressure injury upper arm
+UWI;Injury;Upper arm;Stump;Stump injury;Infection of stump upper arm
+UPS;Injury;Upper arm;Non-specific;Injury without tissue type specified;Upper arm soft tissue overuse injury (e.g. periostitis)
+UPZ;Injury;Upper arm;Non-specific;Injury without tissue type specified;Other upper arm overuse injury
+UZX;Injury;Upper arm;Non-specific;Unknown;Upper arm pain/injury not otherwise specified
+EMX;Injury;Elbow;Muscle/tendon;Muscle injury;Elbow muscle strain/spasm/trigger points
+ETB;Injury;Elbow;Muscle/tendon;Tendinopathy;Distal biceps tendinopathy
+ETC;Injury;Elbow;Muscle/tendon;Tendinopathy;Elbow tendon injury combined
+ETF;Injury;Elbow;Muscle/tendon;Tendinopathy;Common flexor origin tear
+ET2;Injury;Elbow;Muscle/tendon;Tendinopathy;Golfer's elbow (medial epicondyle pain)
+ET3;Injury;Elbow;Muscle/tendon;Tendinopathy;Distal triceps tendinopathy
+ETE;Injury;Elbow;Muscle/tendon;Tendinopathy;Common extensor origin tear
+ET1;Injury;Elbow;Muscle/tendon;Tendinopathy;Tennis elbow (lateral epicondyle pain)
+ETT;Injury;Elbow;Muscle/tendon;Tendinopathy;Distal triceps tendon injury
+ER1;Injury;Elbow;Muscle/tendon;Tendon rupture;Distal biceps tendon rupture
+ER2;Injury;Elbow;Muscle/tendon;Tendon rupture;Distal triceps tendon rupture
+WN1;Injury;Wrist;Nervous;Peripheral nerve injury;Carpal tunnel syndrome
+WNU;Injury;Wrist;Nervous;Peripheral nerve injury;Wrist ulnar nerve injury
+EFU;Injury;Elbow;Bone;Fracture;Fractured olecranon
+EF3;Injury;Elbow;Bone;Fracture;Fractured radial head
+EFX;Injury;Elbow;Bone;Fracture;Elbow fractures
+EFR;Injury;Elbow;Bone;Fracture;Avulsion fracture proximal radius
+EFH;Injury;Elbow;Bone;Fracture;Supracondylar humeral fracture
+EFM;Injury;Elbow;Bone;Fracture;Avulsion fracture elbow multiple locations or location unspecified
+EF1;Injury;Elbow;Bone;Fracture;Avulsion fracture distal humerus
+EF2;Injury;Elbow;Bone;Fracture;Fractured humeral condyle(s)
+ES1;Injury;Elbow;Bone;Bone stress injury;Elbow stress fracture
+EJX;Injury;Elbow;Bone;Bone contusion;Elbow bone bruise
+EEP;Injury;Elbow;Bone;Avascular necrosis;Panner disease (elbow avascular necrosis)
+WNX;Injury;Wrist;Nervous;Peripheral nerve injury;Wrist neurological injury
+LNA;Injury;Lumbosacral;Nervous;Peripheral nerve injury;Lumbosacral nerve root impingement due to foraminal stenosis bony and disc
+LNB;Injury;Lumbosacral;Nervous;Peripheral nerve injury;Buttock nerve injury
+ECL;Injury;Elbow;Cartilage/synovium/bursa;Cartilage injury;Loose body in elbow
+EC1;Injury;Elbow;Cartilage/synovium/bursa;Cartilage injury;Chondral lesion elbow (+/- loose bodies)
+ECO;Injury;Elbow;Cartilage/synovium/bursa;Cartilage injury;Osteochondrosis elbow
+EA1;Injury;Elbow;Cartilage/synovium/bursa;Arthritis;Elbow osteoarthritis
+EQ1;Injury;Elbow;Cartilage/synovium/bursa;Synovitis/capsulitis;Elbow atraumatic synovitis
+EQ4;Injury;Elbow;Cartilage/synovium/bursa;Synovitis/capsulitis;Elbow posterior impingement/synovitis
+EB1;Injury;Elbow;Cartilage/synovium/bursa;Bursitis;Elbow olecranon bursitis
+EL1;Injury;Elbow;Ligament/joint capsule;Joint sprain;Elbow ulna/medial collateral ligament (UCL) strain or tear
+ELZ;Injury;Elbow;Ligament/joint capsule;Joint sprain;Other elbow strain not otherwise specified
+ELR;Injury;Elbow;Ligament/joint capsule;Joint sprain;Elbow ucl rupture/grade 3 tear
+ELM;Injury;Elbow;Ligament/joint capsule;Joint sprain;Elbow ucl injury and common flexor origin tear
+ELA;Injury;Elbow;Ligament/joint capsule;Joint sprain;Elbow hyperextension +/- strain anterior elbow structures
+ELJ;Injury;Elbow;Ligament/joint capsule;Joint sprain;Sprained/jarred elbow
+ED2;Injury;Elbow;Ligament/joint capsule;Joint sprain;Dislocated radial head
+EDA;Injury;Elbow;Ligament/joint capsule;Joint sprain;Anterior elbow dislocation
+EDP;Injury;Elbow;Ligament/joint capsule;Joint sprain;Posterior elbow dislocation
+ED1;Injury;Elbow;Ligament/joint capsule;Joint sprain;Dislocated elbow
+EU1;Injury;Elbow;Ligament/joint capsule;Chronic instability;Elbow valgus instability
+EU2;Injury;Elbow;Ligament/joint capsule;Chronic instability;Elbow posterolateral instability
+EUX;Injury;Elbow;Ligament/joint capsule;Chronic instability;Elbow instability
+EV1;Injury;Elbow;Superficial tissues/skin;Contusion (superficial);Elbow contusion/haematoma
+EKX;Injury;Elbow;Muscle/tendon;Laceration;Elbow laceration
+EK1;Injury;Elbow;Muscle/tendon;Laceration;Elbow laceration deep
+EISP;Injury;Elbow;Superficial tissues/skin;Abrasion;Elbow skin pressure injury
+EI1;Injury;Elbow;Superficial tissues/skin;Abrasion;Elbow abrasion superficial
+EII;Injury;Elbow;Superficial tissues/skin;Abrasion;Complication of elbow laceration including infection
+EWI;Injury;Elbow;Stump;Stump injury;Infection of stump elbow
+EWS;Injury;Elbow;Stump;Stump injury;Stump pressure injury elbow
+EPX;Injury;Elbow;Non-specific;Injury without tissue type specified;Elbow pain without tissue type specified
+EZZ;Injury;Elbow;Non-specific;Unknown;Elbow pain/injury not otherwise specified
+EZ1;Injury;Elbow;Non-specific;Unknown;Elbow pain undiagnosed
+EZS;Injury;Elbow;Non-specific;Unknown;Post elbow surgery
+EZX;Injury;Elbow;Non-specific;Unknown;Elbow injuries
+RMF;Injury;Forearm;Muscle/tendon;Muscle injury;Forearm flexor muscle strain
+RMT;Injury;Forearm;Muscle/tendon;Muscle injury;Forearm muscle soreness
+RME;Injury;Forearm;Muscle/tendon;Muscle injury;Forearm extensor muscle strain
+RM1;Injury;Forearm;Muscle/tendon;Muscle injury;Forearm muscle injury
+RH1;Injury;Forearm;Superficial tissues/skin;Contusion (superficial);Forearm contusion/haematoma
+RYC;Injury;Forearm;Muscle/tendon;Muscle compartment syndrome;Forearm compartment syndrome
+RTI;Injury;Forearm;Muscle/tendon;Tendinopathy;Intersection syndrome
+RTY;Injury;Forearm;Muscle/tendon;Tendinopathy;Forearm extensor tenosynovitis
+RTS;Injury;Forearm;Muscle/tendon;Tendinopathy;Forearm splints/medial ulnar stress syndrome
+RTF;Injury;Forearm;Muscle/tendon;Tendinopathy;Forearm flexor tendon injury
+RTE;Injury;Forearm;Muscle/tendon;Tendinopathy;Forearm extensor tendon injury
+RT1;Injury;Forearm;Muscle/tendon;Tendinopathy;Forearm extensor tendinopathy
+RTX;Injury;Forearm;Muscle/tendon;Tendinopathy;Forearm tendon injury
+LNZ;Injury;Lumbosacral;Nervous;Peripheral nerve injury;Other lumbosacral nerve injury
+RFM;Injury;Forearm;Bone;Fracture;Fractured ulna midshaft
+RFB;Injury;Forearm;Bone;Fracture;Fracture radius and ulna midshaft
+RF1;Injury;Forearm;Bone;Fracture;Fractured forearm bone(s)
+RFA;Injury;Forearm;Bone;Fracture;Monteggia fracture - midshaft ulna fracture and dislocation radial head at elbow
+RFC;Injury;Forearm;Bone;Fracture;Colles fracture radius
+RFR;Injury;Forearm;Bone;Fracture;Fracture radius midshaft
+RFG;Injury;Forearm;Bone;Fracture;Galeazzi fracture - midshaft radius fracture, dislocation distal radioulnar joint
+RFS;Injury;Forearm;Bone;Fracture;Smiths fracture distal radius
+RFU;Injury;Forearm;Bone;Fracture;Fracture of distal ulna
+RFD;Injury;Forearm;Bone;Fracture;Fractured distal radius
+RSXR;Injury;Forearm;Bone;Bone stress injury;Radial stress fracture involving cortex
+RSXU;Injury;Forearm;Bone;Bone stress injury;Ulna stress fracture involving cortex
+RSOU;Injury;Forearm;Bone;Bone stress injury;Bone oedema ulna
+RSOR;Injury;Forearm;Bone;Bone stress injury;Bone oedema radius
+RS1;Injury;Forearm;Bone;Bone stress injury;Bone stress lesion radius and/or ulna
+RSX;Injury;Forearm;Bone;Bone stress injury;Forearm stress fracture
+RJX;Injury;Forearm;Bone;Bone contusion;Forearm bone contusion
+RK1;Injury;Forearm;Muscle/tendon;Laceration;Complication of forearm laceration including infection
+RIX;Injury;Forearm;Superficial tissues/skin;Abrasion;Forearm abrasion
+RWS;Injury;Forearm;Stump;Stump injury;Stump pressure injury forearm
+RWI;Injury;Forearm;Stump;Stump injury;Infection of stump forearm
+RP1;Injury;Forearm;Non-specific;Injury without tissue type specified;Other stress/overuse injuries to forearm
+RZX;Injury;Forearm;Non-specific;Unknown;Forearm pain/injury not otherwise specified
+RZ1;Injury;Forearm;Non-specific;Unknown;Forearm pain/injury undiagnosed
+WMX;Injury;Wrist;Muscle/tendon;Muscle injury;Wrist and hand muscle injury
+WH1;Injury;Wrist;Superficial tissues/skin;Contusion (superficial);Wrist bruising/haematoma
+WTT;Injury;Wrist;Muscle/tendon;Tendinopathy;Thumb tendon injury
+WT1;Injury;Wrist;Muscle/tendon;Tendinopathy;De quervain's tenosynovitis
+WT2;Injury;Wrist;Muscle/tendon;Tendinopathy;Wrist ganglion
+WT3;Injury;Wrist;Muscle/tendon;Tendinopathy;Rupture wrist flexor tendon
+WT4;Injury;Wrist;Muscle/tendon;Tendinopathy;Carpal boss
+WTX;Injury;Wrist;Muscle/tendon;Tendinopathy;Wrist tendon injury
+WTD;Injury;Wrist;Muscle/tendon;Tendinopathy;Wrist extensor tendon injury
+WTE;Injury;Wrist;Muscle/tendon;Tendinopathy;Wrist extensor tenosynovitis/tendinopathy at wrist
+WTF;Injury;Wrist;Muscle/tendon;Tendinopathy;Wrist flexor tenosynovitis/tendinopathy
+WRD;Injury;Wrist;Muscle/tendon;Tendon rupture;Rupture wrist extensor tendon
+WRE;Injury;Wrist;Muscle/tendon;Tendon rupture;Other tenosynovitis/tendinopathy thumb
+WR1;Injury;Wrist;Muscle/tendon;Tendon rupture;Rupture thumb extensor tendon (excl if complication of wrist fracture - see specific fracture)
+LNX;Injury;Lumbosacral;Nervous;Brain/spinal cord injury;Lumbar spine neurological injury
+LNP;Injury;Lumbosacral;Nervous;Peripheral nerve injury;Piriformis syndrome (with sciatic nerve impingement)
+LNFX;Injury;Lumbosacral;Nervous;Brain/spinal cord injury;Lumbar spinal fracture with associated neurological injury
+WFU;Injury;Wrist;Bone;Fracture;Fracture of ulna styloid
+WFT;Injury;Wrist;Bone;Fracture;Fractured trapezium
+WFS;Injury;Wrist;Bone;Fracture;Fracture radial styloid
+WFR;Injury;Wrist;Bone;Fracture;Fracture of distal radius +/- ulna
+WFP;Injury;Wrist;Bone;Fracture;Fracture proximal pole scaphoid
+WFO;Injury;Wrist;Bone;Fracture;Fractured hook of hamate
+WFM;Injury;Wrist;Bone;Fracture;Fracture multiple carpal bones
+WFH;Injury;Wrist;Bone;Fracture;Fractured hamate
+WFD;Injury;Wrist;Bone;Fracture;Fracture distal pole scaphoid
+WF3;Injury;Wrist;Bone;Fracture;Wrist fracture with complication (e.g. extensor pollicus longus rupture)
+WF2;Injury;Wrist;Bone;Fracture;Fracture other carpal bone
+WF1;Injury;Wrist;Bone;Fracture;Fractured scaphoid
+WFW;Injury;Wrist;Bone;Fracture;Fracture waist scaphoid
+WS1;Injury;Wrist;Bone;Bone stress injury;Carpal stress fracture
+WSH;Injury;Wrist;Bone;Bone stress injury;Hand stress fracture (incl thumb and fingers)
+WSX;Injury;Wrist;Bone;Bone stress injury;Wrist and hand stress/overuse injuries
+WJ1;Injury;Wrist;Bone;Bone contusion;Other complication of wrist sprain
+WJ2;Injury;Wrist;Ligament/joint capsule;Joint sprain;Distal radioulnar joint injury
+WJC;Injury;Wrist;Ligament/joint capsule;Joint sprain;Other carpal ligament injury
+WEL;Injury;Wrist;Bone;Avascular necrosis;Avascular necrosis lunate
+WEN;Injury;Wrist;Bone;Avascular necrosis;Non union fractured scaphoid
+WEW;Injury;Wrist;Bone;Avascular necrosis;Avascular necrosis in wrist/hand
+WES;Injury;Wrist;Bone;Avascular necrosis;Avascular necrosis scaphoid
+LNFC;Injury;Lumbosacral;Nervous;Brain/spinal cord injury;Lumbar spinal fracture with spinal cord/cauda equina injury
+LNBP;Injury;Lumbosacral;Nervous;Peripheral nerve injury;Pudendal nerve injury
+LN4;Injury;Lumbosacral;Nervous;Brain/spinal cord injury;Lumbosacral nerve stretch/traction injury
+WCX;Injury;Wrist;Cartilage/synovium/bursa;Cartilage injury;Wrist osteochondral/chondral injury
+WC1;Injury;Wrist;Cartilage/synovium/bursa;Cartilage injury;Wrist fibrocartilage tear
+WA1;Injury;Wrist;Cartilage/synovium/bursa;Arthritis;Wrist Osteoarthritis
+WAS;Injury;Wrist;Cartilage/synovium/bursa;Arthritis;Scapholunate advanced collapse (SLAC)
+WAW;Injury;Wrist;Cartilage/synovium/bursa;Arthritis;Wrist (radiocarpal) osteoarthritis
+WQW;Injury;Wrist;Cartilage/synovium/bursa;Synovitis/capsulitis;Chronic synovitis of wrist
+WQU;Injury;Wrist;Cartilage/synovium/bursa;Synovitis/capsulitis;Ulnar abutment syndrome
+WLR;Injury;Wrist;Ligament/joint capsule;Joint sprain;Scapholunate ligament rupture
+WL1;Injury;Wrist;Ligament/joint capsule;Joint sprain;Lunate - triquetral sprain
+WLJ;Injury;Wrist;Ligament/joint capsule;Joint sprain;Sprained/jarred wrist joint
+WLL;Injury;Wrist;Ligament/joint capsule;Joint sprain;Scapholunate ligament sprain/tear
+WLS;Injury;Wrist;Ligament/joint capsule;Joint sprain;Scapholunate ligament sprain
+WD1;Injury;Wrist;Ligament/joint capsule;Joint sprain;Dislocation through carpus
+WDC;Injury;Wrist;Ligament/joint capsule;Joint sprain;Dislocation of CMC joint of fingers
+WDD;Injury;Wrist;Ligament/joint capsule;Joint sprain;Distal radioulnar joint dislocation
+WDP;Injury;Wrist;Ligament/joint capsule;Joint sprain;Dislocation of thumb joint
+WDX;Injury;Wrist;Ligament/joint capsule;Joint sprain;Wrist and hand dislocations
+WDW;Injury;Wrist;Ligament/joint capsule;Joint sprain;Radiocarpal joint dislocation
+WU1;Injury;Wrist;Ligament/joint capsule;Chronic instability;Scapholunate Dorsal intercalated segment instability (DISI)
+WUC;Injury;Wrist;Ligament/joint capsule;Chronic instability;Carpal instability
+WU2;Injury;Wrist;Ligament/joint capsule;Chronic instability;Distal radioulnar joint instability
+WUP;Injury;Wrist;Ligament/joint capsule;Chronic instability;Thumb instability
+WUV;Injury;Wrist;Ligament/joint capsule;Chronic instability;Visi (volar intercalated segmental instability) wrist
+WUW;Injury;Wrist;Ligament/joint capsule;Chronic instability;Radiocarpal joint instability
+WUX;Injury;Wrist;Ligament/joint capsule;Chronic instability;Chronic wrist instability
+WVF;Injury;Wrist;Superficial tissues/skin;Contusion (superficial);Finger bruising/haematoma
+WVX;Injury;Wrist;Vessels;Vascular trauma;Wrist vascular injury
+WVA;Injury;Wrist;Vessels;Vascular trauma;Wrist arterial injury (incl aneurysm)
+WV1;Injury;Wrist;Superficial tissues/skin;Contusion (superficial);Wrist soft tissue bruising/haematoma
+WKW;Injury;Wrist;Muscle/tendon;Laceration;Wrist laceration/abrasion
+WKV;Injury;Wrist;Muscle/tendon;Laceration;Volar wrist laceration/abrasion
+WKPU;Injury;Wrist;Muscle/tendon;Laceration;Laceration of thumb nail/nailbed
+WKL;Injury;Wrist;Muscle/tendon;Laceration;Palmar hand laceration
+WKC;Injury;Wrist;Muscle/tendon;Laceration;Callous of wrist/hand (incl fingers/thumb)
+WKB;Injury;Wrist;Muscle/tendon;Laceration;Blisters of wrist/hand (incl fingers/thumb)
+WK1;Injury;Wrist;Muscle/tendon;Laceration;Dorsal wrist laceration/abrasion
+WIX;Injury;Wrist;Superficial tissues/skin;Abrasion;Wrist abrasion
+WP1;Injury;Wrist;Non-specific;Injury without tissue type specified;Wrist and hand impingement/synovitis
+PZH;Injury;Wrist;Non-specific;Unknown;Other hand pain not otherwise specified
+WZS;Injury;Wrist;Non-specific;Unknown;Post surgery on wrist joint
+WZW;Injury;Wrist;Non-specific;Unknown;Other wrist pain not otherwise specified
+WZZ;Injury;Wrist;Non-specific;Unknown;Wrist or hand pain undiagnosed
+WZ1;Injury;Wrist;Non-specific;Unknown;Other wrist injury not otherwise specified
+PM1;Injury;Hand;Muscle/tendon;Muscle injury;Hand intrinsic muscle injury
+PH1;Injury;Hand;Muscle/tendon;Muscle contusion;Hand muscle bruising/haematoma
+PT1;Injury;Hand;Muscle/tendon;Tendinopathy;Index finger flexor tendon rupture
+PTT;Injury;Hand;Muscle/tendon;Tendinopathy;Trigger thumb
+PTP;Injury;Hand;Muscle/tendon;Tendinopathy;Flexor pulley injury fingers
+PTG;Injury;Hand;Muscle/tendon;Tendinopathy;Trigger finger
+PTD;Injury;Hand;Muscle/tendon;Tendinopathy;Dupytren's contracture
+PTF;Injury;Hand;Muscle/tendon;Tendinopathy;Finger flexor tenosynovitis/tendinopathy
+PTP2;Injury;Hand;Muscle/tendon;Tendinopathy;Flexor A2 pulley injury
+PTP4;Injury;Hand;Muscle/tendon;Tendinopathy;Flexor A4 pulley injury
+PRB;Injury;Hand;Muscle/tendon;Tendon rupture;Middle finger extensor tendon rupture
+PRC;Injury;Hand;Muscle/tendon;Tendon rupture;Ring finger extensor tendon rupture
+PRE;Injury;Hand;Muscle/tendon;Tendon rupture;Little finger extensor tendon rupture
+PRF;Injury;Hand;Muscle/tendon;Tendon rupture;Flexor tendon rupture finger(s)
+PRT;Injury;Hand;Muscle/tendon;Tendon rupture;Middle finger flexor tendon rupture
+PRX;Injury;Hand;Muscle/tendon;Tendon rupture;Rupture thumb flexor tendon
+PRA;Injury;Hand;Muscle/tendon;Tendon rupture;Index finger extensor tendon rupture
+PTE;Injury;Hand;Muscle/tendon;Tendinopathy;Finger(s) extensor tenosynovitis/tendinopathy
+PR5;Injury;Hand;Muscle/tendon;Tendon rupture;Little finger flexor tendon rupture
+PR1;Injury;Hand;Muscle/tendon;Tendon rupture;Finger extensor tendon injury (incl mallet finger +/- avulsion fracture distal phalanx)
+PR4;Injury;Hand;Muscle/tendon;Tendon rupture;Ring finger flexor tendon rupture
+PFX;Injury;Hand;Bone;Fracture;Multiple metacarpal fractures
+PFC;Injury;Hand;Bone;Fracture;Fracture 3rd metacarpal
+PF2;Injury;Hand;Bone;Fracture;Fracture 4th metacarpal
+PFJ;Injury;Hand;Bone;Fracture;Proximal phalanx fracture little finger
+PFI;Injury;Hand;Bone;Fracture;Proximal phalanx fracture ring finger
+PFH;Injury;Hand;Bone;Fracture;Proximal phalanx fracture middle finger
+PFG;Injury;Hand;Bone;Fracture;Proximal phalanx fracture index finger
+PFF;Injury;Hand;Bone;Fracture;Fracture proximal phalanx of thumb
+PFL;Injury;Hand;Bone;Fracture;Middle phalanx fracture index finger
+PFD;Injury;Hand;Bone;Fracture;Middle phalanx fracture middle finger
+PFM;Injury;Hand;Bone;Fracture;Fracture metacarpals 2- 5
+PFB;Injury;Hand;Bone;Fracture;Fracture 2nd metacarpal
+PFA;Injury;Hand;Bone;Fracture;Avulsion fracture phalanx
+PF7;Injury;Hand;Bone;Fracture;Fracture shaft 1st metacarpal
+PF5;Injury;Hand;Bone;Fracture;Distal phalanx fracture little finger
+PF3;Injury;Hand;Bone;Fracture;Fractured phalanx
+PF1;Injury;Hand;Bone;Fracture;Bennett's fracture/dislocation thumb
+PFE;Injury;Hand;Bone;Fracture;Fifth metacarpal fracture
+PFN;Injury;Hand;Bone;Fracture;Middle phalanx fracture ring finger
+PFO;Injury;Hand;Bone;Fracture;Middle phalanx fracture little finger
+PFP;Injury;Hand;Bone;Fracture;Distal phalanx fracture index finger
+PFQ;Injury;Hand;Bone;Fracture;Distal phalanx fracture middle finger
+PFR;Injury;Hand;Bone;Fracture;Rolando fracture (comminuted fracture base 1st MC)
+PFS;Injury;Hand;Bone;Fracture;Distal phalanx fracture ring finger
+PFT;Injury;Hand;Bone;Fracture;Fractured thumb
+PFU;Injury;Hand;Bone;Fracture;Multiple phalangeal fractures fingers
+PFK;Injury;Hand;Bone;Fracture;Fracture distal phalanx thumb
+PSS;Injury;Hand;Bone;Bone stress injury;Sesamoiditis of thumb
+PJX;Injury;Hand;Bone;Bone contusion;Hand bone contusion
+PAT;Injury;Hand;Cartilage/synovium/bursa;Arthritis;Osteoarthritis of thumb
+PAP;Injury;Hand;Cartilage/synovium/bursa;Arthritis;PIP joint osteoarthritis fingers
+PAM;Injury;Hand;Cartilage/synovium/bursa;Arthritis;Metacarpophalangeal joint osteoarthritis
+PAI;Injury;Hand;Cartilage/synovium/bursa;Arthritis;Interphalangeal joint osteoarthritis
+PAF;Injury;Hand;Cartilage/synovium/bursa;Arthritis;Osteoarthritis of fingers
+PA1;Injury;Hand;Cartilage/synovium/bursa;Arthritis;DIP joint osteoarthritis
+PAC;Injury;Hand;Cartilage/synovium/bursa;Arthritis;CMC joint osteoarthritis
+PQI;Injury;Hand;Cartilage/synovium/bursa;Synovitis/capsulitis;Chronic Synovitis of IP joint thumb
+PQ1;Injury;Hand;Cartilage/synovium/bursa;Synovitis/capsulitis;Complication from finger fracture (incl malunion)
+PQC;Injury;Hand;Cartilage/synovium/bursa;Synovitis/capsulitis;Chronic synovitis of 1st CMC joint
+PQD;Injury;Hand;Cartilage/synovium/bursa;Synovitis/capsulitis;Chronic synovitis of DIP joint(s)
+PQF;Injury;Hand;Cartilage/synovium/bursa;Synovitis/capsulitis;Chronic synovitis of fingers
+PQX;Injury;Hand;Cartilage/synovium/bursa;Synovitis/capsulitis;Chronic synovitis of thumb
+PQP;Injury;Hand;Cartilage/synovium/bursa;Synovitis/capsulitis;Chronic synovitis of PIP joint(s)
+PQJ;Injury;Hand;Cartilage/synovium/bursa;Synovitis/capsulitis;Chronic synovitis of MCP joint(s)
+PQM;Injury;Hand;Cartilage/synovium/bursa;Synovitis/capsulitis;Chronic synovitis of 1st MCP joint
+PLF;Injury;Hand;Ligament/joint capsule;Joint sprain;Finger joint sprain ( PIP and DIP joints)
+PLR;Injury;Hand;Ligament/joint capsule;Joint sprain;Thumb radial collateral ligament (RCL) rupture at MCP joint
+PLS;Injury;Hand;Ligament/joint capsule;Joint sprain;Thumb sprain
+PL2;Injury;Hand;Ligament/joint capsule;Joint sprain;Other hand or finger ligament tear
+PLT;Injury;Hand;Ligament/joint capsule;Joint sprain;Thumb ip joint sprain
+PL1;Injury;Hand;Ligament/joint capsule;Joint sprain;Sprained ulnar collateral ligament (skier's) thumb
+PLM;Injury;Hand;Ligament/joint capsule;Joint sprain;Metacarpophalangeal joint sprain
+PLU;Injury;Hand;Ligament/joint capsule;Joint sprain;Thumb ulnar collateral ligament (UCL) rupture at MCP joint (skier's thumb)
+PLC;Injury;Hand;Ligament/joint capsule;Joint sprain;Thumb cmc joint sprain
+PDB;Injury;Hand;Ligament/joint capsule;Joint sprain;MCP joint dislocation index finger
+PDJ;Injury;Hand;Ligament/joint capsule;Joint sprain;PIP joint dislocation little finger
+PD1;Injury;Hand;Ligament/joint capsule;Joint sprain;Dislocated metacarpophalangeal or interphalangeal joint
+PD5;Injury;Hand;Ligament/joint capsule;Joint sprain;MCP joint dislocation little finger
+PDA;Injury;Hand;Ligament/joint capsule;Joint sprain;Complication of thumb joint dislocation
+PDY;Injury;Hand;Ligament/joint capsule;Joint sprain;PIP joint dislocation finger unknown
+PDC;Injury;Hand;Ligament/joint capsule;Joint sprain;MCP joint dislocation middle finger
+PDE;Injury;Hand;Ligament/joint capsule;Joint sprain;MCP joint dislocation of two or more fingers
+PDF;Injury;Hand;Ligament/joint capsule;Joint sprain;Dislocation of interphalangeal joint thumb
+PDG;Injury;Hand;Ligament/joint capsule;Joint sprain;Proximal interphalangeal (PIP) joint dislocation index finger
+PDD;Injury;Hand;Ligament/joint capsule;Joint sprain;MCP joint dislocation ring finger
+PDI;Injury;Hand;Ligament/joint capsule;Joint sprain;PIP joint dislocation ring finger
+PDX;Injury;Hand;Ligament/joint capsule;Joint sprain;DIP joint dislocation finger unknown
+PDK;Injury;Hand;Ligament/joint capsule;Joint sprain;DIP joint dislocation index finger
+PDL;Injury;Hand;Ligament/joint capsule;Joint sprain;DIP joint dislocation middle finger
+PDM;Injury;Hand;Ligament/joint capsule;Joint sprain;DIP joint dislocation ring finger
+PDN;Injury;Hand;Ligament/joint capsule;Joint sprain;Multiple PIP and/or DIP joint dislocations
+PDQ;Injury;Hand;Ligament/joint capsule;Joint sprain;Dislocation CMC joint thumb
+PDS;Injury;Hand;Ligament/joint capsule;Joint sprain;DIP joint dislocation little finger
+PDT;Injury;Hand;Ligament/joint capsule;Joint sprain;Dislocation of MCP joint thumb
+PDV;Injury;Hand;Ligament/joint capsule;Joint sprain;Finger joint dislocation with volar plate injury
+PDW;Injury;Hand;Ligament/joint capsule;Joint sprain;Dislocation of MCP joint finger(s)
+PDH;Injury;Hand;Ligament/joint capsule;Joint sprain;PIP joint dislocation middle finger
+PUK;Injury;Hand;Ligament/joint capsule;Chronic instability;Complication of finger MCP joint sprain
+PUQ;Injury;Hand;Ligament/joint capsule;Chronic instability;Complication of MCP joint sprain excl chronic instability
+PU1;Injury;Hand;Ligament/joint capsule;Chronic instability;Finger PIP or DIP joint instability
+PUC;Injury;Hand;Ligament/joint capsule;Chronic instability;Instability 1st CMC joint
+PUD;Injury;Hand;Ligament/joint capsule;Chronic instability;Complication of PIP/DIP joint dislocation
+PUF;Injury;Hand;Ligament/joint capsule;Chronic instability;Finger MCP joint instability
+PUI;Injury;Hand;Ligament/joint capsule;Chronic instability;Interphalangeal joint instability of thumb
+PUM;Injury;Hand;Ligament/joint capsule;Chronic instability;Instability 1st MCP joint
+PVH;Injury;Hand;Superficial tissues/skin;Contusion (superficial);Thumbnail haematoma
+PVN;Injury;Hand;Superficial tissues/skin;Contusion (superficial);Fingernail haematoma
+PVT;Injury;Hand;Superficial tissues/skin;Contusion (superficial);Thumb bruising/haematoma
+PKH;Injury;Hand;Muscle/tendon;Laceration;Hand laceration
+PK2;Injury;Hand;Muscle/tendon;Laceration;Wrist and hand laceration/abrasion
+PKF;Injury;Hand;Muscle/tendon;Laceration;Finger laceration
+PKN;Injury;Hand;Muscle/tendon;Laceration;Laceration of fingernail/nailbed
+PKT;Injury;Hand;Muscle/tendon;Laceration;Thumb laceration
+PKD;Injury;Hand;Muscle/tendon;Laceration;Dorsal hand laceration
+PIX;Injury;Hand;Superficial tissues/skin;Abrasion;Hand abrasion
+PP1;Injury;Hand;Non-specific;Injury without tissue type specified;Other finger pain not otherwise specified
+PP2;Injury;Hand;Non-specific;Injury without tissue type specified;Chronic regional pain syndrome
+PPT;Injury;Hand;Non-specific;Injury without tissue type specified;Other thumb pain not otherwise specified
+PZS;Injury;Hand;Non-specific;Unknown;Post hand surgery
+CM2;Injury;Chest;Muscle/tendon;Muscle injury;Chest muscle strain
+CH2;Injury;Chest;Superficial tissues/skin;Contusion (superficial);Chest wall soft tissue bruising/haematoma
+CT1;Injury;Chest;Muscle/tendon;Tendinopathy;Intercostal tendinopathy
+CFA;Injury;Chest;Bone;Fracture;Fracture upper rib (1- 4)
+CFX;Injury;Chest;Bone;Fracture;Chest fracture(s)
+CFB;Injury;Chest;Bone;Fracture;Fracture middle rib (5 - 9)
+CFM;Injury;Chest;Bone;Fracture;Fracture multiple ribs
+CF1;Injury;Chest;Bone;Fracture;Fractured rib(s)
+CFL;Injury;Chest;Bone;Fracture;Fracture lower rib (10 - 12)
+CFC;Injury;Chest;Bone;Fracture;Fracture of costochondral margin
+CF2;Injury;Chest;Bone;Fracture;Sternal fracture
+CS1;Injury;Chest;Bone;Bone stress injury;Stress fracture rib(s)
+CSR;Injury;Chest;Bone;Bone stress injury;Stress reaction rib(s)
+CJ1;Injury;Chest;Bone;Bone contusion;Bruised ribs/chest wall
+CJS;Injury;Chest;Bone;Bone contusion;Bruised sternum
+CCR;Injury;Chest;Cartilage/synovium/bursa;Cartilage injury;Costochondritis
+CC1;Injury;Chest;Cartilage/synovium/bursa;Cartilage injury;Costal cartilage/costochondral joint injury
+CQC;Injury;Chest;Cartilage/synovium/bursa;Synovitis/capsulitis;Synovitis of chest joint
+CQS;Injury;Chest;Cartilage/synovium/bursa;Synovitis/capsulitis;Synovitis of sternoclavicular joint
+CLS;Injury;Chest;Ligament/joint capsule;Joint sprain;Sternoclavicular joint sprains
+CL1;Injury;Chest;Ligament/joint capsule;Joint sprain;Costovertebral joint sprains
+CLP;Injury;Chest;Ligament/joint capsule;Joint sprain;Posterior sternoclavicular joint sprain
+CLX;Injury;Chest;Ligament/joint capsule;Joint sprain;Chest joint sprains
+CLA;Injury;Chest;Ligament/joint capsule;Joint sprain;Anterior sternoclavicular (S/C) joint sprain
+CDS;Injury;Chest;Ligament/joint capsule;Joint sprain;Sternoclavicular joint dislocation
+CDX;Injury;Chest;Ligament/joint capsule;Joint sprain;Chest dislocations
+CDP;Injury;Chest;Ligament/joint capsule;Joint sprain;Posterior sternoclavicular joint dislocation
+CDC;Injury;Chest;Ligament/joint capsule;Joint sprain;Costochondral joint dislocation
+CUS;Injury;Chest;Ligament/joint capsule;Chronic instability;Sternoclavicular joint instability
+CUC;Injury;Chest;Ligament/joint capsule;Chronic instability;Costochondral joint instability
+CVBH;Injury;Chest;Internal organs;Organ trauma;Breast haematoma/trauma
+CVB1;Injury;Chest;Internal organs;Organ trauma;Breast haematoma/trauma
+CVBR;Injury;Chest;Internal organs;Organ trauma;Breast implant rupture
+CVBM;Injury;Chest;Internal organs;Organ trauma;Milk-duct injury
+CVB4;Injury;Chest;Internal organs;Organ trauma;Structural breast deformity delayed presentation related to breast trauma
+CVB3;Injury;Chest;Internal organs;Organ trauma;Breast fat necrosis or oil cyst delayed presentation related to breast trauma
+CVB2;Injury;Chest;Internal organs;Organ trauma;Severe breast haematoma associated with rapid expansion in breast size
+CKBX;Injury;Chest;Muscle/tendon;Laceration;Breast laceration
+CK8;Injury;Chest;Muscle/tendon;Laceration;Truncal laceration/abrasion not requiring suturing
+CKX;Injury;Chest;Muscle/tendon;Laceration;Chest wall laceration/abrasion
+CIBC;Injury;Chest;Superficial tissues/skin;Abrasion;Breast of torso chaffing (friction injury)
+CII;Injury;Chest;Superficial tissues/skin;Abrasion;Chest wall abrasion (incl complications)
+CIBX;Injury;Chest;Superficial tissues/skin;Abrasion;Breast abrasion
+CO1;Injury;Chest;Internal organs;Organ trauma;Haemothorax
+COP;Injury;Chest;Internal organs;Organ trauma;Pneumothorax
+COX;Injury;Chest;Internal organs;Organ trauma;Lung/heart traumatic injury
+CPB1;Injury;Chest;Non-specific;Injury without tissue type specified;Exercise-related breast pain
+CPX;Injury;Chest;Non-specific;Injury without tissue type specified;Chest injury without tissue type specified
+CZ1;Injury;Chest;Non-specific;Unknown;Chest pain undiagnosed
+DMM;Injury;Thoracic spine;Muscle/tendon;Muscle injury;Thoracic muscle strain/spasm/trigger points
+DM1;Injury;Thoracic spine;Muscle/tendon;Muscle injury;Thoracic extensor muscle strain
+DH1;Injury;Thoracic spine;Superficial tissues/skin;Contusion (superficial);Thoracic soft tissue bruising/haematoma
+DFX;Injury;Thoracic spine;Bone;Fracture;Thoracic spine fracture
+DFT;Injury;Thoracic spine;Bone;Fracture;Fracture transverse or posterior process thoracic spine
+DF1;Injury;Thoracic spine;Bone;Fracture;Fracture thoracic vertebral body
+DSX;Injury;Thoracic spine;Bone;Bone stress injury;Thoracic spine stress/compression fracture
+DJX;Injury;Thoracic spine;Bone;Bone contusion;Thoracic spine bone contusion
+LN3;Injury;Lumbosacral;Nervous;Brain/spinal cord injury;Lumbar spinal canal stenosis
+LN2;Injury;Lumbosacral;Nervous;Peripheral nerve injury;Lumbar nerve root impingement due to foraminal stenosis bony and disc
+DC1;Injury;Thoracic spine;Cartilage/synovium/bursa;Cartilage injury;Thoracic disc prolapse
+DA1;Injury;Thoracic spine;Cartilage/synovium/bursa;Arthritis;Facet joint osteoarthritis thoracic spine
+DAX;Injury;Thoracic spine;Cartilage/synovium/bursa;Arthritis;Thoracic spine osteoarthritis
+DQV;Injury;Thoracic spine;Cartilage/synovium/bursa;Synovitis/capsulitis;Inflammation/stiffness of costovertebral joints
+DLJ;Injury;Thoracic spine;Ligament/joint capsule;Joint sprain;Thoracic spine joint injury
+DL1;Injury;Thoracic spine;Ligament/joint capsule;Joint sprain;Thoracic facet joint sprain
+DUV;Injury;Thoracic spine;Ligament/joint capsule;Chronic instability;Costovertebral joint instability
+DKX;Injury;Thoracic spine;Muscle/tendon;Laceration;Thoracic laceration
+DIX;Injury;Thoracic spine;Superficial tissues/skin;Abrasion;Thoracic abrasion (including infection)
+DPY;Injury;Thoracic spine;Non-specific;Injury without tissue type specified;Thoracic muscle trigger points
+DPP;Injury;Thoracic spine;Non-specific;Injury without tissue type specified;Thoracic functional pain
+DP1;Injury;Thoracic spine;Non-specific;Injury without tissue type specified;Chronic thoracic functional pain
+DZX;Injury;Thoracic spine;Non-specific;Unknown;Thoracic pain/injury not otherwise specified
+DZ1;Injury;Thoracic spine;Non-specific;Unknown;Thoracic pain undiagnosed
+LMG;Injury;Lumbosacral;Muscle/tendon;Muscle injury;Gluteal muscle strain
+LMZ;Injury;Lumbosacral;Muscle/tendon;Muscle injury;Buttock muscle soreness/trigger points
+LMP;Injury;Lumbosacral;Muscle/tendon;Muscle injury;Piriformis muscle strain
+LMB;Injury;Lumbosacral;Muscle/tendon;Muscle injury;Buttock muscle strain/spasm/trigger points
+LM1;Injury;Lumbosacral;Muscle/tendon;Muscle injury;Lumbar spine muscle and tendon strain/spasm/trigger points
+LMT;Injury;Lumbosacral;Muscle/tendon;Muscle injury;Lumbar soreness or muscle spasm
+LHS;Injury;Lumbosacral;Superficial tissues/skin;Contusion (superficial);SIJ bruising/haematoma
+LH1;Injury;Lumbosacral;Superficial tissues/skin;Contusion (superficial);Lumbar contusion/haematoma
+LHB;Injury;Lumbosacral;Superficial tissues/skin;Contusion (superficial);Buttock soft tissue bruising/haematoma
+LTP;Injury;Lumbosacral;Muscle/tendon;Tendinopathy;Piriformis tendinopathy/soreness
+LN1;Injury;Lumbosacral;Nervous;Brain/spinal cord injury;Lumbar spinal injury
+GN1;Injury;Hip/groin;Nervous;Peripheral nerve injury;Genitofemoral nerve entrapment
+GNE;Injury;Hip/groin;Nervous;Peripheral nerve injury;Nerve entrapment groin
+GNI;Injury;Hip/groin;Nervous;Peripheral nerve injury;Ilioinguinal nerve entrapment
+GNM;Injury;Hip/groin;Nervous;Peripheral nerve injury;Thigh neurological injury
+GNO;Injury;Hip/groin;Nervous;Peripheral nerve injury;Obturator nerve entrapment
+GNX;Injury;Hip/groin;Nervous;Peripheral nerve injury;Groin neurovascular injuries
+TNEL;Injury;Thigh;Nervous;Peripheral nerve injury;Lateral cutaneous nerve of thigh entrapment
+TN1;Injury;Thigh;Nervous;Peripheral nerve injury;Nerve entrapment in thigh
+QN1;Injury;Lower leg;Nervous;Peripheral nerve injury;Peroneal nerve palsy (with foot drop)
+QNX;Injury;Lower leg;Nervous;Peripheral nerve injury;Neurological injury of lower leg
+ANX;Injury;Ankle;Nervous;Peripheral nerve injury;Nerve injury - at ankle
+LFS;Injury;Lumbosacral;Bone;Fracture;Fractured sacrum
+LFZ;Injury;Lumbosacral;Bone;Fracture;Other lumbar spine fracture
+LFX;Injury;Lumbosacral;Bone;Fracture;Lumbar spine fracture
+LFV;Injury;Lumbosacral;Bone;Fracture;Lumbar spine vertebral body fracture
+LFSX;Injury;Lumbosacral;Bone;Fracture;Lumbar spinous process fracture
+LFP;Injury;Lumbosacral;Bone;Fracture;Pelvic fracture(s)
+LFI;Injury;Lumbosacral;Bone;Fracture;Fractured ischium
+LFD;Injury;Lumbosacral;Bone;Fracture;Lumbar pedicle fracture
+LFC;Injury;Lumbosacral;Bone;Fracture;Complication of lumbar fracture
+LFA;Injury;Lumbosacral;Bone;Fracture;Lumbar pars interarticularis acute fracture
+LFT;Injury;Lumbosacral;Bone;Fracture;Fracture transverse process(es)
+LFM;Injury;Lumbosacral;Bone;Fracture;Multiple lumbar spine fractures
+LS1;Injury;Lumbosacral;Bone;Bone stress injury;Stress fracture lumbar spine
+LSU;Injury;Lumbosacral;Bone;Bone stress injury;Pars stress fracture L1 - L3
+LSI;Injury;Lumbosacral;Bone;Bone stress injury;Stress fracture ilium
+LSP;Injury;Lumbosacral;Bone;Bone stress injury;Pars interarticularis stress fracture
+LSM;Injury;Lumbosacral;Bone;Bone stress injury;Multiple (incl bilateral) pars stress fractures
+LSLX;Injury;Lumbosacral;Bone;Bone stress injury;Other lumbar spine stress fracture
+LSL;Injury;Lumbosacral;Bone;Bone stress injury;Spondylolisthesis lumbar
+LSIS;Injury;Lumbosacral;Bone;Bone stress injury;Stress fracture ischium
+LSS;Injury;Lumbosacral;Bone;Bone stress injury;Stress fracture sacrum
+LSF;Injury;Lumbosacral;Bone;Bone stress injury;Pars stress fracture L5
+LSE;Injury;Lumbosacral;Bone;Bone stress injury;Pars stress fracture L4
+LSC;Injury;Lumbosacral;Bone;Bone stress injury;Stress fracture coccyx
+LS2;Injury;Lumbosacral;Bone;Bone stress injury;Lumbar stress reaction
+LSG;Injury;Lumbosacral;Bone;Bone stress injury;Other stress fracture pelvis
+LS3;Injury;Lumbosacral;Bone;Bone stress injury;Lumbar pedicle stress fracture
+LJX;Injury;Lumbosacral;Bone;Bone contusion;Lumbar spine/buttock bone contusion
+ANC;Injury;Ankle;Nervous;Peripheral nerve injury;Calcaneal nerve entrapment
+LC1;Injury;Lumbosacral;Cartilage/synovium/bursa;Cartilage injury;Lumbar discogenic pain
+LC2;Injury;Lumbosacral;Cartilage/synovium/bursa;Cartilage injury;Disc degeneration
+LC3;Injury;Lumbosacral;Cartilage/synovium/bursa;Cartilage injury;Lumbar disc annular tear
+LCP;Injury;Lumbosacral;Cartilage/synovium/bursa;Cartilage injury;Lumbar disc prolapse
+LAE;Injury;Lumbosacral;Cartilage/synovium/bursa;Arthritis;Degenerative L5/S1 disc disease
+LAD;Injury;Lumbosacral;Cartilage/synovium/bursa;Arthritis;Degenerative L4/L5 disc disease
+LAM;Injury;Lumbosacral;Cartilage/synovium/bursa;Arthritis;Degenerative disc disease multiple levels lumbar spine
+LAX;Injury;Lumbosacral;Cartilage/synovium/bursa;Arthritis;Osteoarthritis lumbosacral spine
+LA1;Injury;Lumbosacral;Cartilage/synovium/bursa;Arthritis;Facet joint osteoarthritis lumbosacral spine
+LLJ;Injury;Lumbosacral;Ligament/joint capsule;Joint sprain;Spinal joint sprain
+LLI;Injury;Lumbosacral;Ligament/joint capsule;Joint sprain;Iliolumbar ligament pain
+LLF;Injury;Lumbosacral;Ligament/joint capsule;Joint sprain;Lumbar facet joint sprain
+LL1;Injury;Lumbosacral;Ligament/joint capsule;Joint sprain;Lumbar region ligament sprain
+LLS;Injury;Lumbosacral;Ligament/joint capsule;Joint sprain;Sacroiliac joint sprain
+LLC;Injury;Lumbosacral;Ligament/joint capsule;Joint sprain;Sacrococcygeal joint injury/pain
+LU1;Injury;Lumbosacral;Ligament/joint capsule;Chronic instability;Lumbar instability
+LUT;Injury;Lumbosacral;Ligament/joint capsule;Chronic instability;Grade 2-3 spondylolisthesis lumbar spine
+LUSX;Injury;Lumbosacral;Ligament/joint capsule;Chronic instability;Spondylolisthesis any level
+LUSD;Injury;Lumbosacral;Ligament/joint capsule;Chronic instability;Grade 4 spondylolisthesis lumbar spine
+LUS;Injury;Lumbosacral;Ligament/joint capsule;Chronic instability;Sacroiliac joint instability
+LUP;Injury;Lumbosacral;Ligament/joint capsule;Chronic instability;Lumbosacral instability
+LUR;Injury;Lumbosacral;Ligament/joint capsule;Chronic instability;Retrolisthesis lumbar spine
+LK1;Injury;Lumbosacral;Muscle/tendon;Laceration;Complication of lumbosacral laceration incl infection
+LKB;Injury;Lumbosacral;Muscle/tendon;Laceration;Pelvic/buttock laceration
+LKX;Injury;Lumbosacral;Muscle/tendon;Laceration;Lumbar laceration
+LIB;Injury;Lumbosacral;Superficial tissues/skin;Abrasion;Buttock abrasion incl skin pressure injury
+LP1;Injury;Lumbosacral;Non-specific;Injury without tissue type specified;Chronic lumbar functional pain
+LPS;Injury;Lumbosacral;Non-specific;Injury without tissue type specified;Sacroiliac joint injury/pain
+LZX;Injury;Lumbosacral;Non-specific;Unknown;Lumbar pain/injury not otherwise specified
+LZ1;Injury;Lumbosacral;Non-specific;Unknown;Lumbar pain non-specific
+LZB;Injury;Lumbosacral;Non-specific;Unknown;Buttock pain not otherwise specified
+LZH;Injury;Lumbosacral;Non-specific;Unknown;Lumbar pain with hamstring referral
+LZU;Injury;Lumbosacral;Non-specific;Unknown;Buttock pain undiagnosed
+OMO;Injury;Abdomen;Muscle/tendon;Muscle injury;Abdominal oblique muscle strain
+OMM;Injury;Abdomen;Muscle/tendon;Muscle injury;Truncal muscle strain
+OMA;Injury;Abdomen;Muscle/tendon;Muscle injury;Transversus abdominis muscle strain
+OMW;Injury;Abdomen;Muscle/tendon;Muscle injury;Winded
+OM1;Injury;Abdomen;Muscle/tendon;Muscle injury;Truncal muscle trigger points/spasm
+OMY;Injury;Abdomen;Muscle/tendon;Muscle injury;Rectus abdominis trigger points/spasm
+OMT;Injury;Abdomen;Muscle/tendon;Muscle injury;Abdominal muscle soreness or spasm
+OH1;Injury;Abdomen;Superficial tissues/skin;Contusion (superficial);Abdominopelvic soft tissue bruising/haematoma
+OTS;Injury;Abdomen;Muscle/tendon;Tendinopathy;Abdominal tendon insertion strain
+OTU;Injury;Abdomen;Muscle/tendon;Tendinopathy;Umbilical hernia
+OTR;Injury;Abdomen;Muscle/tendon;Tendinopathy;Rectus abdominus tendinopathy
+OTI;Injury;Abdomen;Muscle/tendon;Tendinopathy;Direct inguinal hernia
+OTH;Injury;Abdomen;Muscle/tendon;Tendinopathy;Sports hernia/abdominal tendinopathy
+OTA;Injury;Abdomen;Muscle/tendon;Tendinopathy;Abdominal tendon insertion injury
+OT2;Injury;Abdomen;Muscle/tendon;Tendinopathy;Costolliac impingement
+OT1;Injury;Abdomen;Muscle/tendon;Tendinopathy;Divarication of rectus abdominis
+OTX;Injury;Abdomen;Muscle/tendon;Tendinopathy;Abdominal tendon injury
+ORI;Injury;Abdomen;Muscle/tendon;Tendon rupture;Abdominal tendon insertion rupture
+OKS;Injury;Abdomen;Muscle/tendon;Laceration;Truncal laceration requiring suturing
+OKX;Injury;Abdomen;Muscle/tendon;Laceration;Truncal laceration/abrasion
+OIX;Injury;Abdomen;Superficial tissues/skin;Abrasion;Complication of abrasion to trunk - including infection
+OO1;Injury;Abdomen;Internal organs;Organ trauma;Intestinal trauma
+OOB;Injury;Abdomen;Internal organs;Organ trauma;Bladder trauma
+OOH;Injury;Abdomen;Internal organs;Organ trauma;Trunk and abdominal injury
+OOK;Injury;Abdomen;Internal organs;Organ trauma;Kidney trauma
+OOM;Injury;Abdomen;Internal organs;Organ trauma;Multiple organ trauma
+OOL;Injury;Abdomen;Internal organs;Organ trauma;Liver trauma
+OOP;Injury;Abdomen;Internal organs;Organ trauma;Pancreatic trauma
+OOS;Injury;Abdomen;Internal organs;Organ trauma;Spleen trauma
+OOZ;Injury;Abdomen;Internal organs;Organ trauma;Other organ trauma not otherwise specified
+OOX;Injury;Abdomen;Internal organs;Organ trauma;Abdominal organ injury
+OPS;Injury;Abdomen;Non-specific;Injury without tissue type specified;Runner's stitch
+OPY;Injury;Abdomen;Non-specific;Injury without tissue type specified;Abdominal muscle cramps
+OP1;Injury;Abdomen;Non-specific;Injury without tissue type specified;Exertional abdominal pain
+OZ1;Injury;Abdomen;Non-specific;Unknown;Abdominal pain undiagnosed
+OZX;Injury;Abdomen;Non-specific;Unknown;Abdominal pain not otherwise specified
+GMA;Injury;Hip/groin;Muscle/tendon;Muscle injury;Proximal adductor trigger points
+GMY;Injury;Hip/groin;Muscle/tendon;Muscle injury;Groin soreness or trigger points
+GMR;Injury;Hip/groin;Muscle/tendon;Muscle injury;Rectus abdominus strain
+GMP;Injury;Hip/groin;Muscle/tendon;Muscle injury;Iliopsoas muscle strain/tear
+GMFP;Injury;Hip/groin;Muscle/tendon;Muscle injury;Psoas muscle strain/tear
+GM8;Injury;Hip/groin;Muscle/tendon;Muscle injury;Hip and groin muscle strain/tear
+GM1;Injury;Hip/groin;Muscle/tendon;Muscle injury;Hip flexor muscle strain
+GMI;Injury;Hip/groin;Muscle/tendon;Muscle injury;Soreness/trigger points iliopsoas
+GHZ;Injury;Hip/groin;Superficial tissues/skin;Contusion (superficial);Other hip/groin bruising/haematoma
+GHL;Injury;Hip/groin;Superficial tissues/skin;Contusion (superficial);Labial bruising/haematoma
+GH1;Injury;Hip/groin;Superficial tissues/skin;Contusion (superficial);Contusion/haematoma, hip region
+GTS;Injury;Hip/groin;Muscle/tendon;Tendinopathy;Snapping psoas tendon
+GTL;Injury;Hip/groin;Muscle/tendon;Tendinopathy;Adductor longus tendon injury
+GTLS;Injury;Hip/groin;Muscle/tendon;Tendinopathy;Adductor longus tendon strain
+GTMS;Injury;Hip/groin;Muscle/tendon;Tendinopathy;Adductor magnus tendon strain
+GTX;Injury;Hip/groin;Muscle/tendon;Tendinopathy;Hip and groin tendon injuries
+GTO;Injury;Hip/groin;Muscle/tendon;Tendinopathy;Abdominal tendon insertion tendinopathy
+GTRS;Injury;Hip/groin;Muscle/tendon;Tendinopathy;Rectus femoris tendon strain
+GTSS;Injury;Hip/groin;Muscle/tendon;Tendinopathy;Sartorius tendon strain
+GTM;Injury;Hip/groin;Muscle/tendon;Tendinopathy;Adductor magnus tendon injury
+GTST;Injury;Hip/groin;Muscle/tendon;Tendinopathy;Sartorius tendinopathy
+GTHI;Injury;Hip/groin;Muscle/tendon;Tendinopathy;Indirect inguinal hernia
+GTR;Injury;Hip/groin;Muscle/tendon;Tendinopathy;Rectus femoris tendon injury
+GTH;Injury;Hip/groin;Muscle/tendon;Tendinopathy;Sports hernia
+GTFT;Injury;Hip/groin;Muscle/tendon;Tendinopathy;Iliopsoas tendinopathy
+GTMT;Injury;Hip/groin;Muscle/tendon;Tendinopathy;Adductor magnus tendinopathy
+GTFS;Injury;Hip/groin;Muscle/tendon;Tendinopathy;Iliopsoas tendon strain
+GTFR;Injury;Hip/groin;Muscle/tendon;Tendinopathy;Iliopsoas tendon rupture
+GTF;Injury;Hip/groin;Muscle/tendon;Tendinopathy;Iliopsoas tendon injury
+GTD;Injury;Hip/groin;Muscle/tendon;Tendinopathy;Unspecified or multiple adductor tendon injury
+GT3;Injury;Hip/groin;Muscle/tendon;Tendinopathy;Iliopsoas tendinopathy/bursitis
+GT1;Injury;Hip/groin;Muscle/tendon;Tendinopathy;Adductor origin tendinopathy
+GTHF;Injury;Hip/groin;Muscle/tendon;Tendinopathy;Femoral hernia
+GRM;Injury;Hip/groin;Muscle/tendon;Tendon rupture;Adductor magnus tendon rupture
+GRR;Injury;Hip/groin;Muscle/tendon;Tendon rupture;Rectus femoris origin tendon rupture
+GRS;Injury;Hip/groin;Muscle/tendon;Tendon rupture;Sartorius tendon rupture
+GRA;Injury;Hip/groin;Muscle/tendon;Tendon rupture;Adductor longus tendon rupture
+ANM;Injury;Ankle;Nervous;Peripheral nerve injury;Medial calcaneal nerve entrapment
+ANT;Injury;Ankle;Nervous;Peripheral nerve injury;Tarsal tunnel syndrome
+FNX;Injury;Foot;Nervous;Peripheral nerve injury;Foot neurological injury
+FN1;Injury;Foot;Nervous;Peripheral nerve injury;Morton's neuroma or joplin's neuritis
+XNU;Injury;Multiple systems;Nervous;Peripheral nerve injury;Upper limb neurological injury
+XNL;Injury;Multiple systems;Nervous;Peripheral nerve injury;Lower limb neurological injury
+GFPI;Injury;Hip/groin;Bone;Fracture;Fracture inferior pubic ramus
+GF2;Injury;Hip/groin;Bone;Fracture;Fractured coccyx
+GFPS;Injury;Hip/groin;Bone;Fracture;Fracture superior pubic ramus
+GFX;Injury;Hip/groin;Bone;Fracture;Hip/groin fractures
+GFP;Injury;Hip/groin;Bone;Fracture;Fracture pubic ramus
+GFN;Injury;Hip/groin;Bone;Fracture;Fractured neck of femur
+GF3;Injury;Hip/groin;Bone;Fracture;Fractured ilium
+GF1;Injury;Hip/groin;Bone;Fracture;Acetabular fracture
+GFF;Injury;Hip/groin;Bone;Fracture;Femoral fracture
+GSN;Injury;Hip/groin;Bone;Bone stress injury;Femoral neck stress fracture
+GS3;Injury;Hip/groin;Bone;Bone stress injury;Stress fracture pelvic bone
+GSP;Injury;Hip/groin;Bone;Bone stress injury;Pelvic stress fracture
+GSPI;Injury;Hip/groin;Bone;Bone stress injury;Stress fracture inferior pubic ramus
+GSM;Injury;Hip/groin;Bone;Bone stress injury;Multiple stress fractures pelvis
+GSX;Injury;Hip/groin;Bone;Bone stress injury;Hip/groin stress fracture
+GS2;Injury;Hip/groin;Bone;Bone stress injury;Stress fracture through femoral neck (both cortices)
+GS1;Injury;Hip/groin;Bone;Bone stress injury;Osteitis pubis
+GSFI;Injury;Hip/groin;Bone;Bone stress injury;Stress fracture inferior cortex femoral neck
+GSFS;Injury;Hip/groin;Bone;Bone stress injury;Stress fracture superior cortex femoral neck
+GJX;Injury;Hip/groin;Bone;Bone contusion;Groin/hip bone contusion
+GEA;Injury;Hip/groin;Bone;Avascular necrosis;Hip avascular necrosis
+GEP;Injury;Hip/groin;Bone;Avascular necrosis;Perthes disease
+GEVA;Injury;Hip/groin;Bone;Avascular necrosis;Avascular necrosis femoral head
+XNS;Injury;Multiple systems;Nervous;Brain/spinal cord injury;Spinal injury crossing anatomical boundaries
+ZNS;Injury;Unknown or not specified;Nervous;Brain/spinal cord injury;Spinal injury location unspecified
+SGS;Injury;Shoulder;Bone;Physis injury;Traction injury to apophysis at shoulder
+SGO;Injury;Shoulder;Bone;Physis injury;Osteochondrosis shoulder
+UGL;Injury;Upper arm;Bone;Physis injury;Little leaguers' shoulder
+EGC;Injury;Elbow;Bone;Physis injury;Capitellar osteochondrosis
+EGT;Injury;Elbow;Bone;Physis injury;Traction injury to apophysis at elbow
+EGM;Injury;Elbow;Bone;Physis injury;Apophysitis medial epicondyle elbow
+WGO;Injury;Wrist;Bone;Physis injury;Osteochondrosis of wrist and hand
+GC1;Injury;Hip/groin;Cartilage/synovium/bursa;Cartilage injury;Hip joint chondral/osteochondral injury
+GCC;Injury;Hip/groin;Cartilage/synovium/bursa;Cartilage injury;Hip joint chondral lesion
+GCL;Injury;Hip/groin;Cartilage/synovium/bursa;Cartilage injury;Labral tear, hip joint
+GA1;Injury;Hip/groin;Cartilage/synovium/bursa;Arthritis;Hip joint osteoarthritis
+GAX;Injury;Hip/groin;Cartilage/synovium/bursa;Arthritis;Hip/groin arthritis
+GQH;Injury;Hip/groin;Cartilage/synovium/bursa;Synovitis/capsulitis;Synovitis of hip joint
+GQX;Injury;Hip/groin;Cartilage/synovium/bursa;Synovitis/capsulitis;Hip joint inflammation/synovitis/other biomechanical lesion
+GBT;Injury;Hip/groin;Cartilage/synovium/bursa;Bursitis;Trochanteric bursitis
+GLH;Injury;Hip/groin;Ligament/joint capsule;Joint sprain;Hip joint sprain/jar
+GD1;Injury;Hip/groin;Ligament/joint capsule;Joint sprain;Hip joint dislocation
+GUP;Injury;Hip/groin;Ligament/joint capsule;Chronic instability;Pubic symphysis instability
+GUH;Injury;Hip/groin;Ligament/joint capsule;Chronic instability;Instability of hip joint
+GVH;Injury;Hip/groin;Vessels;Vascular trauma;Vascular injury hip region
+GVI;Injury;Hip/groin;Vessels;Vascular trauma;Exercise-related iliac artery flow limitation
+GK1;Injury;Hip/groin;Muscle/tendon;Laceration;Complication of laceration including infection
+GKX;Injury;Hip/groin;Muscle/tendon;Laceration;Hip and groin laceration
+GIX;Injury;Hip/groin;Superficial tissues/skin;Abrasion;Groin/hip abrasion
+GOT;Injury;Hip/groin;Internal organs;Organ trauma;Groin organ damage
+GOP;Injury;Hip/groin;Internal organs;Organ trauma;Pelvic organ injury
+GOR;Injury;Hip/groin;Internal organs;Organ trauma;Testicular rupture
+GOU;Injury;Hip/groin;Internal organs;Organ trauma;Penile injury
+GO1;Injury;Hip/groin;Internal organs;Organ trauma;Ruptured penis/urethra
+GO2;Injury;Hip/groin;Internal organs;Organ trauma;Testicular/scrotal contusion/haematoma
+GP1;Injury;Hip/groin;Non-specific;Injury without tissue type specified;Chronic non specific /functional groin pain
+GPY;Injury;Hip/groin;Non-specific;Injury without tissue type specified;Other stress/overuse injury hip and groin
+GZS;Injury;Hip/groin;Non-specific;Unknown;Post hip/groin surgery
+GZX;Injury;Hip/groin;Non-specific;Unknown;Hip/groin pain not otherwise specified
+GZN;Injury;Hip/groin;Non-specific;Unknown;Pelvic/buttock pain not otherwise specified
+GZH;Injury;Hip/groin;Non-specific;Unknown;Clicking hip
+GZ1;Injury;Hip/groin;Non-specific;Unknown;Groin pain undiagnosed
+TMV;Injury;Thigh;Muscle/tendon;Muscle injury;Other quadricep strain
+TMH;Injury;Thigh;Muscle/tendon;Muscle injury;Hamstring cramping during exercise
+TM1;Injury;Thigh;Muscle/tendon;Muscle injury;Hamstring strain/tear
+TM2;Injury;Thigh;Muscle/tendon;Muscle injury;Quadriceps strain/tear
+TMA;Injury;Thigh;Muscle/tendon;Muscle injury;Distal adductor strain
+TMAL;Injury;Thigh;Muscle/tendon;Muscle injury;Adductor longus strain
+TMAR;Injury;Thigh;Muscle/tendon;Muscle injury;Adductor muscle rupture/grade 3 strain
+TMB;Injury;Thigh;Muscle/tendon;Muscle injury;Biceps femoris strain grade 1 - 2
+TMC;Injury;Thigh;Muscle/tendon;Muscle injury;Thigh muscle cramping during exercise
+TMCA;Injury;Thigh;Muscle/tendon;Muscle injury;Adductor muscle cramping during exercise
+TMCQ;Injury;Thigh;Muscle/tendon;Muscle injury;Quadricep cramping during exercise
+TMG;Injury;Thigh;Muscle/tendon;Muscle injury;Gluteus medius/minimus strain
+TMX;Injury;Thigh;Muscle/tendon;Muscle injury;Gluteus maximus strain
+TMGX;Injury;Thigh;Muscle/tendon;Muscle injury;Thigh muscle wasting
+TMHR;Injury;Thigh;Muscle/tendon;Muscle injury;Grade 3 hamstring strain
+TML;Injury;Thigh;Muscle/tendon;Muscle injury;Back referred muscle tightness
+TMM;Injury;Thigh;Muscle/tendon;Muscle injury;Adductor magnus strain
+TMP;Injury;Thigh;Muscle/tendon;Muscle injury;Thigh muscle trigger points
+TMQ;Injury;Thigh;Muscle/tendon;Muscle injury;Rectus femoris rupture
+TMR;Injury;Thigh;Muscle/tendon;Muscle injury;Rectus femoris strain
+TMS;Injury;Thigh;Muscle/tendon;Muscle injury;Semimembranosis/tendinosis strain (grade 1 - 2)
+TMT;Injury;Thigh;Muscle/tendon;Muscle injury;Rectus femoris trigger points
+TMW;Injury;Thigh;Muscle/tendon;Muscle injury;Back referred hamstring tightness
+TMY;Injury;Thigh;Muscle/tendon;Muscle injury;Lateral hamstring trigger points
+TMZ;Injury;Thigh;Muscle/tendon;Muscle injury;Thigh muscle strain/spasm/trigger points
+TMGQ;Injury;Thigh;Muscle/tendon;Muscle injury;Quadriceps wasting
+THI;Injury;Thigh;Superficial tissues/skin;Contusion (superficial);Bruising/haematoma iliac crest/gluteus medius
+THH;Injury;Thigh;Muscle/tendon;Muscle contusion;Hamstring muscle haematoma
+THV;Injury;Thigh;Muscle/tendon;Muscle contusion;Iliotibial band haematoma
+THD;Injury;Thigh;Muscle/tendon;Muscle contusion;Adductor muscle haematoma
+THZ;Injury;Thigh;Superficial tissues/skin;Contusion (superficial);Other thigh soft tissue bruising/haematoma not otherwise specified
+THA;Injury;Thigh;Vessels;Vascular trauma;Acute arterial bleed thigh
+TH1;Injury;Thigh;Superficial tissues/skin;Contusion (superficial);Contusion/haematoma of thigh
+THM;Injury;Thigh;Muscle/tendon;Muscle contusion;Myositis ossificans thigh
+THQ;Injury;Thigh;Muscle/tendon;Muscle contusion;Quadriceps muscle haematoma
+THT;Injury;Thigh;Muscle/tendon;Muscle contusion;Thigh muscle haematoma
+TYC;Injury;Thigh;Muscle/tendon;Muscle compartment syndrome;Compartment syndrome of thigh
+TTP;Injury;Thigh;Muscle/tendon;Tendinopathy;Tenoperiostitis of thigh
+TTS;Injury;Thigh;Muscle/tendon;Tendinopathy;Sartorius tendon injury
+TTM;Injury;Thigh;Muscle/tendon;Tendinopathy;Gluteus med/min tendinopathy
+TTH;Injury;Thigh;Muscle/tendon;Tendinopathy;Hamstring tendinopathy with ischial bursitis
+TTG;Injury;Thigh;Muscle/tendon;Tendinopathy;Gluteal tendinopathy/enthesopathy
+TT8;Injury;Thigh;Muscle/tendon;Tendinopathy;Thigh tendon injuries
+TT1;Injury;Thigh;Muscle/tendon;Tendinopathy;Hamstring origin tendinopathy
+TTR;Injury;Thigh;Muscle/tendon;Tendinopathy;Rectus femoris origin tendinopathy
+TRM;Injury;Thigh;Muscle/tendon;Tendon rupture;Gluteus med/min tendon rupture
+TR1;Injury;Thigh;Muscle/tendon;Tendon rupture;Hamstring tendon injury
+TRH;Injury;Thigh;Muscle/tendon;Tendon rupture;Hamstring origin tendon rupture
+WGR;Injury;Wrist;Bone;Physis injury;Epiphysitis of distal radius
+WGT;Injury;Wrist;Bone;Physis injury;Traction injury to apophysis at wrist/hand
+TF1;Injury;Thigh;Bone;Fracture;Fractured femoral shaft
+TFX;Injury;Thigh;Bone;Fracture;Thigh fractures
+TS1;Injury;Thigh;Bone;Bone stress injury;Femoral bone stress lesion
+TSF;Injury;Thigh;Bone;Bone stress injury;Femoral shaft stress fracture
+TJF;Injury;Thigh;Bone;Bone contusion;Femur bone contusion
+DGS;Injury;Thoracic spine;Bone;Physis injury;Osteochondrosis spine
+TVML;Injury;Thigh;Superficial tissues/skin;Contusion (superficial);Morel-Lavall�e lesion, hip/thigh
+TKX;Injury;Thigh;Muscle/tendon;Laceration;Thigh laceration/abrasion
+TK1;Injury;Thigh;Muscle/tendon;Laceration;Complication of laceration incl. infection
+TIX;Injury;Thigh;Superficial tissues/skin;Abrasion;Thigh abrasion
+TISP;Injury;Thigh;Superficial tissues/skin;Abrasion;Upper leg skin pressure injury
+TWS;Injury;Thigh;Stump;Stump injury;Stump pressure injury thigh
+TWI;Injury;Thigh;Stump;Stump injury;Infection of stump thigh
+TPZ;Injury;Thigh;Non-specific;Injury without tissue type specified;Thigh pain without tissue type specified
+TZS;Injury;Thigh;Non-specific;Unknown;Other stress/overuse injuries to thigh
+TZX;Injury;Thigh;Non-specific;Unknown;Thigh pain not otherwise specified
+TZ1;Injury;Thigh;Non-specific;Unknown;Thigh pain/injury not otherwise specified
+TZZ;Injury;Thigh;Non-specific;Unknown;Thigh pain undiagnosed
+KMP;Injury;Knee;Muscle/tendon;Muscle injury;Popliteus muscle strain
+KMX;Injury;Knee;Muscle/tendon;Muscle injury;Knee muscle strain/spasm/trigger points
+KH1;Injury;Knee;Superficial tissues/skin;Contusion (superficial);Other soft tissue bruising/haematoma knee
+KHQ;Injury;Knee;Muscle/tendon;Muscle contusion;Distal quadricep haematoma
+KT9;Injury;Knee;Muscle/tendon;Tendinopathy;Lateral hamstring tendon strain at knee
+KTPI;Injury;Knee;Muscle/tendon;Tendinopathy;Insertional patellar tendon pathology, incl intratendon ossicle
+KTQ;Injury;Knee;Muscle/tendon;Tendinopathy;Quadriceps tendon injury
+KTP;Injury;Knee;Muscle/tendon;Tendinopathy;Patellar tendon injury
+KTM;Injury;Knee;Muscle/tendon;Tendinopathy;Gastrocnemius tendon injury
+KTL;Injury;Knee;Muscle/tendon;Tendinopathy;Lateral gastroc tendinopathy knee
+KTH;Injury;Knee;Muscle/tendon;Tendinopathy;Medial hamstring tendon strain at knee
+KTS;Injury;Knee;Muscle/tendon;Tendinopathy;Medial hamstring insertion tendonitis/pes anserinus bursitis
+KT7;Injury;Knee;Muscle/tendon;Tendinopathy;Quadriceps tendinopathy +/- suprapatellar bursitis
+KT5;Injury;Knee;Muscle/tendon;Tendinopathy;Popliteus tendinopathy/strain
+KT3;Injury;Knee;Muscle/tendon;Tendinopathy;Knee tendon injury
+KT2;Injury;Knee;Muscle/tendon;Tendinopathy;Patellar tendinopathy
+KT1;Injury;Knee;Muscle/tendon;Tendinopathy;Iliotibial band syndrome
+KTG;Injury;Knee;Muscle/tendon;Tendinopathy;Medial gastroc tendinopathy knee
+KTB;Injury;Knee;Muscle/tendon;Tendinopathy;Lateral hamstring insertion tendonitis
+KRL;Injury;Knee;Muscle/tendon;Tendon rupture;Lateral hamstring tendon rupture at knee
+KRQ;Injury;Knee;Muscle/tendon;Tendon rupture;Quadriceps tendon rupture
+KRH;Injury;Knee;Muscle/tendon;Tendon rupture;Hamstring tendon rupture
+KR2;Injury;Knee;Muscle/tendon;Tendon rupture;Medial hamstring tendon rupture
+KR1;Injury;Knee;Muscle/tendon;Tendon rupture;Patellar tendon rupture
+KF1;Injury;Knee;Bone;Fracture;Patella fracture
+KF2;Injury;Knee;Bone;Fracture;Intraarticular femoral fracture
+KFF;Injury;Knee;Bone;Fracture;Distal femoral fracture
+KFI;Injury;Knee;Bone;Fracture;Intraarticular tibial fracture
+KFT;Injury;Knee;Bone;Fracture;Proximal tibial fracture
+KFX;Injury;Knee;Bone;Fracture;Knee fractures
+KSP;Injury;Knee;Bone;Bone stress injury;Patellar stress fracture
+KSX;Injury;Knee;Bone;Bone stress injury;Knee stress fracture
+KS1;Injury;Knee;Bone;Bone stress injury;Distal femoral stress fracture
+KJX;Injury;Knee;Bone;Bone contusion;Knee bone contusion
+DG1;Injury;Thoracic spine;Bone;Physis injury;Scheuermanns disease
+LGJ;Injury;Lumbosacral;Bone;Physis injury;Lumbar spine joint injury
+GGT;Injury;Hip/groin;Bone;Physis injury;Traction injury to apophysis at groin/hip joint
+GG1;Injury;Hip/groin;Bone;Physis injury;Traction injury to apophysis at buttock and pelvis
+GG2;Injury;Hip/groin;Bone;Physis injury;Slipped capital femoral epiphysis
+KC5;Injury;Knee;Cartilage/synovium/bursa;Cartilage injury;Medial and lateral meniscal tears
+KCO;Injury;Knee;Cartilage/synovium/bursa;Cartilage injury;Osteochondritis dissecans medial or lateral femoral condyle
+KCP;Injury;Knee;Cartilage/synovium/bursa;Cartilage injury;Patellofemoral joint chondral pain
+KCT;Injury;Knee;Cartilage/synovium/bursa;Cartilage injury;Tibial osteochondral injury
+KCM;Injury;Knee;Cartilage/synovium/bursa;Cartilage injury;Medial femoral condyle osteochondral injury
+KCL;Injury;Knee;Cartilage/synovium/bursa;Cartilage injury;Knee cartilage injury with loose bodies
+KCK;Injury;Knee;Cartilage/synovium/bursa;Cartilage injury;Lateral femoral condyle osteochondral injury
+KCD;Injury;Knee;Cartilage/synovium/bursa;Cartilage injury;Degenerative meniscal tear
+KCU;Injury;Knee;Cartilage/synovium/bursa;Cartilage injury;Patellofemoral osteochondral injury
+KCC;Injury;Knee;Cartilage/synovium/bursa;Cartilage injury;Lateral meniscal cyst
+KC7;Injury;Knee;Cartilage/synovium/bursa;Cartilage injury;Osteochondritis dissecans patella
+KC4;Injury;Knee;Cartilage/synovium/bursa;Cartilage injury;Osteochondrosis of knee
+KC3;Injury;Knee;Cartilage/synovium/bursa;Cartilage injury;Lateral meniscal tear
+KC2;Injury;Knee;Cartilage/synovium/bursa;Cartilage injury;Medial meniscal tear
+KC1;Injury;Knee;Cartilage/synovium/bursa;Cartilage injury;Knee articular cartilage damage
+KC8;Injury;Knee;Cartilage/synovium/bursa;Cartilage injury;Knee joint cartilage injury (unspecified)
+KCB;Injury;Knee;Cartilage/synovium/bursa;Cartilage injury;Mixed osteochondral and meniscal injury
+KAG;Injury;Knee;Cartilage/synovium/bursa;Arthritis;Bi- or tri-compartmental osteoarthritis
+KAP;Injury;Knee;Cartilage/synovium/bursa;Arthritis;Patellofemoral osteoarthritis
+KAM;Injury;Knee;Cartilage/synovium/bursa;Arthritis;Medial compartment osteoarthritis knee
+KAH;Injury;Knee;Cartilage/synovium/bursa;Arthritis;Post arthroplasty knee
+KA1;Injury;Knee;Cartilage/synovium/bursa;Arthritis;Knee osteoarthritis
+KAL;Injury;Knee;Cartilage/synovium/bursa;Arthritis;Lateral compartment osteoarthritis knee
+KQB;Injury;Knee;Cartilage/synovium/bursa;Synovitis/capsulitis;Baker's cyst
+KQH;Injury;Knee;Cartilage/synovium/bursa;Synovitis/capsulitis;Hoffa's fat pad impingement
+KQS;Injury;Knee;Cartilage/synovium/bursa;Synovitis/capsulitis;Knee joint synovitis
+KBI;Injury;Knee;Cartilage/synovium/bursa;Bursitis;Infrapatella fat pad contusion/haematoma +/- bursitis
+KBP;Injury;Knee;Cartilage/synovium/bursa;Bursitis;Prepatellar bursitis
+KBPT;Injury;Knee;Cartilage/synovium/bursa;Bursitis;Traumatic knee bursitis
+KLX;Injury;Knee;Ligament/joint capsule;Joint sprain;Combined ligament injuries knee
+KLT;Injury;Knee;Ligament/joint capsule;Joint sprain;PLC injury with chondral /meniscal injury
+KLY;Injury;Knee;Ligament/joint capsule;Joint sprain;MCL strain/rupture with chondral/meniscal damage knee
+KLK;Injury;Knee;Ligament/joint capsule;Joint sprain;Combined ligament injury with chondral/meniscal injury
+KLZ;Injury;Knee;Ligament/joint capsule;Joint sprain;Knee sprains/ligament injuries
+KLV;Injury;Knee;Ligament/joint capsule;Joint sprain;Grade 1 MCL tear knee
+KLS;Injury;Knee;Ligament/joint capsule;Joint sprain;Complication post MCL strain/rupture incl Pellegrini Stieda lesion
+KLQ;Injury;Knee;Ligament/joint capsule;Joint sprain;Partial PCL tear
+KLP;Injury;Knee;Ligament/joint capsule;Joint sprain;PCL rupture
+KLM;Injury;Knee;Ligament/joint capsule;Joint sprain;MCL rupture knee
+KLL;Injury;Knee;Ligament/joint capsule;Joint sprain;Posterolateral corner and LCL ligament injuries knee
+KLW;Injury;Knee;Ligament/joint capsule;Joint sprain;Grade 2 MCL tear knee
+KLI;Injury;Knee;Ligament/joint capsule;Joint sprain;Partial ACL tear
+KL6;Injury;Knee;Ligament/joint capsule;Joint sprain;Knee medial patellofemoral ligament injury
+KL2;Injury;Knee;Ligament/joint capsule;Joint sprain;PCL injury
+KL3;Injury;Knee;Ligament/joint capsule;Joint sprain;MCL injury
+KL4;Injury;Knee;Ligament/joint capsule;Joint sprain;LCL strain/rupture
+KL5;Injury;Knee;Ligament/joint capsule;Joint sprain;Knee posterolateral complex strain/tear
+KLA;Injury;Knee;Ligament/joint capsule;Joint sprain;ACL rupture
+KLC;Injury;Knee;Ligament/joint capsule;Joint sprain;ACL strain/rupture with chondral/meniscal injury
+KLG;Injury;Knee;Ligament/joint capsule;Joint sprain;ACL graft rupture
+KL1;Injury;Knee;Ligament/joint capsule;Joint sprain;Anterior cruciate ligament (acl) injury
+KD1;Injury;Knee;Ligament/joint capsule;Joint sprain;Dislocated patella
+KDT;Injury;Knee;Ligament/joint capsule;Joint sprain;Superior tibiofibular joint dislocation
+KDS;Injury;Knee;Ligament/joint capsule;Joint sprain;Patellar subluxation
+KDP;Injury;Knee;Ligament/joint capsule;Joint sprain;Patellar dislocation with avulsion fracture patella
+KD2;Injury;Knee;Ligament/joint capsule;Joint sprain;Knee dislocation with neural or vascular complication
+KDK;Injury;Knee;Ligament/joint capsule;Joint sprain;Knee dislocation
+KUM;Injury;Knee;Ligament/joint capsule;Chronic instability;Chronic MCL insufficiency
+KUZ;Injury;Knee;Ligament/joint capsule;Chronic instability;Other instability
+KUP;Injury;Knee;Ligament/joint capsule;Chronic instability;Chronic PCL insufficiency
+KU2;Injury;Knee;Ligament/joint capsule;Chronic instability;Patellar instability
+KU1;Injury;Knee;Ligament/joint capsule;Chronic instability;Chronic acl insufficiency
+KUX;Injury;Knee;Ligament/joint capsule;Chronic instability;Knee instability (chronic or recurrent subluxations)
+KV1;Injury;Knee;Superficial tissues/skin;Contusion (superficial);Knee contusion/haematoma (extraarticular)
+KVM;Injury;Knee;Superficial tissues/skin;Contusion (superficial);Knee MCL contusion
+KK1;Injury;Knee;Muscle/tendon;Laceration;Lacerated knee
+KKD;Injury;Knee;Muscle/tendon;Laceration;Deep knee laceration - intraarticular
+KKS;Injury;Knee;Muscle/tendon;Laceration;Superficial knee laceration/abrasion
+KIX;Injury;Knee;Superficial tissues/skin;Abrasion;Knee abrasion
+KWI;Injury;Knee;Stump;Stump injury;Infection of stump knee
+KWS;Injury;Knee;Stump;Stump injury;Stump pressure injury knee
+KPR;Injury;Knee;Non-specific;Injury without tissue type specified;PCL strain/rupture with associated chondral/meniscal injury
+KPA;Injury;Knee;Non-specific;Injury without tissue type specified;Patellofemoral pain with patellar tendinopathy
+KQ3;Injury;Knee;Non-specific;Injury without tissue type specified;Synovial plica of knee
+KP4;Injury;Knee;Non-specific;Injury without tissue type specified;Knee impingement/synovitis/biomechanical lesion not associated with other conditions
+KZ1;Injury;Knee;Non-specific;Unknown;Knee pain/injury not otherwise specified
+KZ2;Injury;Knee;Non-specific;Unknown;Knee haemarthrosis cause undiagnosed
+KZA;Injury;Knee;Non-specific;Unknown;Post knee reconstruction
+KZS;Injury;Knee;Non-specific;Unknown;Post knee surgery
+KZZ;Injury;Knee;Non-specific;Unknown;Knee pain undiagnosed
+QMSA;Injury;Lower leg;Muscle/tendon;Muscle injury;Soleus strain a/w accessory soleus
+QMT;Injury;Lower leg;Muscle/tendon;Muscle injury;Calf muscle cramps/spasm
+QMP;Injury;Lower leg;Muscle/tendon;Muscle injury;Tibialis posterior strain
+QMM;Injury;Lower leg;Muscle/tendon;Muscle injury;Medial gastroc strain
+QMLX;Injury;Lower leg;Muscle/tendon;Muscle injury;Lateral compartment muscle injury
+QML;Injury;Lower leg;Muscle/tendon;Muscle injury;Lateral gastroc strain
+QM1;Injury;Lower leg;Muscle/tendon;Muscle injury;Gastrocnemius muscle injury/strain
+QMA;Injury;Lower leg;Muscle/tendon;Muscle injury;Anterior compartment muscle injury
+QMD;Injury;Lower leg;Muscle/tendon;Muscle injury;Delayed onset muscle soreness
+QMX;Injury;Lower leg;Muscle/tendon;Muscle injury;Lower leg muscle injury
+QMS;Injury;Lower leg;Muscle/tendon;Muscle injury;Soleus muscle strain
+QMYP;Injury;Lower leg;Muscle/tendon;Muscle injury;Peroneal trigger points/spasm
+QMYG;Injury;Lower leg;Muscle/tendon;Muscle injury;Gastroc muscle trigger points/spasm
+QH2;Injury;Lower leg;Muscle/tendon;Muscle contusion;Calf contusion/haematoma
+QHZ;Injury;Lower leg;Superficial tissues/skin;Contusion (superficial);Other shin soft tissue bruising/haematoma not otherwise specified
+QHP;Injury;Lower leg;Muscle/tendon;Muscle contusion;Peroneal haematoma
+QHA;Injury;Lower leg;Muscle/tendon;Muscle contusion;Tib anterior haematoma
+QH1;Injury;Lower leg;Superficial tissues/skin;Contusion (superficial);Leg soft tissue bruising/haematoma
+QHM;Injury;Lower leg;Muscle/tendon;Muscle contusion;Lower leg muscle haematoma
+QYA;Injury;Lower leg;Muscle/tendon;Muscle compartment syndrome;Anterior compartment syndrome
+QY2;Injury;Lower leg;Muscle/tendon;Muscle compartment syndrome;Acute anterior compartment syndrome
+QYB;Injury;Lower leg;Muscle/tendon;Muscle compartment syndrome;Tenoperiostitis of lower leg
+QYD;Injury;Lower leg;Muscle/tendon;Muscle compartment syndrome;Deep posterior compartment syndrome
+QYS;Injury;Lower leg;Muscle/tendon;Muscle compartment syndrome;Post compartment release surgery
+QYP;Injury;Lower leg;Muscle/tendon;Muscle compartment syndrome;Posterior compartment syndrome
+QYM;Injury;Lower leg;Muscle/tendon;Muscle compartment syndrome;Compartment syndrome multiple sites lower leg
+QYF;Injury;Lower leg;Muscle/tendon;Muscle compartment syndrome;Other acute compartment syndrome to lower leg
+QYL;Injury;Lower leg;Muscle/tendon;Muscle compartment syndrome;Lateral (peroneal) compartment syndrome
+QTT;Injury;Lower leg;Muscle/tendon;Tendinopathy;Anterior shin splints
+QT1;Injury;Lower leg;Muscle/tendon;Tendinopathy;Medial tibial stress syndrome ('shin splints')
+QTA;Injury;Lower leg;Muscle/tendon;Tendinopathy;Achilles tendinopathy
+QTPT;Injury;Lower leg;Muscle/tendon;Tendinopathy;Plantaris tendinopathy
+QTAP;Injury;Lower leg;Muscle/tendon;Tendinopathy;Achilles paratenon injury
+QTS;Injury;Lower leg;Muscle/tendon;Tendinopathy;Post achilles tendon surgery
+QTB;Injury;Lower leg;Muscle/tendon;Tendinopathy;Achilles enthesopathy with retrocalcaneal bursitis
+QRA;Injury;Lower leg;Muscle/tendon;Tendon rupture;Achilles tendon rupture
+QRI;Injury;Lower leg;Muscle/tendon;Tendon rupture;Insertional achilles tendon rupture
+QRM;Injury;Lower leg;Muscle/tendon;Tendon rupture;Midsubstance achilles tendon rupture
+QRP;Injury;Lower leg;Muscle/tendon;Tendon rupture;Plantaris tendon rupture
+GGA;Injury;Hip/groin;Bone;Physis injury;Other apophysitis/avulsion fracture groin/hip
+GGF;Injury;Hip/groin;Bone;Physis injury;Osteochondroses of hip joint
+QFO;Injury;Lower leg;Bone;Fracture;Fractured midshaft tibia
+QFZ;Injury;Lower leg;Bone;Fracture;Compound fractured tibia +/- fibula
+QFX;Injury;Lower leg;Bone;Fracture;Lower leg fractures
+QFT;Injury;Lower leg;Bone;Fracture;Fractured midshaft tibia and fibula
+QFQ;Injury;Lower leg;Bone;Fracture;Fractured tibia +/- fibula  with other complication (e.g. compartment syndrome)
+QFN;Injury;Lower leg;Bone;Fracture;Fractured fibula with associated peroneal nerve injury
+QFM;Injury;Lower leg;Bone;Fracture;Fractured midshaft fibula
+QFH;Injury;Lower leg;Bone;Fracture;Fractured proximal fibula
+QFF;Injury;Lower leg;Bone;Fracture;Fractured fibula
+QF2;Injury;Lower leg;Bone;Fracture;Fractured distal shaft fibula
+QF1;Injury;Lower leg;Bone;Fracture;Fractured tibia +/- fibula
+QFS;Injury;Lower leg;Bone;Fracture;Fractured mid-fibula with associated syndesmosis injury ankle
+QSA;Injury;Lower leg;Bone;Bone stress injury;Stress fracture anterior cortex tibia
+QSOT;Injury;Lower leg;Bone;Bone stress injury;Tibial bone oedema
+QSOF;Injury;Lower leg;Bone;Bone stress injury;Fibula bone oedema
+QST;Injury;Lower leg;Bone;Bone stress injury;Stress fracture tibia
+QSL;Injury;Lower leg;Bone;Bone stress injury;Stress fracture fibula involving cortex
+QS2;Injury;Lower leg;Bone;Bone stress injury;Fibular bone stress lesion
+QS1;Injury;Lower leg;Bone;Bone stress injury;Tibial bone stress lesion
+QSP;Injury;Lower leg;Bone;Bone stress injury;Stress fracture posteromedial tibia
+QJX;Injury;Lower leg;Bone;Bone contusion;Lower leg bone contusion
+QZS;Injury;Lower leg;Cartilage/synovium/bursa;Arthritis;Post lower leg surgery
+QQ1;Injury;Lower leg;Cartilage/synovium/bursa;Synovitis/capsulitis;Ruptured baker's cyst
+QBC;Injury;Lower leg;Cartilage/synovium/bursa;Bursitis;Calcaneal bursitis (pump bump)
+QBX;Injury;Lower leg;Cartilage/synovium/bursa;Bursitis;Bursitis not otherwise specified
+QL1;Injury;Lower leg;Ligament/joint capsule;Joint sprain;Sprained superior tibiofibular joint
+QVT;Injury;Lower leg;Superficial tissues/skin;Contusion (superficial);Pretibial periosteal bruising/haematoma
+QV4;Injury;Lower leg;Vessels;Vascular trauma;Popliteal artery entrapment
+QVV;Injury;Lower leg;Vessels;Vascular trauma;Other vascular injury to lower leg
+QVX;Injury;Lower leg;Vessels;Vascular trauma;Vascular injury lower leg
+QKXQ;Injury;Lower leg;Muscle/tendon;Laceration;Other complication of lower leg laceration/abrasion
+QKXI;Injury;Lower leg;Muscle/tendon;Laceration;Infection as complication of lower leg laceration/abrasion
+QK2;Injury;Lower leg;Muscle/tendon;Laceration;Calf laceration/abrasion
+QK1;Injury;Lower leg;Muscle/tendon;Laceration;Lower leg laceration
+QIS;Injury;Lower leg;Superficial tissues/skin;Abrasion;Shin abrasion
+QI1;Injury;Lower leg;Superficial tissues/skin;Abrasion;Lower leg soft tissue infection
+QISP;Injury;Lower leg;Superficial tissues/skin;Abrasion;Lower leg skin pressure injury
+QWS;Injury;Lower leg;Stump;Stump injury;Stump pressure injury lower limb
+QWI;Injury;Lower leg;Stump;Stump injury;Infection of stump lower leg
+QPY;Injury;Lower leg;Non-specific;Injury without tissue type specified;Other leg overuse injury
+QPS;Injury;Lower leg;Non-specific;Injury without tissue type specified;Soleus trigger points/spasm
+QZZ;Injury;Lower leg;Non-specific;Unknown;Lower leg pain undiagnosed
+QZ1;Injury;Lower leg;Non-specific;Unknown;Other lower leg pain/injury not otherwise specified
+AT5;Injury;Ankle;Muscle/tendon;Tendinopathy;Tibialis anterior tenosynovitis
+ATX;Injury;Ankle;Muscle/tendon;Tendinopathy;Ankle tendon injury
+ATP;Injury;Ankle;Muscle/tendon;Tendinopathy;Peroneal tendon subluxation/dislocation
+ATE;Injury;Ankle;Muscle/tendon;Tendinopathy;Extensor tendon injuries at ankle
+AT6;Injury;Ankle;Muscle/tendon;Tendinopathy;Peroneal tendinopathy
+AT7;Injury;Ankle;Muscle/tendon;Tendinopathy;Flexor hallucis longus tendinopathy
+ARP;Injury;Ankle;Muscle/tendon;Tendon rupture;Tibialis posterior tendon rupture
+ARH;Injury;Ankle;Muscle/tendon;Tendon rupture;Flexor hallucis longus rupture
+GGH;Injury;Hip/groin;Bone;Physis injury;Apophysitis/avulsion fracture ischial tuberosity
+GGO;Injury;Hip/groin;Bone;Physis injury;Apophysitis/avulsion fracture iliac crest
+GGR;Injury;Hip/groin;Bone;Physis injury;Apophysitis/avulsion fracture anterior inferior iliac spine (aiis)
+GGS;Injury;Hip/groin;Bone;Physis injury;Apophysitis/avulsion fracture anterior superior iliac spine (asis)
+AFS;Injury;Ankle;Bone;Fracture;Fractured lateral process talus
+AFT;Injury;Ankle;Bone;Fracture;Fractured talar dome
+AFP;Injury;Ankle;Bone;Fracture;Fracture posterior malleolus
+AFO;Injury;Ankle;Bone;Fracture;Fractured os trigonum
+AFN;Injury;Ankle;Bone;Fracture;Fractured talar neck
+AFM;Injury;Ankle;Bone;Fracture;Medial malleolus fracture
+AFG;Injury;Ankle;Bone;Fracture;Fractured posterior process talus
+AFX;Injury;Ankle;Bone;Fracture;Trimalleolar fracture
+AFD;Injury;Ankle;Bone;Fracture;Ankle fracture with diastasis of syndesmosis
+AFB;Injury;Ankle;Bone;Fracture;Bimalleolar fracture
+AFL;Injury;Ankle;Bone;Fracture;Lateral malleolus fracture
+AF2;Injury;Ankle;Bone;Fracture;Fractured talus
+AF1;Injury;Ankle;Bone;Fracture;Fracture ankle
+ASX;Injury;Ankle;Bone;Bone stress injury;Ankle stress fracture
+ASM;Injury;Ankle;Bone;Bone stress injury;Stress fracture medial malleolus
+ASL;Injury;Ankle;Bone;Bone stress injury;Stress fracture lateral malleolus
+AS1;Injury;Ankle;Bone;Bone stress injury;Stress fracture talus
+ASC;Injury;Ankle;Bone;Bone stress injury;Stress injury calcaneus
+AJT;Injury;Ankle;Bone;Bone contusion;Talar dome bone bruise
+AJX;Injury;Ankle;Bone;Bone contusion;Ankle bone contusion
+AEX;Injury;Ankle;Bone;Avascular necrosis;Ankle avascular necrosis
+TGX;Injury;Thigh;Bone;Physis injury;Thigh region physis injury
+KGO;Injury;Knee;Bone;Physis injury;Osgood-schlatter syndrome
+KGS;Injury;Knee;Bone;Physis injury;Apophysitis/avulsion fracture distal pole patella/sinding larsen johansson syndrome (sljs)
+AC1;Injury;Ankle;Cartilage/synovium/bursa;Cartilage injury;Ankle osteochondral injuries
+AA1;Injury;Ankle;Cartilage/synovium/bursa;Arthritis;Ankle joint osteoarthritis
+AQX;Injury;Ankle;Cartilage/synovium/bursa;Synovitis/capsulitis;Ankle synovitis/impingement/bursitis
+AQS;Injury;Ankle;Cartilage/synovium/bursa;Synovitis/capsulitis;Ankle joint synovitis
+AQP;Injury;Ankle;Cartilage/synovium/bursa;Synovitis/capsulitis;Posterior impingement ankle
+AQA;Injury;Ankle;Cartilage/synovium/bursa;Synovitis/capsulitis;Ankle anterior impingement
+AL1;Injury;Ankle;Ligament/joint capsule;Joint sprain;Sprain lateral collateral ligament ankle
+AL2;Injury;Ankle;Ligament/joint capsule;Joint sprain;Sprain medial collateral (deltoid) ligament ankle
+ALA;Injury;Ankle;Ligament/joint capsule;Joint sprain;Anterior talofibular ligament sprain
+ALJ;Injury;Ankle;Ligament/joint capsule;Joint sprain;Ankle sprains
+ALR;Injury;Ankle;Ligament/joint capsule;Joint sprain;Lateral ligaments rupture (grade 3 injury)
+ALC;Injury;Ankle;Ligament/joint capsule;Joint sprain;Calcaneofibular ligament sprain
+ALS;Injury;Ankle;Ligament/joint capsule;Joint sprain;Inferior tibiofibular syndesmosis sprain
+ALM;Injury;Ankle;Ligament/joint capsule;Joint sprain;Ankle multiple ligaments sprain
+AD1;Injury;Ankle;Ligament/joint capsule;Joint sprain;Ankle dislocation
+AUX;Injury;Ankle;Ligament/joint capsule;Chronic instability;Chronic ankle instability
+AUM;Injury;Ankle;Ligament/joint capsule;Chronic instability;Chronic medial instability
+AU1;Injury;Ankle;Ligament/joint capsule;Chronic instability;Chronic lateral instability
+AV1;Injury;Ankle;Superficial tissues/skin;Contusion (superficial);Ankle contusion/haematoma
+AKD;Injury;Ankle;Muscle/tendon;Laceration;Deep (intraarticular) laceration ankle
+AKS;Injury;Ankle;Muscle/tendon;Laceration;Superficial ankle laceration/abrasion
+AKI;Injury;Ankle;Muscle/tendon;Laceration;Complication of ankle laceration incl infection
+AKX;Injury;Ankle;Muscle/tendon;Laceration;Ankle laceration
+AIX;Injury;Ankle;Superficial tissues/skin;Abrasion;Ankle abrasion
+AP2;Injury;Ankle;Non-specific;Injury without tissue type specified;Functional pain ankle
+AZZ;Injury;Ankle;Non-specific;Unknown;Other ankle pain/injury not otherwise specified
+AZ1;Injury;Ankle;Non-specific;Unknown;Ankle pain/injury undiagnosed
+AZS;Injury;Ankle;Non-specific;Unknown;Post ankle surgery
+FM1;Injury;Foot;Muscle/tendon;Muscle injury;Foot muscle strain/spasm/trigger points
+FH3;Injury;Foot;Superficial tissues/skin;Contusion (superficial);Fat pad contusion heel
+FYX;Injury;Foot;Muscle/tendon;Muscle compartment syndrome;Foot muscle compartment syndrome
+FT6;Injury;Foot;Muscle/tendon;Tendinopathy;Cuboid syndrome
+FTX;Injury;Foot;Muscle/tendon;Tendinopathy;Foot tendon injuries
+FTT;Injury;Foot;Muscle/tendon;Tendinopathy;Tibialis posterior insertional tendinopathy
+FTM;Injury;Foot;Muscle/tendon;Tendinopathy;Mid/distal plantar fasciitis
+FT7;Injury;Foot;Muscle/tendon;Tendinopathy;Tibialis posterior tendinopathy
+FT2;Injury;Foot;Muscle/tendon;Tendinopathy;Extensor tendon injury in foot
+FT1;Injury;Foot;Muscle/tendon;Tendinopathy;Plantar heel pain (fasciitis/strain/calcaneal spur)
+FTE;Injury;Foot;Muscle/tendon;Tendinopathy;Extensor tendinopathy in foot
+FRE;Injury;Foot;Muscle/tendon;Tendon rupture;Ruptured toe extensor tendon
+FRP;Injury;Foot;Muscle/tendon;Tendon rupture;Plantar fascia rupture
+FR1;Injury;Foot;Muscle/tendon;Tendon rupture;Peroneal tendon rupture
+KGPB;Injury;Knee;Bone;Physis injury;Patella symptoms related to bipartite patella
+KGT;Injury;Knee;Bone;Physis injury;Traction injury to apophysis at knee
+FFS;Injury;Foot;Bone;Fracture;Fracture 2nd metatarsal
+FFT;Injury;Foot;Bone;Fracture;Fracture great toe distal phalanx
+FFU;Injury;Foot;Bone;Fracture;Complication of fractured foot including non union
+FFZ;Injury;Foot;Bone;Fracture;Fracture tarsal bone
+FFX;Injury;Foot;Bone;Fracture;Fracture two or more metatarsals
+FFB;Injury;Foot;Bone;Fracture;Avulsion fracture 5th metatarsal base
+FFC;Injury;Foot;Bone;Fracture;Fractured calcaneus
+FFN;Injury;Foot;Bone;Fracture;Fracture navicular
+FFM;Injury;Foot;Bone;Fracture;Fracture 1st metatarsal
+FFI;Injury;Foot;Bone;Fracture;Fracture 3rd metatarsal
+FFH;Injury;Foot;Bone;Fracture;Fracture great toe
+FFF;Injury;Foot;Bone;Fracture;Fracture cuneiform
+FF1;Injury;Foot;Bone;Fracture;Fracture cuboid
+FFA;Injury;Foot;Bone;Fracture;Fractured anterior process calcaneus
+FF2;Injury;Foot;Bone;Fracture;Fractured metatarsal(s)
+FF3;Injury;Foot;Bone;Fracture;Fractured phalanx (foot)
+FF4;Injury;Foot;Bone;Fracture;Fracture 4th metatarsal
+FF5;Injury;Foot;Bone;Fracture;Fracture 5th metatarsal shaft
+FFG;Injury;Foot;Bone;Fracture;Fracture great toe proximal phalanx
+FSS;Injury;Foot;Bone;Bone stress injury;Second metatarsal stress fracture
+FSF;Injury;Foot;Bone;Bone stress injury;Cuneiform stress fracture
+FSB;Injury;Foot;Bone;Bone stress injury;Base second metatarsal stress fracture
+FST;Injury;Foot;Bone;Bone stress injury;Sesamoid stress fracture
+FSR;Injury;Foot;Bone;Bone stress injury;Stress reaction metatarsal/metatarsalgia
+FSP;Injury;Foot;Bone;Bone stress injury;Sesamoid stress injury
+FSN;Injury;Foot;Bone;Bone stress injury;Navicular stress fracture
+FSI;Injury;Foot;Bone;Bone stress injury;Third metatarsal stress fracture
+FSD;Injury;Foot;Bone;Bone stress injury;Cuboid stress fracture
+FSC;Injury;Foot;Bone;Bone stress injury;Stress fracture calcaneus
+FS5;Injury;Foot;Bone;Bone stress injury;Fifth metatarsal stress fracture
+FS4;Injury;Foot;Bone;Bone stress injury;Fourth metatarsal stress fracture
+FS3;Injury;Foot;Bone;Bone stress injury;Sesamoiditis/stress fracture
+FSM;Injury;Foot;Bone;Bone stress injury;Other metatarsal stress fracture
+FS2;Injury;Foot;Bone;Bone stress injury;Stress fracture metatarsal
+FS1;Injury;Foot;Bone;Bone stress injury;Stress reactions/fractures in foot
+FSON;Injury;Foot;Bone;Bone stress injury;Navicular bone oedema
+FSA;Injury;Foot;Bone;Bone stress injury;First metatarsal stress fracture
+FJX;Injury;Foot;Bone;Bone contusion;Foot bone bruise
+FEN;Injury;Foot;Bone;Avascular necrosis;Non union navicular stress fracture
+FES;Injury;Foot;Bone;Avascular necrosis;Avascular necrosis sesamoid great toe
+KGB;Injury;Knee;Bone;Physis injury;Epiphysitis of medial tibial plateau (blount's disease)
+AGA;Injury;Ankle;Bone;Physis injury;Traction injury to apophysis ankle
+AGT;Injury;Ankle;Bone;Physis injury;Osteochondrosis of ankle
+AGC;Injury;Ankle;Bone;Physis injury;Apophysitis/avulsion fracture to calcaneus (sever's disease)
+FCX;Injury;Foot;Cartilage/synovium/bursa;Cartilage injury;Foot chondral/osteochondral lesion
+FC1;Injury;Foot;Cartilage/synovium/bursa;Cartilage injury;Osteochondrosis of foot
+FAS;Injury;Foot;Cartilage/synovium/bursa;Arthritis;Subtalar joint arthritis
+FAF;Injury;Foot;Cartilage/synovium/bursa;Arthritis;Bunion 5th MTP joint
+FAT;Injury;Foot;Cartilage/synovium/bursa;Arthritis;Arthritis of lesser toes
+FA1;Injury;Foot;Cartilage/synovium/bursa;Arthritis;Bunion of great toe metatarsophalangeal (mtp) joint
+FA2;Injury;Foot;Cartilage/synovium/bursa;Arthritis;Arthritis of midfoot
+FAX;Injury;Foot;Cartilage/synovium/bursa;Arthritis;Foot osteoarthritis
+FAH;Injury;Foot;Cartilage/synovium/bursa;Arthritis;Arthritis MTP joint great toe/Hallux Rigidus
+FQ3;Injury;Foot;Cartilage/synovium/bursa;Synovitis/capsulitis;Sinus tarsi syndrome (subtalar joint synovitis)
+FQM;Injury;Foot;Cartilage/synovium/bursa;Synovitis/capsulitis;Synovitis of midfoot joints
+FQ2;Injury;Foot;Cartilage/synovium/bursa;Synovitis/capsulitis;Synovitis of MTP joint(s)
+FL1;Injury;Foot;Ligament/joint capsule;Joint sprain;Midfoot joint/ligament sprain (incl lisfranc)
+FLF;Injury;Foot;Ligament/joint capsule;Joint sprain;Spring ligament sprain in foot
+FLG;Injury;Foot;Ligament/joint capsule;Joint sprain;Sprain IP ligament(s) great toe
+FLJ;Injury;Foot;Ligament/joint capsule;Joint sprain;Foot joint sprain
+FLL;Injury;Foot;Ligament/joint capsule;Joint sprain;Plantar plate disruption MTP joint
+FLT;Injury;Foot;Ligament/joint capsule;Joint sprain;Sprained toe/'turf toe'
+FDM;Injury;Foot;Ligament/joint capsule;Joint sprain;Dislocation of lesser toe MTP joint
+FDX;Injury;Foot;Ligament/joint capsule;Joint sprain;Foot dislocation
+FDP;Injury;Foot;Ligament/joint capsule;Joint sprain;Dislocation of IP joint of lesser toe
+FD2;Injury;Foot;Ligament/joint capsule;Joint sprain;Dislocation of great toe MTP joint
+FDT;Injury;Foot;Ligament/joint capsule;Joint sprain;Dislocation of midfoot through tarsometatarsal (tmt) joints/lisfranc dislocation
+FUX;Injury;Foot;Ligament/joint capsule;Chronic instability;Foot joint chronic instability
+FV1;Injury;Foot;Superficial tissues/skin;Contusion (superficial);Foot contusion/haematoma
+FVX;Injury;Foot;Superficial tissues/skin;Contusion (superficial);Other foot soft tissue bruising/haematoma not elsewhere specified
+FVTN;Injury;Foot;Superficial tissues/skin;Contusion (superficial);Talon noir (black heel)/hyperkeratosis hemorrhagica
+FVT;Injury;Foot;Superficial tissues/skin;Contusion (superficial);Haematoma lesser toes
+FVN;Injury;Foot;Superficial tissues/skin;Contusion (superficial);Nail bed haematoma lesser toes
+FVG;Injury;Foot;Superficial tissues/skin;Contusion (superficial);Haematoma great toe
+FV2;Injury;Foot;Superficial tissues/skin;Contusion (superficial);Toenail problem/contusion/haematoma
+FVXX;Injury;Foot;Vessels;Vascular trauma;Foot vascular injuries
+FV3;Injury;Foot;Superficial tissues/skin;Contusion (superficial);Heel bruising/haematoma incl fat pad contusion
+FKI;Injury;Foot;Muscle/tendon;Laceration;Complication of foot laceration incl infection
+FKU;Injury;Foot;Muscle/tendon;Laceration;Ulceration foot
+FIC;Injury;Foot;Superficial tissues/skin;Abrasion;Callous on foot
+FIN;Injury;Foot;Superficial tissues/skin;Abrasion;Skin infection toenail - incl infected ingrown toenail
+FI2;Injury;Foot;Superficial tissues/skin;Abrasion;Foot cellulitis/infected ulcer
+FIA;Injury;Foot;Superficial tissues/skin;Abrasion;Foot abrasion
+FIF;Injury;Foot;Superficial tissues/skin;Abrasion;Blisters foot
+FIH;Injury;Foot;Superficial tissues/skin;Abrasion;Blisters heel
+FISP;Injury;Foot;Superficial tissues/skin;Abrasion;Foot skin pressure injury
+FP1;Injury;Foot;Non-specific;Injury without tissue type specified;Sprain 1st MTP joint with volar plate rupture
+FPY;Injury;Foot;Non-specific;Injury without tissue type specified;Foot muscle trigger points, cramping, spasm
+FPL;Injury;Foot;Non-specific;Injury without tissue type specified;Sprain of great toe
+FP2;Injury;Foot;Non-specific;Injury without tissue type specified;Synovitis/impingement/biomechanical lesion of foot
+FP5;Injury;Foot;Non-specific;Injury without tissue type specified;Chronic regional pain syndrome foot
+FZX;Injury;Foot;Non-specific;Unknown;Foot pain/injury not otherwise specified
+FZ1;Injury;Foot;Non-specific;Unknown;Foot pain undiagnosed
+FZS;Injury;Foot;Non-specific;Unknown;Post foot surgery
+XML;Injury;Multiple systems;Muscle/tendon;Muscle injury;Muscle strain lower limb
+XMS;Injury;Multiple systems;Muscle/tendon;Muscle injury;Muscle strain spine
+XMU;Injury;Multiple systems;Muscle/tendon;Muscle injury;Muscle strain upper limb
+XMX;Injury;Multiple systems;Muscle/tendon;Muscle injury;Trigger points/spasm multiple locations
+XHL;Injury;Multiple systems;Superficial tissues/skin;Contusion (superficial);Soft tissue bruising lower limb
+XHU;Injury;Multiple systems;Superficial tissues/skin;Contusion (superficial);Soft tissue bruising upper limb
+XT8;Injury;Multiple systems;Muscle/tendon;Tendinopathy;Tendinopathy crossing anatomical boundaries
+FGK;Injury;Foot;Bone;Physis injury;Kohler's disease - navicular osteochondrosis
+FGT;Injury;Foot;Bone;Physis injury;Traction injury to foot
+FG5;Injury;Foot;Bone;Physis injury;Apophysitis/avulsion fracture base 5th metatarsal
+FGF;Injury;Foot;Bone;Physis injury;Osteochondrosis of metatarsal head/freiberg's disease
+XAU;Injury;Multiple systems;Cartilage/synovium/bursa;Arthritis;Upper limb osteoarthritis
+XAX;Injury;Multiple systems;Cartilage/synovium/bursa;Arthritis;Osteoarthritis crossing anatomical boundaries
+XLU;Injury;Multiple systems;Ligament/joint capsule;Joint sprain;Sprain multiple locations
+XVX;Injury;Multiple systems;Vessels;Vascular trauma;Vascular injury crossing anatomical boundaries
+XKX;Injury;Multiple systems;Muscle/tendon;Laceration;Laceration/abrasion crossing anatomical boundaries
+XKL;Injury;Multiple systems;Muscle/tendon;Laceration;Laceration/abrasion lower limb
+XISS;Injury;Multiple systems;Superficial tissues/skin;Abrasion;Saddle sores
+XOD;Injury;Multiple systems;Internal organs;Organ trauma;Drowning
+ZMX;Injury;Unknown or not specified;Muscle/tendon;Muscle injury;Muscle injury/spasm location unspecified
+ZT8;Injury;Unknown or not specified;Muscle/tendon;Tendinopathy;Tendinopathy location unspecified
+XGX;Injury;Multiple systems;Bone;Physis injury;Osteochondrosis crossing anatomical boundaries
+ZGT;Injury;Unknown or not specified;Bone;Physis injury;Traction apophysitis/osteochondrosis not elsewhere specified
+ZAX;Injury;Unknown or not specified;Cartilage/synovium/bursa;Arthritis;Osteoarthritis location unspecified
+ZLU;Injury;Unknown or not specified;Ligament/joint capsule;Joint sprain;Sprain location unspecified
+ZVX;Injury;Unknown or not specified;Vessels;Vascular trauma;Vascular injury location unspecified
+XKU;Injury;Unknown or not specified;Muscle/tendon;Laceration;Laceration/abrasion upper limb
+ZKX;Injury;Unknown or not specified;Muscle/tendon;Laceration;Laceration/abrasion location unspecified
+ZZ1;Injury;Unknown or not specified;Non-specific;Unknown;Diagnosis uncertain/unrecorded
+MCEAC;Illness;Cardiovascular;;Environmental - exercise-related;Arrhythmogenic cardiomyopathy (formerly arrhythmogenic right ventricular cardiomyopathy (arvc))
+MCET;Illness;Cardiovascular;;Environmental - exercise-related;Commotio cordis
+MCESC;Illness;Cardiovascular;;Environmental - exercise-related;Syncopal episode(s) cardiac
+MCES;Illness;Cardiovascular;;Environmental - exercise-related;Syncope/collapse, general (including non-cardiac causes)
+MCEH;Illness;Cardiovascular;;Environmental - exercise-related;Hypertrophic cardiomyopathy
+MCEG;Illness;Cardiovascular;;Environmental - exercise-related;Abnormal screening ECG
+MCEC;Illness;Cardiovascular;;Environmental - exercise-related;Cardiomyopathy, other
+MCEA;Illness;Cardiovascular;;Environmental - exercise-related;Athlete's heart
+MCECP;Illness;Cardiovascular;;Environmental - exercise-related;Exertional chest pain (angina)
+MCYXC;Illness;Cardiovascular;;Immunological/inflammatory;Myocarditis/pericarditis due to COVID-19
+MCYXV;Illness;Cardiovascular;;Immunological/inflammatory;Myocarditis/pericarditis post COVID-19 vaccine
+MCYX;Illness;Cardiovascular;;Immunological/inflammatory;Myocarditis
+MCVX;Illness;Cardiovascular;;Thrombotic/haemorrhagic;Venous disease
+MCVZ;Illness;Cardiovascular;;Thrombotic/haemorrhagic;Other venous disease incl calf/ankle oedema, cause unknown
+MCVV;Illness;Cardiovascular;;Thrombotic/haemorrhagic;Varicose veins
+MCVS;Illness;Cardiovascular;;Thrombotic/haemorrhagic;Subclavian vein/axillary vein thrombosis
+MCVI;Illness;Cardiovascular;;Thrombotic/haemorrhagic;Ischaemic heart disease
+MCVD;Illness;Cardiovascular;;Thrombotic/haemorrhagic;Deep venous thrombosis
+MCVCA;Illness;Cardiovascular;;Thrombotic/haemorrhagic;Cardiac arrest
+MCCPS;Illness;Cardiovascular;;Degenerative or chronic condition;Pulmonary stenosis
+MCCSV;Illness;Cardiovascular;;Degenerative or chronic condition;Supraventricular tachycardia incl atrial flutter
+MCCP;Illness;Cardiovascular;;Degenerative or chronic condition;Peripheral vascular disease
+MCCMV;Illness;Cardiovascular;;Degenerative or chronic condition;Mitral valve prolapse
+MCCMI;Illness;Cardiovascular;;Degenerative or chronic condition;Myocardial infarction
+MCCHF;Illness;Cardiovascular;;Degenerative or chronic condition;Heart failure
+MCCH;Illness;Cardiovascular;;Degenerative or chronic condition;Hypertension
+MCCCA;Illness;Cardiovascular;;Degenerative or chronic condition;Coronary artery disease
+MCCC;Illness;Cardiovascular;;Degenerative or chronic condition;High cholesterol
+MCCAV;Illness;Cardiovascular;;Degenerative or chronic condition;Aortic valve pathology
+MCCA;Illness;Cardiovascular;;Degenerative or chronic condition;Aortopathy
+MCCD;Illness;Cardiovascular;;Degenerative or chronic condition;Dilated cardiomyopathy
+MCCV;Illness;Cardiovascular;;Degenerative or chronic condition;Murmurs/valvular disease
+MCJP;Illness;Cardiovascular;;Developmental anomaly;Patent Ductus Arteriosus (PDA)
+MCJX;Illness;Cardiovascular;;Developmental anomaly;Cardiovascular developmental anomaly
+MCJVS;Illness;Cardiovascular;;Developmental anomaly;Ventricular septal defect
+MCJBS;Illness;Cardiovascular;;Developmental anomaly;Brugada syndrome
+MCJM;Illness;Cardiovascular;;Developmental anomaly;Marfan syndrome
+MCJD;Illness;Cardiovascular;;Developmental anomaly;Atrial septal defect incl patent foramen ovale (pfo)
+MCJA;Illness;Cardiovascular;;Developmental anomaly;Bicuspid aortic valve
+MCJCA;Illness;Cardiovascular;;Developmental anomaly;Coronary artery anomaly
+MCXX;Illness;Cardiovascular;;Multiple;Cardiovascular illness
+MCZX;Illness;Cardiovascular;;Unknown/not specified;Other cardiovascular disease
+MCJB;Illness;Cardiovascular;;Unknown/not specified;Long QT syndrome
+MCEF;Illness;Cardiovascular;;Unknown/not specified;Atrial fibrillation
+MCZPM;Illness;Cardiovascular;;Unknown/not specified;Pacemaker insertion
+MCJW;Illness;Cardiovascular;;Unknown/not specified;Wolff-parkinson-white syndrome
+MCZC;Illness;Cardiovascular;;Unknown/not specified;Heart arrhythmia/conduction abnormality
+MCZCD;Illness;Cardiovascular;;Unknown/not specified;Sudden cardiac death
+MCZIC;Illness;Cardiovascular;;Unknown/not specified;Implantable cardioverter-defibrillator (ICD) complication
+MCZII;Illness;Cardiovascular;;Unknown/not specified;ICD insertion
+MCZIS;Illness;Cardiovascular;;Unknown/not specified;ICD shock
+MCZP;Illness;Cardiovascular;;Unknown/not specified;Ablation procedure
+MCZPC;Illness;Cardiovascular;;Unknown/not specified;Pacemaker complication
+MCZ1;Illness;Cardiovascular;;Unknown/not specified;Cardiac preparticipation screening
+MDAX;Illness;Dermatological;;Allergic;Atopic dermatitis / eczema
+MGED;Illness;Gastrointestinal;;Environmental - exercise-related;Runner's diarrhoea
+MDYL;Illness;Dermatological;;Immunological/inflammatory;Enlarged lymph node
+MDYX;Illness;Dermatological;;Immunological/inflammatory;Rash /other dermatological condition
+MDYP;Illness;Dermatological;;Immunological/inflammatory;Psoriasis
+MDYD;Illness;Dermatological;;Immunological/inflammatory;Dermatitis
+MDYAC;Illness;Dermatological;;Immunological/inflammatory;Acne
+MDYU;Illness;Dermatological;;Immunological/inflammatory;Urticaria
+MDYC;Illness;Dermatological;;Immunological/inflammatory;Sebaceous (epidermoid) cyst
+MDIX;Illness;Dermatological;;Infection;Skin infection/cellulitis/abscess
+MDIPR;Illness;Dermatological;;Infection;Pityriasis rosea
+MDIPV;Illness;Dermatological;;Infection;Pityriasis versicolor
+MDIS;Illness;Dermatological;;Infection;Feet warts - incl plantar warts
+MDISC;Illness;Dermatological;;Infection;Scabies
+MDIV;Illness;Dermatological;;Infection;Skin infection - viral
+MDIW;Illness;Dermatological;;Infection;Wrist and hand warts
+MDIP;Illness;Dermatological;;Infection;Skin infection wrist/hand
+MDIY;Illness;Dermatological;;Infection;Other fungal infection
+MDIT;Illness;Dermatological;;Infection;Tinea pedis/athlete's foot
+MDIZ;Illness;Dermatological;;Infection;Other skin infection not specifically mentioned
+MDIN;Illness;Dermatological;;Infection;Skin infection head/face/neck
+MDIL;Illness;Dermatological;;Infection;Lymphadenopathy secondary to skin infection
+MDIK;Illness;Dermatological;;Infection;Keratolysis
+MDIH;Illness;Dermatological;;Infection;Herpes simplex
+MDIG;Illness;Dermatological;;Infection;Fungal infection groin
+MDIF;Illness;Dermatological;;Infection;Skin infection - fungal
+MDIE;Illness;Dermatological;;Infection;Skin infection elbow
+MDIB;Illness;Dermatological;;Infection;Skin infection pelvis/buttock - incl ischial abscess
+MDIVZ;Illness;Dermatological;;Infection;Skin infection - viral
+MDIO;Illness;Dermatological;;Infection;Other warts
+MDBXD;Illness;Dermatological;;Neoplasm;Skin lesion/tumour thoracic
+MDB1;Illness;Dermatological;;Neoplasm;Benign skin lesion
+MDBXH;Illness;Dermatological;;Neoplasm;Skin lesion/tumour head
+MDBX;Illness;Dermatological;;Neoplasm;Skin lesion/tumour
+MDBS;Illness;Dermatological;;Neoplasm;Squamous cell carcinoma
+MDBM;Illness;Dermatological;;Neoplasm;Multiple skin cancers
+MDBES;Illness;Dermatological;;Neoplasm;Melanoma in situ (grade 0)
+MDBE;Illness;Dermatological;;Neoplasm;Melanoma
+MDBB;Illness;Dermatological;;Neoplasm;Basal cell carcinoma
+MDBL;Illness;Dermatological;;Neoplasm;Subcutaneous lipoma
+MDDX;Illness;Dermatological;;Drug-related/poisoning;Drug-related skin rash
+MDZG;Illness;Dermatological;;Unknown/not specified;Dermatological illness
+MDZX;Illness;Dermatological;;Unknown/not specified;Other rash not otherwise mentioned or undiagnosed
+MTIT;Illness;Dental;;Infection;Dental caries
+MTIW;Illness;Dental;;Infection;Wisdom tooth
+MTIP;Illness;Dental;;Infection;Periodontitis
+MTCC;Illness;Dental;;Degenerative or chronic condition;Dental condition
+MYAH;Illness;Endocrinological;;Allergic;Hashimoto's thyroiditis
+MGEE;Illness;Gastrointestinal;;Environmental - exercise-related;Exercise associated gastritis/reflux
+MYYF;Illness;Endocrinological;;Immunological/inflammatory;Chronic fatigue syndrome/myalgic encephalomyeitis
+MYYX;Illness;Endocrinological;;Immunological/inflammatory;Endocrine illness
+MYYZ;Illness;Endocrinological;;Immunological/inflammatory;Other endocrine disorder
+MYYT;Illness;Endocrinological;;Immunological/inflammatory;Thyroid disorder
+MYIB;Illness;Endocrinological;;Infection;Mastitis/breastfeeding condition
+MYBBC;Illness;Endocrinological;;Neoplasm;Breast cancer
+MYBBL;Illness;Endocrinological;;Neoplasm;Breast lump for investigation
+MYNG;Illness;Endocrinological;;Metabolic/nutritional;Gynaecomastia
+MYJO;Illness;Endocrinological;;Developmental anomaly;Exercise prescription for patient with obesity
+MYJ;Illness;Endocrinological;;Developmental anomaly;Functional hypothalamic amenorrhoea
+MYXB;Illness;Endocrinological;;Multiple;Advice on breast care
+MGAX;Illness;Gastrointestinal;;Allergic;Coeliac disease
+MUED;Illness;Genitourinary;;Environmental - exercise-related;Erectile dysfunction related to cycling/rowing
+MUEE;Illness;Genitourinary;;Environmental - exercise-related;Diet and exercise associated amenorrhoea
+MGYC;Illness;Gastrointestinal;;Immunological/inflammatory;Cholecystitis
+MGYS;Illness;Gastrointestinal;;Immunological/inflammatory;Surgical bowel problem
+MGYU;Illness;Gastrointestinal;;Immunological/inflammatory;Gastritis/peptic ulceration - non exercise/nsaid related
+MGYX;Illness;Gastrointestinal;;Immunological/inflammatory;Gastritis
+MGIB;Illness;Gastrointestinal;;Infection;Bacterial gastroenteritis (incl food poisoning)
+MGIZ;Illness;Gastrointestinal;;Infection;Other gastrointestinal infection
+MGIX;Illness;Gastrointestinal;;Infection;Gastrointestinal infection
+MGIV;Illness;Gastrointestinal;;Infection;Viral gastroenteritis
+MGID;Illness;Gastrointestinal;;Infection;Amoebic dysentery
+MGIA;Illness;Gastrointestinal;;Infection;Appendicitis
+MGIH;Illness;Gastrointestinal;;Infection;Viral hepatitis (A, B, or C)
+MGBX;Illness;Gastrointestinal;;Neoplasm;Gastrointestinal neoplasm
+MGVH;Illness;Gastrointestinal;;Thrombotic/haemorrhagic;Haemorrhoids
+MGVM;Illness;Gastrointestinal;;Thrombotic/haemorrhagic;Haematemesis/melaena/GI bleeding
+MGDN;Illness;Gastrointestinal;;Drug-related/poisoning;Nsaid associated gastritis/peptic ulceration
+MGXD;Illness;Gastrointestinal;;Multiple;Diarrhoea
+MGXX;Illness;Gastrointestinal;;Multiple;Gastrointestinal illness
+MUEI;Illness;Genitourinary;;Environmental - exercise-related;Urinary incontinence
+MHEX;Illness;Hematological;;Environmental - exercise-related;Exercise-related iron deficiency
+MRER;Illness;Musculoskeletal;;Environmental - exercise-related;Rhabdomyolysis
+MNED;Illness;Neurological;;Environmental - exercise-related;Autonomic dysreflexia
+MUYD;Illness;Genitourinary;;Immunological/inflammatory;Dysmenorrhoea
+MUYZ;Illness;Genitourinary;;Immunological/inflammatory;Pelvic pain non-specific
+MUYE;Illness;Genitourinary;;Immunological/inflammatory;Endometriosis
+MUYA;Illness;Genitourinary;;Immunological/inflammatory;Other amenorrhoea
+MUYR;Illness;Genitourinary;;Immunological/inflammatory;Menorrhagia
+MUIT;Illness;Genitourinary;;Infection;Urinary tract infection
+MUIS;Illness;Genitourinary;;Infection;Sexually transmitted disease
+MUIP;Illness;Genitourinary;;Infection;Pyelonephritis
+MUIG;Illness;Genitourinary;;Infection;Gynaecological infection
+MUIE;Illness;Genitourinary;;Infection;Epididymitis
+MUIC;Illness;Genitourinary;;Infection;Cystitis
+MUIX;Illness;Genitourinary;;Infection;Other genitourinary infection
+MUBS;Illness;Genitourinary;;Neoplasm;Abnormal cervical smear
+MUBC;Illness;Genitourinary;;Neoplasm;Cervical/uterine cancer
+MUBO;Illness;Genitourinary;;Neoplasm;Ovarian cancer
+MUBT;Illness;Genitourinary;;Neoplasm;Testicular cancer
+MUBB;Illness;Genitourinary;;Neoplasm;Ovarian cyst (benign)
+MUVT;Illness;Genitourinary;;Neoplasm;Testicular tortion
+MUVH;Illness;Genitourinary;;Thrombotic/haemorrhagic;Haematuria
+MUCA;Illness;Genitourinary;;Degenerative or chronic condition;Pelvic floor advice/education
+MUCP;Illness;Genitourinary;;Degenerative or chronic condition;PCOS (Polycystic ovary syndrome)
+MUJE;Illness;Genitourinary;;Developmental anomaly;Epididymal cyst
+MUJV;Illness;Genitourinary;;Developmental anomaly;Varicocele
+MUXZ;Illness;Genitourinary;;Multiple;Other gynaecological illness
+MUXF;Illness;Genitourinary;;Multiple;Pelvic floor other diagnosis
+MUXX;Illness;Genitourinary;;Multiple;Genitourinary illness
+MUZPE;Illness;Genitourinary;;Unknown/not specified;Ectopic pregnancy
+MUZP3;Illness;Genitourinary;;Unknown/not specified;Perineal tear (grade 3 - 4)
+MUZP1;Illness;Genitourinary;;Unknown/not specified;Perineal tear (grade 1 - 2)
+MUZL;Illness;Genitourinary;;Unknown/not specified;Vulvodynia
+MUZP;Illness;Genitourinary;;Unknown/not specified;Pregnancy
+MUZQ;Illness;Genitourinary;;Unknown/not specified;Pelvic organ prolapse
+MUZZ;Illness;Genitourinary;;Unknown/not specified;Urinary illness
+MUZA;Illness;Genitourinary;;Unknown/not specified;Antenatal advice / consult
+MUZB;Illness;Genitourinary;;Unknown/not specified;Other urological/bladder diagnosis (incl nocturia)
+MUZF;Illness;Genitourinary;;Unknown/not specified;Fertility advice consultation
+MUZN;Illness;Genitourinary;;Unknown/not specified;Postnatal advice / consult
+MUZO;Illness;Genitourinary;;Unknown/not specified;Hormonal contraceptive advice
+MUZX;Illness;Genitourinary;;Unknown/not specified;Gynaecological consultation
+MUZT;Illness;Genitourinary;;Unknown/not specified;Request for pregnancy test
+MUZM;Illness;Genitourinary;;Unknown/not specified;Miscarriage
+MUZV;Illness;Genitourinary;;Unknown/not specified;Postpartum vaginal delivery
+MUZC;Illness;Genitourinary;;Unknown/not specified;Postpartum ceasarean section
+MUZAB;Illness;Genitourinary;;Unknown/not specified;Abortion
+MNEM;Illness;Neurological;;Environmental - exercise-related;Exercise related migraine
+MHB;Illness;Hematological;;Neoplasm;Haematological malignancy
+MHNF;Illness;Hematological;;Metabolic/nutritional;Iron deficiency anaemia
+MHNA;Illness;Hematological;;Metabolic/nutritional;Anaemia
+MHJX;Illness;Hematological;;Developmental anomaly;Sickle cell or thalassaemia
+MHXX;Illness;Hematological;;Multiple;Haematological illness and nutritional deficiencies
+MEEX;Illness;Otological;;Environmental - exercise-related;Swimmer's ear
+MRYS;Illness;Musculoskeletal;;Immunological/inflammatory;Psoriatic arthritis
+MRYP;Illness;Musculoskeletal;;Immunological/inflammatory;Pseudogout
+MRYPK;Illness;Musculoskeletal;;Immunological/inflammatory;Pseudogout in knee
+MRYL;Illness;Musculoskeletal;;Immunological/inflammatory;Lupus/systemic lupus erythematosus (SLE)
+MRYPZ;Illness;Musculoskeletal;;Immunological/inflammatory;Pseudogout in other joint/location
+MRYNZ;Illness;Musculoskeletal;;Immunological/inflammatory;Non specific seronegative arthritis affecting <4 joints
+MRYR;Illness;Musculoskeletal;;Immunological/inflammatory;Rheumatoid arthritis
+MRYRZ;Illness;Musculoskeletal;;Immunological/inflammatory;Rheumatoid arthritis affecting <4 joints
+MRYX;Illness;Musculoskeletal;;Immunological/inflammatory;Rheumatological illness
+MRYGP;Illness;Musculoskeletal;;Immunological/inflammatory;Gout in hands/fingers
+MRYRX;Illness;Musculoskeletal;;Immunological/inflammatory;Rheumatoid arthritis affecting many joints
+MRYA;Illness;Musculoskeletal;;Immunological/inflammatory;Ankylosing spondylitis
+MRYNL;Illness;Musculoskeletal;;Immunological/inflammatory;Non specific seronegative arthritis affecting SIJ
+MRYN;Illness;Musculoskeletal;;Immunological/inflammatory;Seronegative arthritis
+MRYIL;Illness;Musculoskeletal;;Immunological/inflammatory;Sacroiliac joint inflammation
+MRYGZ;Illness;Musculoskeletal;;Immunological/inflammatory;Gout in other location not otherwise specified
+MRYGK;Illness;Musculoskeletal;;Immunological/inflammatory;Gout in knee
+MRYGE;Illness;Musculoskeletal;;Immunological/inflammatory;Gout in elbow
+MRYGA;Illness;Musculoskeletal;;Immunological/inflammatory;Gout in ankle/foot (incl big toe)
+MRYG;Illness;Musculoskeletal;;Immunological/inflammatory;Gout
+MRYNX;Illness;Musculoskeletal;;Immunological/inflammatory;Non specific seronegative arthritis affecting many joints
+MRYI;Illness;Musculoskeletal;;Immunological/inflammatory;Reiter's syndrome
+MRIJH;Illness;Musculoskeletal;;Infection;Infected hip joint
+MRIJ;Illness;Musculoskeletal;;Infection;Joint infection - septic arthritis (excl complications of surgery or perforating lacerations)
+MRIF;Illness;Musculoskeletal;;Infection;Infected foot joint
+MRIJA;Illness;Musculoskeletal;;Infection;Infected ankle joint
+MRIBT;Illness;Musculoskeletal;;Infection;Infection of bone - osteomyelitis thigh
+MRIJE;Illness;Musculoskeletal;;Infection;Infected elbow joint
+MRIB;Illness;Musculoskeletal;;Infection;Infection of bone - osteomyelitis
+MRIJS;Illness;Musculoskeletal;;Infection;Infected shoulder joint
+MRIJW;Illness;Musculoskeletal;;Infection;Infected wrist, hand, finger, thumb joint
+MRIP;Illness;Musculoskeletal;;Infection;Infected pubic symphysis
+MRIK;Illness;Musculoskeletal;;Infection;Infected knee joint
+MRIBL;Illness;Musculoskeletal;;Infection;Septic discitis - osteomyelitis of the spine
+MRBXQ;Illness;Musculoskeletal;;Neoplasm;Tumour lower leg
+MRBXF;Illness;Musculoskeletal;;Neoplasm;Tumour foot
+MRBXX;Illness;Musculoskeletal;;Neoplasm;Other tumour not otherwise mentioned
+MRBXW;Illness;Musculoskeletal;;Neoplasm;Tumour wrist/hand
+MRBXU;Illness;Musculoskeletal;;Neoplasm;Tumour upper arm
+MRBXT;Illness;Musculoskeletal;;Neoplasm;Tumour thigh
+MRBXS;Illness;Musculoskeletal;;Neoplasm;Tumour shoulder
+MRBXR;Illness;Musculoskeletal;;Neoplasm;Tumour forearm
+MRBXA;Illness;Musculoskeletal;;Neoplasm;Tumour ankle
+MRBXL;Illness;Musculoskeletal;;Neoplasm;Tumour lumbar spine
+MRBXG;Illness;Musculoskeletal;;Neoplasm;Tumour groin and hip
+MRBXE;Illness;Musculoskeletal;;Neoplasm;Tumour elbow
+MRBXD;Illness;Musculoskeletal;;Neoplasm;Tumour thoracic spine/chest wall
+MRBXB;Illness;Musculoskeletal;;Neoplasm;Tumour lumbar buttock
+MRBXN;Illness;Musculoskeletal;;Neoplasm;Tumour neck
+MRBXK;Illness;Musculoskeletal;;Neoplasm;Tumour knee
+MRJCK;Illness;Musculoskeletal;;Degenerative or chronic condition;Congenital cartilage abnormality of knee
+MRJCL;Illness;Musculoskeletal;;Degenerative or chronic condition;Congenital abnormality lumbar spine
+MRJHX;Illness;Musculoskeletal;;Degenerative or chronic condition;Hypo or hyper - mobility of joints
+MRJMQ;Illness;Musculoskeletal;;Degenerative or chronic condition;Muscle abnormality of lower leg
+MRJSL;Illness;Musculoskeletal;;Degenerative or chronic condition;Sacralisation of l5 segment
+MRJXF;Illness;Musculoskeletal;;Degenerative or chronic condition;Structural abnormality of foot
+MRJXK;Illness;Musculoskeletal;;Degenerative or chronic condition;Structural abnormality of knee
+MRJXS;Illness;Musculoskeletal;;Degenerative or chronic condition;Shoulder structural abnormality
+MRJLL;Illness;Musculoskeletal;;Degenerative or chronic condition;Lumbarisation of S1 segment
+MRJB;Illness;Musculoskeletal;;Degenerative or chronic condition;Spina bifida
+MRJXQ;Illness;Musculoskeletal;;Degenerative or chronic condition;Structural abnormality of lower leg
+MRCO;Illness;Musculoskeletal;;Degenerative or chronic condition;Osteoarthritis - non-traumatic
+MRJYD;Illness;Musculoskeletal;;Developmental anomaly;Thoracic kyphosis
+MRJO;Illness;Musculoskeletal;;Developmental anomaly;Generalised hypomobility of joints
+MRJZD;Illness;Musculoskeletal;;Developmental anomaly;Thoracic spine structural abnormality
+MRJVW;Illness;Musculoskeletal;;Developmental anomaly;Radioulnar variance
+MRJUF;Illness;Musculoskeletal;;Developmental anomaly;Tarsal coalition of foot
+MRJTF;Illness;Musculoskeletal;;Developmental anomaly;Claw toes
+MRJL;Illness;Musculoskeletal;;Developmental anomaly;Lumbosacral spine structural abnormality
+MRJT;Illness;Musculoskeletal;;Developmental anomaly;Talonavicular coalition
+MRJPK;Illness;Musculoskeletal;;Developmental anomaly;Bi or multipartite patella
+MRJC;Illness;Musculoskeletal;;Developmental anomaly;Calcaneonavicular coalition
+MRJ1G;Illness;Musculoskeletal;;Developmental anomaly;Congenital abnormality of hip joint
+MRJ2G;Illness;Musculoskeletal;;Developmental anomaly;Structural abnormaility of hip/groin
+MRJSD;Illness;Musculoskeletal;;Developmental anomaly;Thoracic scoliosis
+MRJBL;Illness;Musculoskeletal;;Developmental anomaly;Lumbar scoliosis
+MRJCF;Illness;Musculoskeletal;;Developmental anomaly;Calcaneocuboid coalition
+MRJDG;Illness;Musculoskeletal;;Developmental anomaly;Congenital dislocation of hip
+MRJEC;Illness;Musculoskeletal;;Developmental anomaly;Chest structural abnormaility
+MRJH;Illness;Musculoskeletal;;Developmental anomaly;Generalised hypermobility of joints
+MRJHF;Illness;Musculoskeletal;;Developmental anomaly;Hammer toes
+MRJIQ;Illness;Musculoskeletal;;Developmental anomaly;Accessory soleus muscle (excl inj to that muscle)
+MRJKK;Illness;Musculoskeletal;;Developmental anomaly;Discoid lateral meniscus
+MRJFF;Illness;Musculoskeletal;;Developmental anomaly;Accessory bone foot
+MRJA;Illness;Musculoskeletal;;Developmental anomaly;Exercise prescription for patient with arthritis
+MRZX;Illness;Musculoskeletal;;Unknown/not specified;Rheumatological disease other/undiagnosed
+MRZP;Illness;Musculoskeletal;;Unknown/not specified;Pregnancy associated musculoskeletal injury
+MRZF;Illness;Musculoskeletal;;Unknown/not specified;Fibromyalgia/multiple sore muscle areas
+MRZK;Illness;Musculoskeletal;;Unknown/not specified;Inflammatory arthritis of knee
+MSEE;Illness;Psychiatric/psychological;;Environmental - exercise-related;Exercise addiction
+MSEF;Illness;Psychiatric/psychological;;Environmental - exercise-related;Female athlete triad
+MSEX;Illness;Psychiatric/psychological;;Environmental - exercise-related;Overexercising disorder
+MNYM;Illness;Neurological;;Immunological/inflammatory;Migraine
+MNEH;Illness;Neurological;;Immunological/inflammatory;Exercise related headache
+MNIB;Illness;Neurological;;Infection;Brachial neuritis
+MNJC;Illness;Neurological;;Developmental anomaly;Cerebral palsy
+MNJE;Illness;Neurological;;Developmental anomaly;Epilepsy
+MNXX;Illness;Neurological;;Multiple;Neurological illness
+MNXZ;Illness;Neurological;;Multiple;Neurological lesion  location unspecified or crossing anatomical boundaries
+MNZZ;Illness;Neurological;;Unknown/not specified;Headache not otherwise specified
+MNZX;Illness;Neurological;;Unknown/not specified;Other neurological problem
+MNZC;Illness;Neurological;;Unknown/not specified;Cluster headaches
+MNZH;Illness;Neurological;;Unknown/not specified;Headaches
+MNZM;Illness;Neurological;;Unknown/not specified;Generalised tight muscles/spasticity
+MOAC;Illness;Opthalmological;;Allergic;Allergic conjunctivitis
+MPEE;Illness;Respiratory;;Environmental - exercise-related;Asthma - exercise induced only
+MOIC;Illness;Opthalmological;;Infection;Infective conjunctivitis
+MOIS;Illness;Opthalmological;;Infection;Sty (eyelash)
+MOCC;Illness;Opthalmological;;Degenerative or chronic condition;Cataract
+MOCG;Illness;Opthalmological;;Degenerative or chronic condition;Glaucoma
+MOCV;Illness;Opthalmological;;Degenerative or chronic condition;Vision disorder
+MOJA;Illness;Opthalmological;;Developmental anomaly;Astigmatism
+MOJH;Illness;Opthalmological;;Developmental anomaly;Hyperopia (hypermetropia)
+MOJM;Illness;Opthalmological;;Developmental anomaly;Myopia
+MOZ1;Illness;Opthalmological;;Unknown/not specified;Ophthalmological illness (excl trauma)
+MAEO;Illness;Thermoregulatory;;Environmental - exercise-related;Hypothermia
+MAE1;Illness;Thermoregulatory;;Environmental - exercise-related;Heat illness
+MEIM;Illness;Otological;;Infection;Middle ear infection
+MEIR;Illness;Otological;;Infection;Ear +/- sinuses/throat infection
+MEIE;Illness;Otological;;Infection;Otitis externa
+MEIX;Illness;Otological;;Infection;Ear infection
+MSAA;Illness;Psychiatric/psychological;;Allergic;Antenatal anxiety
+MSAD;Illness;Psychiatric/psychological;;Allergic;Antenatal depression
+MAES;Illness;Thermoregulatory;;Environmental - exercise-related;Hyperthermia/heat stroke
+MXEB;Illness;Unknown or not specified;;Environmental - exercise-related;Barotrauma
+MXED;Illness;Unknown or not specified;;Environmental - exercise-related;Decompression sickness
+MDSS;Illness;Dermatological;;Environmental - non-exercise;Sunburn
+MYSBT;Illness;Endocrinological;;Environmental - non-exercise;Mastalgia (cyclical breast tenderness)
+MUSD;Illness;Genitourinary;;Environmental - non-exercise;Erectile dysfunction non-exercise related
+MNSV;Illness;Neurological;;Environmental - non-exercise;Vertigo, unknown cause
+MSNA;Mental health problem;Psychiatric/psychological;;Metabolic/nutritional;Anorexia nervosa
+MSNM;Mental health problem;Psychiatric/psychological;;Metabolic/nutritional;RED-S (Relative Energy Deficiency in Sport)
+MSNB;Mental health problem;Psychiatric/psychological;;Metabolic/nutritional;Bulimia nervosa
+MSXS;Mental health problem;Psychiatric/psychological;;Multiple;Somatisation
+MSX6;Mental health problem;Psychiatric/psychological;;Multiple;Psychological/psychiatric
+MSXB;Mental health problem;Psychiatric/psychological;;Multiple;Bipolar disorders
+MSXD;Mental health problem;Psychiatric/psychological;;Multiple;Depression/mood disorder
+MSDA;Mental health problem;Psychiatric/psychological;;Unknown/not specified;Behavioural disorder (alcohol, drugs)
+MSZX;Mental health problem;Psychiatric/psychological;;Unknown/not specified;Other psychological/psychiatric disorder not otherwise specified
+MSZA;Mental health problem;Psychiatric/psychological;;Unknown/not specified;Adjustment disorder (incl burrnout)
+MSZG;Mental health problem;Psychiatric/psychological;;Unknown/not specified;Behavioural disorder (eg gambling/other addiction)
+MPAA;Illness;Respiratory;;Allergic;Asthma - allergic
+MPAL;Illness;Respiratory;;Allergic;Allergy - rhinitis/sinusitis/hayfever
+MPA3;Illness;Respiratory;;Allergic;Asthma/allergy/hay fever/respiratory
+MOSP;Illness;Opthalmological;;Environmental - non-exercise;Pterygium
+MESC;Illness;Otological;;Environmental - non-exercise;Ear wax/cerumen
+MPYS;Illness;Respiratory;;Immunological/inflammatory;Pulmonary sarcoidosis
+MPIX;Illness;Respiratory;;Infection;Other upper respiratory tract infection
+MPICL;Illness;Respiratory;;Infection;Post COVID-19 condition (including long COVID)
+MPI1;Illness;Respiratory;;Infection;Respiratory system infection
+MPIB;Illness;Respiratory;;Infection;Bronchitis
+MPIC;Illness;Respiratory;;Infection;COVID-19 infection
+MPICA;Illness;Respiratory;;Infection;COVID-19 asymptomatic picked up on screening
+MPIG;Illness;Respiratory;;Infection;Pharyngitis
+MPIH;Illness;Respiratory;;Infection;Sinus headache
+MPII;Illness;Respiratory;;Infection;Influenza virus
+MPIL;Illness;Respiratory;;Infection;Other lower respiratory tract infection
+MPIP;Illness;Respiratory;;Infection;Pneumonia/bronchitis/lower respiratory tract infection
+MPIRS;Illness;Respiratory;;Infection;Respiratory Syncytial Virus (RSV)
+MPIS;Illness;Respiratory;;Infection;Sinusitis
+MPIV;Illness;Respiratory;;Infection;Respiratory infection suspected of being COVID-19
+MPIT;Illness;Respiratory;;Infection;Tonsillitis
+MPICV;Illness;Respiratory;;Infection;Adverse reaction to a covid-19 vaccine
+MPBC;Illness;Respiratory;;Neoplasm;Respiratory neoplasm
+MPVE;Illness;Respiratory;;Thrombotic/haemorrhagic;Pulmonary embolus
+MPCX;Illness;Respiratory;;Degenerative or chronic condition;Chronic airflow limitation
+MPJC;Illness;Respiratory;;Developmental anomaly;Cystic fibrosis
+MPXX;Illness;Respiratory;;Multiple;Respiratory disease
+MPZT;Illness;Respiratory;;Unknown/not specified;Nose /throat illness /condition
+MPZX;Illness;Respiratory;;Unknown/not specified;Other respiratory illness not otherwise specified
+MSSH;Mental health problem;Psychiatric/psychological;;Environmental - non-exercise;Attention deficit hyperactivity disorder
+MSSP;Mental health problem;Psychiatric/psychological;;Environmental - non-exercise;Specific phobias
+MSSS;Mental health problem;Psychiatric/psychological;;Environmental - non-exercise;Sleep disorders
+MSSA;Mental health problem;Psychiatric/psychological;;Environmental - non-exercise;Anxiety/panic/compulsive disorder
+MPSA;Illness;Respiratory;;Environmental - non-exercise;Respiratory symptoms from air pollution
+MXSE;Illness;Unknown or not specified;;Environmental - non-exercise;Environmental illness
+MXIM;Illness;Unknown or not specified;;Infection;Malaria
+MXIX;Illness;Unknown or not specified;;Infection;Infection
+MXI5;Illness;Unknown or not specified;;Infection;Virus proven by serology
+MXI8;Illness;Unknown or not specified;;Infection;Infection, other
+MXICV;Illness;Unknown or not specified;;Infection;Chikungunya
+MXID;Illness;Unknown or not specified;;Infection;Dengue fever
+MXIG;Illness;Unknown or not specified;;Infection;Glandular fever
+MXIMP;Illness;Unknown or not specified;;Infection;Mumps
+MXIRV;Illness;Unknown or not specified;;Infection;Rubella
+MXITB;Illness;Unknown or not specified;;Infection;Tuberculosis
+MXIMS;Illness;Unknown or not specified;;Infection;Measles
+MXIV;Illness;Unknown or not specified;;Infection;Chicken pox
+MXBCH;Illness;Unknown or not specified;;Neoplasm;Tumour head
+MXN1;Illness;Unknown or not specified;;Metabolic/nutritional;Tired athlete undiagnosed
+MXN7;Illness;Unknown or not specified;;Metabolic/nutritional;Nutritional (including vitamin deficiency)
+MXNS;Illness;Unknown or not specified;;Metabolic/nutritional;Advice on legality of drug/supplement
+MXJT;Illness;Unknown or not specified;;Developmental anomaly;Condition related to transgender status
+MXJD;Illness;Unknown or not specified;;Developmental anomaly;Condition related to sexual dimorphism
+MXDD;Illness;Unknown or not specified;;Drug-related/poisoning;Drug use/overdose/poisoning
+MZIQ;Illness;Unknown or not specified;;Infection;Quarantine due to overseas travel or contact tracing
+MZXX;Illness;Unknown or not specified;;Multiple;Medical illness undiagnosed/other
+MZZ3;Illness;Unknown or not specified;;Unknown/not specified;Preparation for overseas travel - advice immunisations
+MZZX;Illness;Unknown or not specified;;Unknown/not specified;Other medical illness
+MZZR;Illness;Unknown or not specified;;Unknown/not specified;Prescription repeat
+MZZP;Illness;Unknown or not specified;;Unknown/not specified;Paperwork
+MZZO;Illness;Unknown or not specified;;Unknown/not specified;Obesity
+MZZE;Illness;Unknown or not specified;;Unknown/not specified;Advice on equipment/other aids e.g. appropriate footwear.
+MZZC;Illness;Unknown or not specified;;Unknown/not specified;Medical certificate
+MZZ4;Illness;Unknown or not specified;;Unknown/not specified;Exercise prescription
+MZZZ;Illness;Unknown or not specified;;Unknown/not specified;Referral
+MZZ2;Illness;Unknown or not specified;;Unknown/not specified;Screening
+MZZ1;Illness;Unknown or not specified;;Unknown/not specified;Consultation
+MZZ6;Illness;Unknown or not specified;;Unknown/not specified;Education

@@ -1,0 +1,667 @@
+---
+title: "Player Health Surveillance Report"
+subtitle: "FIFA U17 World Cup Qatar 2025"
+date: "`r Sys.Date()`"
+output: 
+  word_document:
+      reference_docx: word-styles-reference-03.docx
+---
+
+```{r setup, include=FALSE}
+# Global knitr options (tweak as you like)
+knitr::opts_chunk$set(
+  echo    = FALSE,
+  message = FALSE,
+  warning = FALSE
+)
+
+# Libraries
+library(readr)
+library(dplyr)
+library(flextable)
+library(officer)
+library(scales)
+
+# Absolute path to your results folder
+res_dir <- "~/Library/CloudStorage/OneDrive-FIFA.org/Projects (FIFA)/Competition surveillance projects - current/2025-FU17WC-Qatar/03_Analysis/Results"
+
+# Tournament name
+tournament_name <- "FIFA U-17 World Cup Qatar 2025"
+
+
+
+# Apply global defaults to all flextables created after this call
+flextable::set_flextable_defaults(
+  #theme_fun   = flextable::theme_zebra, # base table look
+  font.family = "Open Sans Light",                # font family
+  font.size   = 9,                       # font size
+  padding     = 3                         # cell padding
+)
+
+
+# Number formatter: 2 dp when needed, no trailing .00 for integers
+fmt <- scales::label_number(accuracy = 0.01, drop0trailing = TRUE)
+
+# Thin border (width in points)
+thin_border <- officer::fp_border(color = "black", width = 0.3)
+
+# ---- Reusable helpers ----
+
+# 1) Read a CSV and format all numeric columns using `fmt`
+read_fmt_csv <- function(path) {
+  readr::read_csv(path, show_col_types = FALSE) %>%
+    mutate(across(where(is.numeric), ~ fmt(.x)))
+}
+
+# 2) Standard flextable styling:
+#    - remove header row
+#    - remove all borders
+#    - add thin top & bottom rules only
+#    - full-width table, autofit
+
+library(flextable)
+library(officer) # for fp_border
+
+style_ft <- function(ft) {
+  # Number of display columns in the flextable
+  ncols <- flextable::ncol_keys(ft)
+
+  ft %>%
+    # Apply zebra theme to body rows first
+    theme_zebra() %>%
+    # Remove all borders everywhere (header, body, footer)
+    border_remove() %>%
+    # As some document templates still show outer borders, explicitly clear them
+    border_outer(part = "all", border = fp_border(color = "transparent", width = 0)) %>%
+    border_inner_h(part = "all", border = fp_border(color = "transparent", width = 0)) %>%
+    border_inner_v(part = "all", border = fp_border(color = "transparent", width = 0)) %>%
+
+    # Header styling: white background, not bold, left-align first column, center the rest
+    bg(part = "header", bg = "white") %>%
+    bold(part = "header", bold = FALSE) %>%
+    align(j = 1, align = "left",   part = "header") %>%
+    align(j = 2:ncols, align = "center", part = "header") %>%
+
+    # Body alignment: left first column, center the rest
+    align(j = 1, align = "left",   part = "body") %>%
+    align(j = 2:ncols, align = "center", part = "body") %>%
+
+    # Reintroduce only the horizontal top & bottom lines on the body
+    hline_top(part = "header", border = thin_border) %>%
+    hline_top(part = "body", border = thin_border) %>%
+    hline_bottom(part = "body", border = thin_border) %>%
+
+    # Fit layout
+    set_table_properties(width = 1, layout = "autofit")
+}
+
+
+```
+
+# Contents
+
+\pagebreak
+
+# Foreword
+
+(insert text)
+
+\pagebreak
+
+# At a glance
+
+## FIFA Player Health Surveillance
+
+### Methods
+
+All players at the `r tournament_name` were invited to participate in the player health surveillance programme. If a player who had agreed to take part in the research sustained an injury or illness during the tournament period, their team’s medical staff recorded details of the case in a secure FIFA database. This included information such as the injury location, type and circumstances or the type of illness, as well as the resulting amount of time for which the player was unable to participate in football. Each team also recorded the amount of training and match play completed by each player during the tournament period.
+
+### Main findings
+
+-   (finding)
+
+-   (finding)
+
+-   (finding)
+
+-   (finding)
+
+-   (finding)
+
+\pagebreak
+
+## Potential injury situations
+
+To complement the FIFA player health surveillance, match analysts also recorded and categorised all events that caused a player to stay down for more than five seconds and/or request medical attention during a match. These are referred to as “potential injuries”. The inclusion of potential injuries is intended to provide more in-depth information about injury mechanisms, enabling us initially to get a better understanding of playing situations that entail a higher risk of injury, and then to analyse the differences between at-risk situations that do and do not lead to injury. This could give rise to further advances in injury prevention strategies.
+
+### Main findings
+
+-   (finding)
+
+-   (finding)
+
+-   (finding)
+
+-   (finding)
+
+-   (finding)
+
+\pagebreak
+
+# Facts and figures from the tournament
+
+### Team and player numbers
+
+```{r}
+df <- read_fmt_csv(file.path(res_dir, "participation_table.csv"))
+ft <- flextable(df) %>% style_ft() %>%  
+    delete_part(part = "header") %>%
+      hline_top(part = "body", border = thin_border) 
+
+ft
+```
+
+<br> <br>
+
+### Exposure
+
+```{r}
+
+
+
+library(readr)
+library(flextable)
+
+df <- read_fmt_csv(file.path(res_dir, "exposure_table.csv"))
+
+# Convert character columns to best types (incl. numeric).
+# Adjust locale if your CSV uses comma decimals.
+
+ft <- flextable(df) %>%
+  style_ft() %>%
+      delete_part(part = "header") %>%
+        hline_top(part = "body", border = thin_border) 
+
+
+
+ft
+
+```
+
+<br> <br>
+
+### Player characteristics
+
+```{r}
+df <- read_fmt_csv(file.path(res_dir, "player_characteristics_table.csv"))
+ft <- df %>%
+  select(-IQR) %>%
+  flextable() %>% 
+  style_ft()
+ft
+```
+
+<br> <br>
+
+\*This data relates to the players participating in the surveillance. The figures for age, height and weight are the average values and ranges across those players.
+
+\pagebreak
+
+# Key Findings
+
+## Injury incidence
+
+```{r}
+
+library(flextable)
+
+df <- read_fmt_csv(file.path(res_dir, "injury_table_report.csv"))
+ft <- flextable(df) %>%
+  style_ft() %>%
+  hline_top(part = "body", border = thin_border) %>%
+      delete_part(part = "header") 
+ft
+
+```
+
+<br> <br>
+
+## Injury severity and burden
+
+```{r}
+
+ df <- read_fmt_csv(file.path(res_dir, "injury_table.csv"))
+time_loss_days <- df[1,5]
+ df <- read_fmt_csv(file.path(res_dir, "overall_results.csv"))
+ 
+time_loss_burden <- df[4,11]
+```
+
+Total number of time-loss days:[^1] **`r time_loss_days`**
+
+[^1]: Time loss estimated for several long‑term injuries
+
+Time-loss burden rate: **`r time_loss_burden`** days per 1,000 h
+
+<br> <br>
+
+### Injuries by body area and time lost from normal football participation
+
+```{r}
+library(readr)
+library(dplyr)
+library(flextable)
+library(grDevices)
+
+# --- Read the CSV with explicit types ---
+df <- read_csv(file.path(res_dir, "time_loss_table.csv"),
+               col_types = cols(
+                 osiics_16_level_1 = col_character(),
+                 `1-3 days`        = col_double(),
+                 `4-7 days`        = col_double(),
+                 `8-28 days`       = col_double(),
+                 `29-90 days`      = col_double(),
+                 `91-180 days`     = col_double(),
+                 Total             = col_double()
+               ),
+               na = c("NA", "", " ")
+)
+
+# Columns to heatmap (all numeric bins + Total)
+num_cols <- names(df)[-1]
+
+# --- Global palette and range ---
+pal     <- colorRampPalette(c("#F7FBFF", "#6BAED6", "#084594"))  # Blues
+levels  <- pal(100)
+rng     <- range(unlist(df[num_cols]), na.rm = TRUE)
+if (!is.finite(rng[1]) || !is.finite(rng[2]) || rng[1] == rng[2]) {
+  rng <- c(0, ifelse(is.finite(rng[2]) && rng[2] != 0, rng[2], 1))
+}
+
+# Map numeric vector to heatmap colors (global scale)
+col_colors <- function(v) {
+  norm <- (v - rng[1]) / (rng[2] - rng[1])
+  out  <- rep("#FFFFFF", length(v))
+  ok   <- is.finite(norm)
+  idx  <- pmax(1, pmin(100, floor(norm[ok] * 99) + 1))
+  out[ok] <- levels[idx]
+  list(bg = out, norm = replace(norm, !ok, NA_real_))
+}
+
+# Build color matrices
+m_list   <- lapply(df[num_cols], col_colors)
+bg_mat   <- do.call(cbind, lapply(m_list, `[[`, "bg"))
+norm_mat <- do.call(cbind, lapply(m_list, `[[`, "norm"))
+colnames(bg_mat) <- num_cols
+
+# --- Build flextable (NO theme_zebra here) ---
+ft <- flextable(df)
+
+# Locally disable any zebra/striping by force-setting the label column bg to white
+ft <- bg(ft, i = seq_len(nrow(df)), j = 1, bg = "#FFFFFF", part = "body")
+
+# Apply heatmap backgrounds for numeric columns
+for (j in seq_along(num_cols)) {
+  ft <- bg(ft, i = seq_len(nrow(df)), j = num_cols[j], bg = bg_mat[, j])
+}
+
+# Improve contrast: white text on darker cells
+cutoff <- 0.78
+for (j in seq_along(num_cols)) {
+  white_rows <- which(!is.na(norm_mat[, j]) & norm_mat[, j] >= cutoff)
+  if (length(white_rows)) {
+    ft <- color(ft, i = white_rows, j = num_cols[j], color = "#FFFFFF")
+  }
+}
+
+# Optional emphasis: bold Total row label and Total column header
+ft <- bold(ft, i = which(df[[1]] == "Total"), j = 1, bold = TRUE)
+ft <- bold(ft, j = which(names(df) == "Total"), part = "header", bold = TRUE)
+
+ft <- autofit(ft)
+
+# ---- Styling additions ----
+
+
+
+# Column keys used by flextable internally (robust targeting)
+col_keys <- names(ft$body$dataset)
+first_key <- col_keys[1]
+
+# 1) Align: first column left, all others centered
+ft <- ft %>%
+  { align(., j = first_key,   align = "left",   part = "all") } %>%
+  { align(., j = col_keys[-1], align = "center", part = "all") }
+
+# 2) Thin border spec (0.4 pt)
+thin <- fp_border(color = "#000000", width = 0.4)
+
+# 3) Header: white background + lines above and below header
+ft <- ft %>%
+  bg(part = "header", bg = "#FFFFFF") %>%
+  hline_top(part = "header",    border = thin) %>%   # NEW: line above header
+  hline_bottom(part = "header", border = thin)       # existing: line under header
+
+# 4) Remove header text in first cell (first column key)
+ft <- set_header_labels(ft, values = setNames("", first_key))
+
+# 5) Horizontal lines above & below the Total row (search in first column of body)
+total_row_idx <- which(ft$body$dataset[[first_key]] == "Total")
+if (length(total_row_idx) == 1) {
+  ft <- border(
+    ft,
+    i = total_row_idx, j = col_keys,
+    border.top = thin, 
+    border.bottom = thin,
+    part = "body"
+  )
+}
+
+# 6) Vertical lines left & right of the Total column (continuous header + body)
+total_col_idx <- which(col_keys == "Total")
+if (length(total_col_idx) == 1) {
+  # Body: left & right borders for all rows in Total column
+  ft <- border(
+    ft,
+    i = seq_len(nrow(ft$body$dataset)),
+    j = col_keys[total_col_idx],
+    border.left = thin, border.right = thin,
+    part = "body"
+  )
+  # Header: left & right borders for Total column header cell
+  ft <- border(
+    ft,
+    i = 1,
+    j = col_keys[total_col_idx],
+    border.left = thin, border.right = thin,
+    part = "header"
+  )
+}
+
+# 7) (Optional) Re-fit column widths after styling
+ft <-     set_table_properties(ft, width = 1, layout = "autofit")
+
+
+
+ft
+
+
+```
+
+\pagebreak
+
+(Designer to create image showing top body areas)
+
+Data for image:
+
+```{r}
+df <- read_fmt_csv(file.path(res_dir, "body_image_labels.csv"))
+ft <- flextable(df) %>% 
+      set_header_labels(osiics_16_level_1 = "Body area", n_tl = "Injuries", tl = "Time loss") %>%
+
+  style_ft()
+ft
+```
+
+**Figure 3.** Injury statistics for selected body areas
+
+<br>
+
+<br>
+
+(Designer to create image showing top tissue types)
+
+Data for image:
+
+```{r}
+df <- read_fmt_csv(file.path(res_dir, "tissue_type_labels.csv"))
+ft <- flextable(df) %>% 
+    set_header_labels(osiics_16_level_2 = "Tissue Type", n_tl = "Injuries", tl = "Time loss") %>%
+  style_ft()
+ft
+```
+
+\pagebreak
+
+## Injury mechanisms and situations
+
+Injuries most often occurred suddenly during matches. The mode of onset (sudden versus gradual), setting, type of contact and player actions leading to a time‑loss injury are shown in Figure 4. <br>
+
+```{r echo=FALSE, fig.align='center', out.width='100%'}
+knitr::include_graphics(file.path(res_dir, "sankey.png"))
+
+```
+
+**Figure 4.** Distribution of injuries at the `r tournament_name` by mode of onset, setting, type of contact and player action
+
+\pagebreak
+
+## Illnesses
+
+```{r}
+
+library(flextable)
+
+df <- read_fmt_csv(file.path(res_dir, "illness_table_report.csv"))
+ft <- flextable(df) %>%
+  style_ft() %>%
+  hline_top(part = "body", border = thin_border) %>%
+      delete_part(part = "header") 
+ft
+
+```
+
+<br>
+
+<br>
+
+## Mental health problems
+
+```{r}
+df <- read_fmt_csv(file.path(res_dir, "basic_numbers_table.csv"))
+mh_n_cases <- df[3,2]
+mh_n_players <- df[3,3]
+
+df <- read_fmt_csv(file.path(res_dir, "health_problems_table.csv"))
+mh_tl <- df[3,5]
+```
+
+There were `r mh_n_cases` reported mental health problems during the `r tournament_name`, affecting `r mh_n_players` players and resulting in a total of `r mh_tl` days of time loss.
+
+\pagebreak
+
+## Potential injury situations
+
+```{r}
+
+df <-  read_fmt_csv(file.path(res_dir,  "potential_injuries_report.csv"))
+
+  ft <- flextable(df) %>% style_ft() %>%  
+    delete_part(part = "header") %>%
+      hline_top(part = "body", border = thin_border) 
+ft
+
+```
+
+<br>
+
+###Top-3 player actions involved
+
+```{r player action}
+
+df <- read_fmt_csv(file.path(res_dir, "Potential_injuries/player_action_distribution.csv"))
+
+df %>%
+  slice_head(n = 3) %>% #limits to first 3 rows
+  select(-3) %>% #remove column 3
+  flextable() %>%
+  style_ft()
+
+```
+
+<br>
+
+###Top-3 body parts
+
+```{r}
+
+df <- read_fmt_csv(file.path(res_dir, "Potential_injuries/body_part_distribution.csv"))
+
+df %>%
+  slice_head(n = 3) %>% #limits to first 3 rows
+  select(-3) %>% #remove column 3
+  flextable() %>%
+  style_ft()
+
+```
+
+\pagebreak
+
+## Referee actions
+```{r}
+
+df <-  read_fmt_csv(file.path(res_dir,  "referee_actions.csv"))
+
+  ft <- flextable(df) %>% style_ft() %>%  
+    delete_part(part = "header") %>%
+      hline_top(part = "body", border = thin_border) 
+ft
+```
+
+\pagebreak
+
+# Methods
+
+## Player health surveillance
+
+All players at the `r tournament_name` were invited to participate in the player health surveillance. Of these, (number, %) provided written informed consent and were included in this analysis.
+
+Data was collected using the methodology recommended by the FIFA-led football-specific extension of the IOC consensus statement on methods for recording and reporting of epidemiological data on injury and illness in sport.[^2] Injuries were classified in several ways, including by mode of onset (sudden or gradual), injury mechanism, player action, referee sanction, diagnosis, body area and type of tissue affected, pathology type and recurrence. Illnesses were categorised by the organ system affected and the cause, while the expected and actual time required to return to play was factored in for both injuries and illnesses.
+
+[^2]: Waldén M, Mountjoy M, McCall A, Serner A, Massey A, Tol JL, Bahr R, D’Hooghe M, Bittencourt N, Della Villa F, Dohi M, Dupont G, Fulcher M, Janse van Rensburg DC, Lu D & Andersen TE. [Football-specific extension of the IOC consensus statement: methods for recording and reporting of epidemiological data on injury and illness in sport 2020](https://bjsm.bmj.com/content/57/21/1341). British Journal of Sports Medicine. 2023, 57(21): 1341-1350.
+
+Players’ health data, as well as their match and training exposure, were collected by each participating team’s medical and training personnel from five days prior to their first match until the day of their last match. To improve standardisation and the quality of the data collected, team doctors were informed about the project at their pre-tournament meeting. Additionally, all teams received a study manual describing the project’s aims and methods in detail.
+
+Injuries and illnesses were recorded if they occurred during the tournament period and resulted in medical attention. Injuries that led to the player being unavailable for a planned team training session or one or more matches were reported separately. Their severity was measured as the resulting number of days out of action. If players had not returned to full, unrestricted team training and matches at the time when this report was prepared, their team doctor’s estimate of injury severity was used.
+
+The injury incidence was expressed as the number of new injuries per 1,000 hours of exposure and the time-loss burden as the number of days lost per 1,000 hours of exposure. The illness incidence and burden were respectively expressed as the number of new illnesses and the number of days lost per 1,000 player-days. The injury incidence and burden were reported separately for injuries sustained in training and matches.
+
+Individual demographic information was collected on all participating players, including their age, height, body mass, playing position and leg dominance (preferred kicking leg).
+
+\pagebreak
+
+## Analysis of potential injury situations
+
+```{r}
+df <-  read_fmt_csv(file.path(res_dir,  "Potential_injuries/potential_injuries_summary.csv"))
+n_players <- df[3,2] %>% pull(value)
+
+```
+
+As the analyses of potential injuries were based on publicly available information, all `r n_players` players who made at least one appearance at the `r tournament_name` could be included. Five performance analysts viewed each match remotely using four camera feeds. They all held a master’s degree in performance analysis, had been working as analysts for FIFA for more than one year and had undergone comprehensive training. If a player stayed down for more than five seconds and/or requested medical attention during a match, a potential injury situation was recorded and details of the incident were classified using the [FIFA Football Language](https://www.fifatrainingcentre.com/en/game/performance-analysis/football-language-analysis/the-fifa-football-language.php) medical coding (Figure 5).
+
+All data was analysed using descriptive statistics. The incidence of potential injury situations was expressed per 1,000 match hours using the following equation: (number of incidents/match exposure time) x 1,000.
+
+(insert figure 5)
+
+**Figure 5.** Data collection process for the FIFA Football Language medical coding [^3]
+
+[^3]: Adapted from Aiello F, Avery L, Gardner T, Rutherford H, McCall A, Impellizzeri FM, Peek K, Della Villa F, Massey A & Serner A. [Broadening our understanding of injury mechanisms to include at-risk situations: an overview of potential injuries at the FIFA men’s World Cup Qatar 2022™](https://www.tandfonline.com/doi/full/10.1080/24733938.2024.2372304). Science and Medicine in Football. 2024: 1-10.
+
+\pagebreak
+
+# Definitions
+
+## Injury
+
+Tissue damage or other derangement of normal physical function, resulting from the rapid or repetitive transfer of kinetic energy. Injuries may occur to any body tissue, may have a sudden or gradual onset, and may or may not be linked to a clearly identifiable event (such as a tackle or collision).
+
+For the purposes of this report, a reportable injury was any newly sustained injury during the tournament period that led to medical attention.
+
+## Potential injury
+
+For the purposes of this report, when a player lay on the pitch for more than five seconds and/or requested medical attention during a match.
+
+## Illness
+
+A health-related complaint or disorder experienced by a player, not considered an injury.
+
+For the purposes of this report, a recordable illness was any newly sustained illness during the tournament period that led to medical attention.
+
+## Mental health problem
+
+Any adverse thought, feeling, behaviour and/or psychosomatic symptom that reduces a player’s normal state of full mental health, irrespective of its cause or its consequences for the player’s football participation or performance or whether the athlete seeks medical attention. Mental health problems cover a spectrum, from minor mental health symptoms to severe disorders.
+
+For the purposes of this report, a mental health problem was recordable if the problem arose during the tournament period and led to medical attention. This does not include routine sport psychology appointments as part of teams’ preparations.
+
+## Medical attention
+
+Advice, assessment or treatment related to an injury or illness from any medical doctor or other licensed health professional (such as a physical therapist) during the surveillance period. This does not include routine or scheduled interventions delivered by medical personnel for the purpose of physical preparation, recovery or prevention (e.g. massage or taping).
+
+## Exposure
+
+Match exposure is defined as organised, scheduled match play between opposing teams (not including internal training matches).
+
+Training exposure is defined as any physical activity performed by players that is aimed at maintaining or improving their skills, physical condition and/or performance in football. The pre-match warm-up and post-match cool-down also count as training exposure. In addition to on-pitch football‑specific training, individual training exposure could include strength and conditioning training (e.g. weight training, running or cycling).
+
+## Time loss
+
+Time loss is defined as the period during which a player is unable to complete unrestricted team training or participate in a football match.
+
+## Severity
+
+Injury and illness severity is measured by the resulting time loss. Severity is recorded as the number of days for which the player is unavailable for unrestricted team training and matches. The time for the return to football is calculated from the date of injury/illness onset (i.e. day 0) until the date when the player returns to full, unrestricted team training or the date of their first partial or full match participation, if this occurs prior to their first complete appearance in team training.
+
+## Burden
+
+Burden is a combined measure of the overall consequences of an injury or illness and reflects the frequency (number of cases) and the severity (time loss).
+
+\pagebreak
+
+# FIFA Medical’s initiatives at the tournament
+
+Player health surveillance was just one of the FIFA Medical Subdivision’s initiatives at the `r tournament_name`. A number of others are described here.
+
+## Team doctor meeting
+
+Prior to the Olympic Football Tournaments, team doctors from the qualified teams attended an online meeting to discuss FIFA’s player health concept at the tournaments.
+
+The meeting consisted of a presentation of the player health concept and an overview of all on-site medical services that were offered during the tournament.
+
+## Taking concussion seriously: “suspect and protect!”
+
+Prior to the tournaments, team doctors were presented with the [FIFA Concussion Protocol for Medical Staff](https://eur02.safelinks.protection.outlook.com/?url=https%3A%2F%2Fdigitalhub.fifa.com%2Fm%2F11dc529ca641c307%2Foriginal%2FFIFA-Medical-Concussion-Protocol.pdf&data=05%7C02%7Cben.clarsen%40fifa.org%7Cd076f2c8cb4a4003420c08dd1aa092bb%7Cac1c0d014482488590e3ebe4b44279d6%7C0%7C0%7C638695999141456832%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=vmR4NxQSnrG74AUQvrQ8I5HTetlWUEU5J9Gg80aTcbw%3D&reserved=0), which is based on FIFA’s “suspect and protect” philosophy. During the tournaments, a FIFA match doctor oversaw the field-of-play services at each stadium, and for each match, a dedicated injury spotter analysed any relevant medical incidents. The injury spotter used video replay to alert the FIFA match doctor to any signs of a concussion or any other potentially serious injury.
+
+In accordance with Law 3 – The Players, each team had one additional permanent concussion substitution available in each match, irrespective of the number of normal substitutes already used.
+
+## Emergency preparedness
+
+All field-of-play medical teams were trained in the FIFA set-piece approach prior to the tournaments, and simulations were performed before every match. The FIFA match doctors agreed with the team doctors on the exact role that they wanted to play in the most critical scenarios on the pitch and assigned and documented each medical team member’s role in the [FIFA Pre-Match Emergency Action Plan](https://eur02.safelinks.protection.outlook.com/?url=https%3A%2F%2Fbjsm.bmj.com%2Fcontent%2Fbjsports%2Fearly%2F2022%2F02%2F13%2Fbjsports-2021-105126.full.pdf&data=05%7C02%7Cben.clarsen%40fifa.org%7Cd076f2c8cb4a4003420c08dd1aa092bb%7Cac1c0d014482488590e3ebe4b44279d6%7C0%7C0%7C638695999141475108%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=bala9wC6WhcG62AvUCeZT3qVSiTMAKE50E90yDyYeCE%3D&reserved=0). [^4]
+
+[^4]: Patterson M, Gordon J, Boyce SH, Lindsay S, Seow D, Serner A, Thomson K, Jones G & Massey A. [Set-piece approach for medical teams managing emergencies in sport: introducing the FIFA Poster for Emergency Action Planning (PEAP)](https://doi.org/10.1136/bjsports-2021-105126). *British Journal of Sports Medicine*. 2022, 56(13): 715-717.
+
+\pagebreak
+
+# FIFA’s global player health surveillance programme
+
+For more information on this programme, please email medical\@fifa.org.
+
+**Figure 6.** Strategies and projects within FIFA’s global player health surveillance programme
+
+\pagebreak
+
+# Report information
+
+This report was prepared by FIFA Medical.
+
+**Picture credits:** © FIFA, © Getty Images.
+
+No relationship is implied between images of players in this report and the report’s content.
+
+FIFA Medical appreciates the valuable contribution of team medical staff at the Olympic Football Tournaments, including [insert names and teams].
+
+FIFA Medical acknowledges and appreciates the contributions of [insert names of contributors], as well as all the players and teams.
+
+Player Health Surveillance at FIFA tournaments has been approved by the Swiss Association of Research Ethics Committees (BASEC number: 2023‑00772). Player information and informed consent forms were available in English, French and Spanish. All the players included in the analyses provided written consent to the use of their data for research purposes.
+
+This report will be updated following scientific peer review and publication of the results. The content will be discussed in separate peer‑reviewed scientific publications.

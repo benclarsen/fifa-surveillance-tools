@@ -1,4 +1,4 @@
-team;player_id;positions;date_birth;height;weight;consent
+team;player_id;position;date_birth;height;weight;consent
 team_1;player_1;MF;1985-07-19;182;74;yes
 team_1;player_2;MF;1990-11-27;183;76;yes
 team_1;player_3;FW;1985-03-31;184;74;yes
