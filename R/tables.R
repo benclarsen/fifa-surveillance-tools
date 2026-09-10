@@ -1,7 +1,8 @@
-# Summary tables ----
+# Report tables ----
 #
 # Functions that turn analysis output into tables for the report. They return
-# data frames and write nothing. Saving is the calling script's job.
+# data frames. Only write_pattern_table_excel() touches the disk, and only
+# where it is told to.
 #
 # Note on the caselist: every case in it already meets the reporting
 # threshold - time loss for injuries and illnesses, medical attention for
@@ -23,20 +24,6 @@ fmt_ci <- function(estimate, lower, upper, digits = 2) {
     is.na(estimate) | is.na(lower) | is.na(upper),
     "",
     paste0(fmt(estimate, digits), " [", fmt(lower, digits), " to ", fmt(upper, digits), "]")
-  )
-}
-
-
-# "5 (3, 9)", or "5" when the quartiles are suppressed.
-fmt_median_iqr <- function(median, q1, q3) {
-  ifelse(
-    is.na(median),
-    "",
-    ifelse(
-      is.na(q1) | is.na(q3),
-      fmt(median, 0),
-      paste0(fmt(median, 0), " (", fmt(q1, 0), ", ", fmt(q3, 0), ")")
-    )
   )
 }
 
@@ -110,8 +97,12 @@ describe_variable <- function(x, label) {
   x <- x[!is.na(x)]
   
   if (length(x) == 0) {
-    return(tibble::tibble(Variable = label, Median = NA_character_,
-                          IQR = NA_character_, Range = NA_character_))
+    return(tibble::tibble(
+      Variable = label,
+      Median   = NA_character_,
+      IQR      = NA_character_,
+      Range    = NA_character_
+    ))
   }
   
   tibble::tibble(
@@ -125,7 +116,7 @@ describe_variable <- function(x, label) {
 
 ## Exposure ----
 
-# Total exposure for the competition. Returns one row, used as the denominator
+# Total exposure for the competition. One row, used as the denominator
 # throughout the analysis.
 summarise_exposure <- function(exposure_training, exposure_match) {
   
@@ -194,8 +185,10 @@ generate_basic_numbers_table <- function(caselist) {
 
 generate_subsequent_table <- function(caselist) {
   
-  columns <- c("Index", "Exacerbation", "Unknown",
-               "Recurrence (early)", "Recurrence (late)", "Recurrence (delayed)")
+  expected_columns <- c(
+    "Index", "Exacerbation", "Unknown",
+    "Recurrence (early)", "Recurrence (late)", "Recurrence (delayed)"
+  )
   
   classified <- caselist %>%
     mutate(
@@ -229,10 +222,10 @@ generate_subsequent_table <- function(caselist) {
     count(problem_type, column) %>%
     tidyr::pivot_wider(names_from = column, values_from = n, values_fill = 0) %>%
     tidyr::complete(problem_type = unname(problem_type_plural)) %>%
-    add_missing_columns(columns) %>%
-    mutate(across(all_of(columns), ~ tidyr::replace_na(.x, 0L))) %>%
+    add_missing_columns(expected_columns) %>%
+    mutate(across(all_of(expected_columns), ~ tidyr::replace_na(.x, 0L))) %>%
     arrange(factor(problem_type, levels = unname(problem_type_plural))) %>%
-    select(problem_type, all_of(columns))
+    select(problem_type, all_of(expected_columns))
 }
 
 
@@ -244,4 +237,429 @@ add_missing_columns <- function(data, columns) {
   }
   
   data
+}
+
+
+## Combining incidence and burden ----
+
+# Run incidence and burden over the same subset and put them side by side.
+#
+# `specs` is a list of lists, each with `label`, `data` and `exposure`.
+# Both analyses return exactly one row per subset, so the results are bound
+# by position - there is nothing to join, and so nothing to mismatch.
+combine_incidence_burden <- function(specs) {
+  
+  rows <- lapply(specs, function(spec) {
+    
+    incidence <- calculate_incidence_severity(spec$data, spec$exposure)
+    burden    <- calculate_burden(spec$data, spec$exposure)
+    
+    bind_cols(
+      tibble::tibble(outcome = spec$label),
+      incidence,
+      select(burden, burden_rate, lower_bound, upper_bound)
+    )
+  })
+  
+  bind_rows(rows)
+}
+
+
+# Format a combined result table for the report.
+format_summary_table <- function(results,
+                                 exposure_label = "Exposure (h)",
+                                 min_n_severity = get_setting("min_n_severity", 2)) {
+  
+  results <- suppress_severity(results, min_n_severity)
+  
+  out <- results %>%
+    transmute(
+      Outcome                   = outcome,
+      exposure                  = round(exposure),
+      `Cases (n)`               = n_cases,
+      `Incidence rate [95% CI]` = fmt_ci(incidence_rate, ci_lower, ci_upper),
+      `Time loss (days)`        = fmt(total_timeloss, 0),
+      `Burden rate [95% CI]`    = fmt_ci(burden_rate, lower_bound, upper_bound)
+    )
+  
+  names(out)[2] <- exposure_label
+  
+  out
+}
+
+
+## Injuries, per 1000 hours ----
+
+generate_injury_summary_table <- function(caselist, data_exposure) {
+  
+  injuries <- filter(caselist, problem_type %in% "Injury")
+  
+  specs <- list(
+    list(label = "All injuries",
+         data  = injuries,
+         exposure = data_exposure$total),
+    
+    list(label = "Gradual onset",
+         data  = filter(injuries, onset %in% "Gradual-onset"),
+         exposure = data_exposure$total),
+    
+    list(label = "Sudden onset",
+         data  = filter(injuries, onset %in% "Sudden-onset"),
+         exposure = data_exposure$total),
+    
+    list(label = "Match injuries",
+         data  = filter(injuries, when_occurred %in% "Match"),
+         exposure = data_exposure$match),
+    
+    list(label = "Training injuries",
+         data  = filter(injuries, when_occurred %in% "Training"),
+         exposure = data_exposure$training)
+  )
+  
+  combine_incidence_burden(specs)
+}
+
+
+## All health problems, per 1000 player-days ----
+
+generate_health_problems_table <- function(caselist, data_exposure) {
+  
+  specs <- lapply(names(problem_type_plural), function(type) {
+    list(
+      label    = unname(problem_type_plural[type]),
+      data     = filter(caselist, problem_type %in% type),
+      exposure = data_exposure$player_days
+    )
+  })
+  
+  combine_incidence_burden(specs)
+}
+
+
+## Severity distribution ----
+
+severity_levels <- c(
+  "0 days", "1-3 days", "4-7 days", "8-28 days",
+  "29-90 days", "91-180 days", ">180 days"
+)
+
+
+classify_severity <- function(timeloss) {
+  cut(
+    timeloss,
+    breaks = c(-Inf, 0, 3, 7, 28, 90, 180, Inf),
+    labels = severity_levels,
+    right  = TRUE
+  )
+}
+
+
+# Injuries by body area and time-loss band, with a matching total row.
+generate_severity_distribution <- function(caselist) {
+  
+  injuries <- caselist %>%
+    filter(problem_type %in% "Injury") %>%
+    mutate(severity = classify_severity(timeloss))
+  
+  report_dropped(injuries, "severity",          "time loss could not be classified")
+  report_dropped(injuries, "osiics_16_level_1", "body area is missing")
+  
+  injuries <- filter(injuries, !is.na(severity), !is.na(osiics_16_level_1))
+  
+  by_area <- injuries %>%
+    count(osiics_16_level_1, severity) %>%
+    tidyr::pivot_wider(names_from = severity, values_from = n, values_fill = 0) %>%
+    add_missing_columns(severity_levels) %>%
+    arrange(osiics_16_level_1) %>%
+    mutate(osiics_16_level_1 = as.character(osiics_16_level_1))
+  
+  totals <- injuries %>%
+    count(severity) %>%
+    tidyr::pivot_wider(names_from = severity, values_from = n, values_fill = 0) %>%
+    add_missing_columns(severity_levels) %>%
+    mutate(osiics_16_level_1 = "Total")
+  
+  bind_rows(by_area, totals) %>%
+    select(osiics_16_level_1, all_of(severity_levels)) %>%
+    mutate(Total = rowSums(across(all_of(severity_levels))))
+}
+
+
+## Body area and tissue type summaries ----
+
+# Cases and total time loss by category, heaviest first. Used for the figures
+# the designer builds from.
+
+generate_body_area_summary <- function(caselist) {
+  summarise_by_category(caselist, "osiics_16_level_1")
+}
+
+
+generate_tissue_type_summary <- function(caselist) {
+  summarise_by_category(caselist, "osiics_16_level_2")
+}
+
+
+summarise_by_category <- function(caselist, column) {
+  
+  caselist %>%
+    filter(problem_type %in% "Injury") %>%
+    group_by(across(all_of(column))) %>%
+    summarise(
+      cases         = n(),
+      timeloss_days = sum(timeloss, na.rm = TRUE),
+      .groups = "drop"
+    ) %>%
+    arrange(desc(timeloss_days))
+}
+
+
+## Pattern tables ----
+#
+# Incidence, severity and burden broken down through the taxonomy.
+#
+# Two views are used in the reports:
+#   body area -> pathology type -> diagnosis   (levels 1, 3, 4)
+#   tissue type -> pathology type              (levels 2, 3)
+#
+# Both come from generate_pattern_table(). Suppression thresholds come from
+# config.R, so the code and the table footnotes cannot drift apart.
+
+
+pattern_levels_body <- list(
+  list(level = 1, vars = "osiics_16_level_1"),
+  list(level = 3, vars = c("osiics_16_level_1", "osiics_16_level_3")),
+  list(level = 4, vars = c("osiics_16_level_1", "osiics_16_level_3", "osiics_16_level_4"))
+)
+
+
+pattern_levels_tissue <- list(
+  list(level = 2, vars = "osiics_16_level_2"),
+  list(level = 3, vars = c("osiics_16_level_2", "osiics_16_level_3"))
+)
+
+
+generate_pattern_table <- function(caselist,
+                                   exposure,
+                                   level_specs,
+                                   min_n_deepest  = get_setting("min_n_diagnosis", 5),
+                                   min_n_severity = get_setting("min_n_severity", 2),
+                                   min_n_iqr      = get_setting("min_n_iqr", 5)) {
+  
+  check_exposure(exposure)
+  
+  # One block of results per level, joined on that level's grouping variables.
+  blocks <- lapply(level_specs, function(spec) {
+    
+    incidence <- calculate_incidence_severity(caselist, exposure, spec$vars)
+    burden    <- calculate_burden(caselist, exposure, spec$vars)
+    
+    left_join(incidence, burden, by = spec$vars) %>%
+      mutate(level = spec$level)
+  })
+  
+  combined <- bind_rows(blocks)
+  
+  deepest_level <- max(vapply(level_specs, function(s) s$level, numeric(1)))
+  all_vars      <- level_specs[[length(level_specs)]]$vars
+  
+  # Rows at the deepest level are shown only when there are enough cases.
+  combined <- filter(combined, level != deepest_level | n_cases >= min_n_deepest)
+  
+  combined <- add_pattern_label(combined, level_specs)
+  combined <- sort_pattern_table(combined, all_vars)
+  combined <- suppress_severity(combined, min_n_severity)
+  
+  combined %>%
+    mutate(
+      q1_timeloss = ifelse(n_cases >= min_n_iqr, q1_timeloss, NA_real_),
+      q3_timeloss = ifelse(n_cases >= min_n_iqr, q3_timeloss, NA_real_)
+    ) %>%
+    transmute(
+      level,
+      label,
+      n_cases,
+      incidence_rate  = fmt(incidence_rate, 2),
+      incidence_ci    = fmt_ci_only(ci_lower, ci_upper),
+      median_timeloss = fmt(median_timeloss, 0),
+      median_iqr      = fmt_iqr_only(q1_timeloss, q3_timeloss),
+      burden_rate     = fmt(burden_rate, 2),
+      burden_ci       = fmt_ci_only(lower_bound, upper_bound)
+    )
+}
+
+
+generate_body_pattern_table <- function(caselist, exposure, ...) {
+  generate_pattern_table(caselist, exposure, pattern_levels_body, ...)
+}
+
+
+generate_tissue_pattern_table <- function(caselist, exposure, ...) {
+  generate_pattern_table(caselist, exposure, pattern_levels_tissue, ...)
+}
+
+
+# The label for each row is the deepest category that row is grouped by.
+add_pattern_label <- function(combined, level_specs) {
+  
+  combined$label <- NA_character_
+  
+  for (spec in level_specs) {
+    deepest <- spec$vars[length(spec$vars)]
+    rows    <- combined$level == spec$level
+    combined$label[rows] <- as.character(combined[[deepest]][rows])
+  }
+  
+  combined
+}
+
+
+# Hierarchical ordering: parent category, then child category, then the header
+# row before its children, then remaining categories alphabetically.
+# Categories order by their factor levels, which osiics.R defines.
+sort_pattern_table <- function(combined, all_vars) {
+  
+  var_1 <- all_vars[1]
+  var_2 <- if (length(all_vars) >= 2) all_vars[2] else NULL
+  var_3 <- if (length(all_vars) >= 3) all_vars[3] else NULL
+  
+  combined$sort_1 <- as.integer(combined[[var_1]])
+  
+  combined$sort_2 <- if (is.null(var_2)) {
+    0L
+  } else {
+    dplyr::coalesce(as.integer(combined[[var_2]]), 0L)
+  }
+  
+  combined$sort_3 <- combined$level
+  
+  combined$sort_4 <- if (is.null(var_3)) {
+    ""
+  } else {
+    dplyr::coalesce(as.character(combined[[var_3]]), "")
+  }
+  
+  arrange(combined, sort_1, sort_2, sort_3, sort_4)
+}
+
+
+## Interval formatting for pattern tables ----
+#
+# These keep the estimate and its interval in separate columns, because the
+# report merges the header cells above each pair.
+
+fmt_ci_only <- function(lower, upper, digits = 2) {
+  ifelse(
+    is.na(lower) | is.na(upper),
+    "",
+    paste0(" [", fmt(lower, digits), ", ", fmt(upper, digits), "]")
+  )
+}
+
+
+fmt_iqr_only <- function(q1, q3) {
+  ifelse(
+    is.na(q1) | is.na(q3),
+    "",
+    paste0(" (", fmt(q1, 0), ", ", fmt(q3, 0), ")")
+  )
+}
+
+
+## Excel output ----
+
+# Write a pattern table to Excel, indenting and italicising by level.
+# The path is an argument - the function writes where it is told and nowhere else.
+write_pattern_table_excel <- function(pattern_table, path, sheet = "table") {
+  
+  styles <- list(
+    openxlsx::createStyle(textDecoration = "bold", border = "top"),
+    openxlsx::createStyle(textDecoration = "italic", indent = 10),
+    openxlsx::createStyle(textDecoration = "italic", indent = 15)
+  )
+  
+  wb <- openxlsx::createWorkbook()
+  openxlsx::addWorksheet(wb, sheet)
+  openxlsx::writeData(wb, sheet, pattern_table)
+  
+  levels_present <- sort(unique(pattern_table$level))
+  
+  for (i in seq_along(levels_present)) {
+    
+    rows <- which(pattern_table$level == levels_present[i]) + 1   # +1 for the header row
+    if (length(rows) == 0) next
+    
+    columns <- if (i == 1) seq_len(ncol(pattern_table)) else 2
+    
+    openxlsx::addStyle(
+      wb, sheet,
+      style      = styles[[min(i, length(styles))]],
+      rows       = rows,
+      cols       = columns,
+      gridExpand = TRUE,
+      stack      = TRUE
+    )
+  }
+  
+  openxlsx::setColWidths(wb, sheet, cols = seq_len(ncol(pattern_table)), widths = "auto")
+  openxlsx::saveWorkbook(wb, file = path, overwrite = TRUE)
+  
+  invisible(path)
+}
+
+
+## Disclosure control ----
+#
+# Counts and incidence rates are shown at any number of cases: they add nothing
+# to the case count, which is published. Median time loss, total time loss and
+# burden all encode how long individual players were unavailable, and exposure
+# is published in the same report, so those figures are recoverable at the
+# level of one player. They are withheld below the threshold.
+
+suppress_severity <- function(results, min_n_severity = get_setting("min_n_severity", 2)) {
+  
+  below <- results$n_cases < min_n_severity
+  
+  for (column in c("median_timeloss", "total_timeloss",
+                   "burden_rate", "lower_bound", "upper_bound")) {
+    
+    if (column %in% names(results)) {
+      results[[column]][below] <- NA_real_
+    }
+  }
+  
+  results
+}
+
+
+# Footnote text generated from the thresholds actually in force, so the report
+# cannot describe a rule the code does not apply.
+suppression_footnote <- function(min_n_severity  = get_setting("min_n_severity", 2),
+                                 min_n_iqr       = get_setting("min_n_iqr", 5),
+                                 min_n_diagnosis = get_setting("min_n_diagnosis", 5)) {
+  
+  paste0(
+    "Case counts and incidence rates are shown for all categories. ",
+    "To protect player confidentiality, figures derived from individual players' ",
+    "time loss are withheld for small categories: median time loss and burden are ",
+    "shown only where there are at least ", min_n_severity, " cases; the interquartile ",
+    "range only where there are at least ", min_n_iqr, " cases; and an individual ",
+    "diagnosis only where at least ", min_n_diagnosis,
+    " cases of that diagnosis were recorded."
+  )
+}
+
+
+## Checks ----
+
+# Warn when rows are about to be excluded, so a silent drop becomes a visible one.
+report_dropped <- function(data, column, reason) {
+  
+  n <- sum(is.na(data[[column]]))
+  
+  if (n > 0) {
+    warning(n, " cases excluded because ", reason, ".", call. = FALSE)
+  }
+  
+  invisible(n)
 }
