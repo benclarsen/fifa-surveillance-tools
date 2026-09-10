@@ -25,9 +25,8 @@ if (!dir.exists(tools_dir)) {
 source(file.path(tools_dir, "R", "setup.R"))
 source(file.path(tools_dir, "R", "osiics.R"))
 source(file.path(tools_dir, "R", "deidentify.R"))
-
-# source(file.path(tools_dir, "R", "analysis.R"))   # added once analysis.R is rewritten
-
+source(file.path(tools_dir, "R", "analysis.R")) 
+source(file.path(tools_dir, "R", "tables.R"))
 
 ## Packages ----
 

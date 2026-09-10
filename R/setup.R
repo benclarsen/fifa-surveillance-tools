@@ -49,20 +49,31 @@ setup_project_folders <- function(path = ".") {
 # Build a path inside the competition's results folder, creating it if needed.
 # `output_dir` is normally set once in the competition's config.R; pass it
 # directly to override.
-make_output_path <- function(filename, output_dir = NULL) {
-  
-  if (is.null(output_dir)) {
-    
-    if (!exists("output_dir", envir = globalenv())) {
-      stop("`output_dir` is not set. Define it in config.R, or pass it to make_output_path().")
-    }
-    
-    output_dir <- get("output_dir", envir = globalenv())
-  }
+
+
+make_output_path <- function(filename, output_dir = get_setting("output_dir")) {
   
   if (!dir.exists(output_dir)) {
     dir.create(output_dir, recursive = TRUE, showWarnings = FALSE)
   }
   
   file.path(output_dir, filename)
+}
+
+
+## Configuration lookup ----
+
+# Look up a value defined in the competition's config.R, falling back to a
+# default. With no default, a missing setting is an error naming the setting.
+get_setting <- function(name, default = NULL) {
+  
+  if (exists(name, envir = globalenv(), inherits = FALSE)) {
+    return(get(name, envir = globalenv()))
+  }
+  
+  if (is.null(default)) {
+    stop("`", name, "` is not set. Define it in config.R.")
+  }
+  
+  default
 }
