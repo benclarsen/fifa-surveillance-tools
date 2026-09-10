@@ -23,6 +23,7 @@ if (!dir.exists(tools_dir)) {
 ## Function definitions ----
 
 source(file.path(tools_dir, "R", "setup.R"))
+source(file.path(tools_dir, "R", "osiics.R"))
 source(file.path(tools_dir, "R", "deidentify.R"))
 
 # source(file.path(tools_dir, "R", "analysis.R"))   # added once analysis.R is rewritten
