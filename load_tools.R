@@ -27,6 +27,8 @@ source(file.path(tools_dir, "R", "osiics.R"))
 source(file.path(tools_dir, "R", "deidentify.R"))
 source(file.path(tools_dir, "R", "analysis.R")) 
 source(file.path(tools_dir, "R", "tables.R"))
+source(file.path(tools_dir, "R", "notes.R"))
+
 
 ## Packages ----
 
