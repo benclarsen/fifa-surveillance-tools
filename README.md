@@ -97,7 +97,8 @@ used it.
 Each release is archived on Zenodo with its own DOI, so a paper can cite the
 exact version that produced its results. Cite the version you used.
 
-> Clarsen, B. fifa-surveillance-tools. Zenodo. DOI to be added.
+> Clarsen, B. *fifa-surveillance-tools*. Zenodo.
+> [https://doi.org/10.5281/zenodo.22715100](https://doi.org/10.5281/zenodo.22715100)
 
 ## Licence
 
@@ -105,4 +106,4 @@ MIT. See [LICENSE](LICENSE).
 
 ## Contact
 
-Ben Clarsen, FIFA Global Player Health Surveillance Programme.
+Ben Clarsen, FIFA Global Player Health Surveillance Programme. ben.clarsen@fifa.org
