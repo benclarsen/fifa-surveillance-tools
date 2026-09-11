@@ -19,16 +19,15 @@ if (!dir.exists(tools_dir)) {
   stop("`tools_dir` does not exist: ", tools_dir)
 }
 
-
 ## Function definitions ----
+#
+# Everything in R/ is sourced, in alphabetical order. These files define
+# functions and constants only - nothing runs on source - so order does not
+# matter, and a new file needs no change here.
 
-source(file.path(tools_dir, "R", "setup.R"))
-source(file.path(tools_dir, "R", "osiics.R"))
-source(file.path(tools_dir, "R", "deidentify.R"))
-source(file.path(tools_dir, "R", "analysis.R")) 
-source(file.path(tools_dir, "R", "tables.R"))
-source(file.path(tools_dir, "R", "notes.R"))
-
+for (file in sort(list.files(file.path(tools_dir, "R"), pattern = "\\.R$", full.names = TRUE))) {
+  source(file)
+}
 
 ## Packages ----
 

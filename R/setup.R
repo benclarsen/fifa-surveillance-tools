@@ -123,3 +123,17 @@ parse_date_dmy <- function(x) {
   if (inherits(x, "Date")) return(x)
   lubridate::dmy(x)
 }
+
+
+# Accept TRUE/FALSE written as a logical, as text, or as 0/1. Source files are
+# inconsistent about this and a silent NA is worse than a guess.
+parse_logical_loose <- function(x) {
+  
+  text <- tolower(as.character(x))
+  
+  dplyr::case_when(
+    text %in% c("true",  "yes", "1") ~ TRUE,
+    text %in% c("false", "no",  "0") ~ FALSE,
+    TRUE ~ NA
+  )
+}
