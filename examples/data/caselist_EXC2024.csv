@@ -1,0 +1,52 @@
+event_id;case_id;team;sex;player_id;date_incident;problem_type;subsequent_cat;recurrence_type;area_system;onset;mechanism;tissue;pathology;when_occurred;match_min;contact;contact_type;player_action;player_action_freetext;sanction;card;timeloss_expected;timeloss_confirmed;timeloss;timeloss_cat;osiics_16_code
+E0001;C0001;TMD;male;TMD022;27/05/2024;Injury;unknown;;Multiple systems;Gradual-onset;;Nervous;Peripheral nerve injury;;;;;;;;;15;11;11;timeloss;XNL
+E0002;C0002;TMG;male;TMG003;27/05/2024;Injury;index;;Neck;Sudden-onset;;Bone;Fracture;Match;19;Yes, direct contact (to injured body part);Opponent;Other:;unspecified action;Opponent committing foul;No card;10;8;8;timeloss;NF1
+E0003;C0003;TMC;male;TMC014;27/05/2024;Injury;index;;Foot;Sudden-onset;;Bone;Bone stress injury;Training;;Yes, direct contact (to injured body part);Opponent;Unknown;;;;47;44;44;timeloss;FS3
+E0004;C0004;TML;male;TML020;28/05/2024;Injury;index;;Chest;Sudden-onset;;Bone;Fracture;Training;;No;;Controlling the ball;;;;17;17;17;timeloss;CFC
+E0005;C0005;TMO;male;TMO002;29/05/2024;Injury;index;;Hip/groin;Sudden-onset;;Ligament/joint capsule;Joint sprain;Match;33;No;;Heading;;Injured player committing foul;Red card;6;7;7;timeloss;GD1
+E0006;C0006;TMG;male;TMG017;29/05/2024;Injury;index;;Chest;Sudden-onset;;Ligament/joint capsule;Joint sprain;Match;63;No;;Change of direction;;No foul;No card;3;;4;timeloss;CL1
+E0007;C0007;TMK;male;TMK021;29/05/2024;Injury;index;;Knee;Sudden-onset;;Muscle/tendon;Tendon rupture;Match;64;Yes, indirect contact (to other body part);Opponent;Running (any speed);;Opponent committing foul;No card;17;16;16;timeloss;KR1
+E0008;C0008;TMJ;male;TMJ007;29/05/2024;Injury;index;;Hip/groin;Sudden-onset;;Cartilage/synovium/bursa;Arthritis;Match;34;Yes, indirect contact (to other body part);Ball;Unknown;;Opponent committing foul;No card;42;37;37;timeloss;GAX
+E0009;C0009;TMN;male;TMN021;29/05/2024;Injury;index;;Shoulder;Sudden-onset;;Cartilage/synovium/bursa;Arthritis;Training;;Yes, indirect contact (to other body part);Ball;Controlling the ball;;;;6;2;2;timeloss;SA2
+E0010;C0010;TMF;male;TMF005;29/05/2024;Illness;index;;Musculoskeletal;Gradual-onset;;;Infection;;;;;;;;;2;;2;timeloss;MRIB
+E0011;C0011;TMD;male;TMD019;30/05/2024;Injury;index;;Shoulder;Gradual-onset;;Muscle/tendon;Tendon rupture;;;;;;;;;34;31;31;timeloss;SRI
+E0012;C0012;TMC;male;TMC020;30/05/2024;Injury;index;;Forearm;Sudden-onset;;Muscle/tendon;Laceration;Training;;No;;Other:;unspecified action;;;9;10;10;timeloss;RK1
+E0013;C0013;TMM;male;TMM001;30/05/2024;Injury;index;;Knee;Sudden-onset;;Muscle/tendon;Tendinopathy;Match;92;Yes, direct contact (to injured body part);Team mate;Running (any speed);;No foul;No card;17;16;16;timeloss;KT5
+E0014;C0014;TML;male;TML022;30/05/2024;Injury;unknown;;Thigh;Sudden-onset;;Muscle/tendon;Muscle injury;Match;6;Yes, indirect contact (to other body part);Opponent;Unknown;;No foul;No card;26;21;21;timeloss;TM2
+E0015;C0015;TMD;male;TMD023;30/05/2024;Injury;index;;Wrist;Sudden-onset;;Bone;Avascular necrosis;Match;88;No;;Hit by ball;;No foul;No card;13;12;12;timeloss;WES
+E0016;C0016;TMM;male;TMM008;30/05/2024;Illness;index;;Respiratory;Gradual-onset;;;Allergic;;;;;;;;;10;7;7;timeloss;MPAL
+E0017;C0017;TMB;male;TMB001;01/06/2024;Injury;index;;Foot;Sudden-onset;;Superficial tissues/skin;Contusion (superficial);Match;57;Yes, indirect contact (to other body part);Opponent;Falling;;No foul;No card;5;3;3;timeloss;FV3
+E0018;C0018;TMO;male;TMO010;01/06/2024;Injury;recurrent injury;late;Ankle;Sudden-onset;;Bone;Fracture;Match;78;Yes, direct contact (to injured body part);Team mate;Change of direction;;Opponent committing foul;No card;11;7;7;timeloss;AFD
+E0019;C0019;TMC;male;TMC005;02/06/2024;Injury;index;;Hip/groin;Sudden-onset;;Bone;Bone contusion;Match;89;No;;Tackle;;No foul;No card;279;;275;timeloss;GJX
+E0020;C0020;TMK;male;TMK020;02/06/2024;Injury;recurrent injury;late;Lumbosacral;Sudden-onset;;Muscle/tendon;Tendinopathy;Training;;No;;Unknown;;;;2;3;3;timeloss;LTP
+E0021;C0021;TMD;male;TMD019;02/06/2024;Illness;index;;Musculoskeletal;Gradual-onset;;;Developmental anomaly;;;;;;;;;5;3;3;timeloss;MRJT
+E0022;C0022;TMA;male;TMA010;03/06/2024;Injury;index;;Ankle;Sudden-onset;;Muscle/tendon;Muscle injury;Other;;No;;Landing;;;;217;214;214;timeloss;GM8
+E0023;C0023;TML;male;TML004;03/06/2024;Injury;index;;Hip/groin;Gradual-onset;;Bone;Bone stress injury;;;;;;;;;23;25;25;timeloss;GS1
+E0024;C0024;TMJ;male;TMJ022;03/06/2024;Injury;index;;Thigh;Sudden-onset;;Muscle/tendon;Muscle injury;Match;51;No;;Falling;;No foul;Yellow card;5;4;4;timeloss;TM1
+E0025;C0025;TMO;male;TMO003;03/06/2024;Injury;index;;Thoracic spine;Gradual-onset;;Ligament/joint capsule;Joint sprain;;;;;;;;;14;14;14;timeloss;DL1
+E0026;C0026;TMD;male;TMD017;04/06/2024;Injury;index;;Knee;Sudden-onset;;Ligament/joint capsule;Joint sprain;Match;37;Yes, direct contact (to injured body part);Opponent;Tackle;;Opponent committing foul;Yellow card;8;;9;timeloss;KL1
+E0027;C0027;TMG;male;TMG003;05/06/2024;Injury;index;;Hand;Sudden-onset;;Bone;Fracture;Match;14;No;;Controlling the ball;;Opponent committing foul;No card;10;;8;timeloss;PFC
+E0028;C0028;TMN;male;TMN016;05/06/2024;Injury;index;;Shoulder;Sudden-onset;;Bone;Fracture;Training;;Yes, direct contact (to injured body part);Opponent;Hit by ball;;;;5;;7;timeloss;SFO
+E0029;C0029;TMD;male;TMD007;05/06/2024;Injury;index;;Hand;Sudden-onset;;Bone;Fracture;Match;88;Yes, direct contact (to injured body part);Opponent;Heading;;No foul;No card;4;6;6;timeloss;PFP
+E0030;C0030;TMG;male;TMG019;05/06/2024;Injury;index;;Knee;Gradual-onset;;Cartilage/synovium/bursa;Synovitis/capsulitis;;;;;;;;;29;24;24;timeloss;KQH
+E0031;C0031;TMH;male;TMH014;05/06/2024;Injury;index;;Hand;Sudden-onset;;Cartilage/synovium/bursa;Synovitis/capsulitis;Match;37;Yes, direct contact (to injured body part);Team mate;Unknown;;No foul;No card;5;;5;timeloss;PQM
+E0032;C0032;TMO;male;TMO017;05/06/2024;Injury;index;;Foot;Sudden-onset;;Superficial tissues/skin;Contusion (superficial);Match;54;Yes, direct contact (to injured body part);Opponent;Unknown;;No foul;Yellow card;40;38;38;timeloss;FV2
+E0033;C0033;TMN;male;TMN001;05/06/2024;Injury;recurrent injury;early;Foot;Sudden-onset;;Muscle/tendon;Tendon rupture;Training;;Yes, indirect contact (to other body part);Opponent;Collision;;;;12;13;13;timeloss;FR1
+E0034;C0034;TMD;male;TMD005;05/06/2024;Injury;index;;Head;Sudden-onset;;Bone;Fracture;Training;;Yes, indirect contact (to other body part);Opponent;Other:;unspecified action;;;17;17;17;timeloss;HF2
+E0035;C0035;TMH;male;TMH016;05/06/2024;Injury;index;;Head;Sudden-onset;;Internal organs;Organ trauma;Match;44;No;;Running (any speed);;Opponent committing foul;No card;7;5;5;timeloss;HOU
+E0036;C0036;TMD;male;TMD012;05/06/2024;Injury;index;;Lower leg;Sudden-onset;;Muscle/tendon;Muscle injury;Training;;Yes, indirect contact (to other body part);Opponent;Falling;;;;5;4;4;timeloss;QMP
+E0037;C0037;TME;male;TME002;05/06/2024;Illness;index;;Dermatological;Gradual-onset;;;Neoplasm;;;;;;;;;6;3;3;timeloss;MDBL
+E0038;C0038;TMB;male;TMB012;06/06/2024;Injury;index;;Head;Sudden-onset;;Muscle/tendon;Laceration;Training;;Yes, indirect contact (to other body part);Opponent;Running (any speed);;;;14;;10;timeloss;HKP
+E0039;C0039;TMF;male;TMF011;06/06/2024;Injury;index;;Elbow;Sudden-onset;;Non-specific;Injury without tissue type specified;Match;55;No;;Heading;;No foul;Yellow card;46;48;48;timeloss;EPX
+E0040;C0040;TMK;male;TMK002;06/06/2024;Injury;recurrent injury;early;Hand;Sudden-onset;;Muscle/tendon;Laceration;Match;10;No;;Tackle;;Injured player committing foul;No card;2;2;2;timeloss;PK2
+E0041;C0041;TMJ;male;TMJ005;06/06/2024;Injury;recurrent injury;delayed;Upper arm;Sudden-onset;;Muscle/tendon;Tendinopathy;Match;89;No;;Other:;unspecified action;No foul;No card;11;10;10;timeloss;UT8
+E0042;C0042;TMJ;male;TMJ004;06/06/2024;Illness;index;;Musculoskeletal;Gradual-onset;;;Developmental anomaly;;;;;;;;;6;2;2;timeloss;MRJFF
+E0043;C0043;TMB;male;TMB015;07/06/2024;Injury;unknown;;Hand;Sudden-onset;;Bone;Fracture;Match;93;No;;Landing;;No foul;No card;7;3;3;timeloss;PFO
+E0044;C0044;TMF;male;TMF010;07/06/2024;Illness;index;;Musculoskeletal;Gradual-onset;;;Immunological/inflammatory;;;;;;;;;-1;1;1;timeloss;MRYS
+E0045;C0045;TMM;male;TMM013;10/06/2024;Injury;index;;Wrist;Sudden-onset;;Ligament/joint capsule;Chronic instability;Match;53;Yes, direct contact (to injured body part);Opponent;Change of direction;;Opponent committing foul;No card;15;;15;timeloss;WUW
+E0046;C0046;TME;male;TME022;10/06/2024;Injury;recurrent injury;early;Foot;Sudden-onset;;Muscle/tendon;Tendinopathy;Match;8;No;;Heading;;No foul;No card;1;2;2;timeloss;FTE
+E0047;C0047;TMI;male;TMI005;11/06/2024;Injury;index;;Hand;Sudden-onset;;Superficial tissues/skin;Contusion (superficial);Training;;Yes, direct contact (to injured body part);Opponent;Falling;;;;16;16;16;timeloss;PVT
+E0048;C0048;TMN;male;TMN007;11/06/2024;Injury;index;;Lumbosacral;Sudden-onset;;Bone;Fracture;Match;53;No;;Falling;;Opponent committing foul;Yellow card;5;2;2;timeloss;LFX
+E0049;C0049;TMA;male;TMA013;15/06/2024;Injury;index;;Hip/groin;Sudden-onset;;Muscle/tendon;Muscle injury;Match;54;No;;Falling;;No foul;No card;31;;30;timeloss;GM1
+E0050;C0050;TMA;male;TMA016;15/06/2024;Injury;index;;Lower leg;Sudden-onset;;Bone;Fracture;Match;83;No;;Heading;;Opponent committing foul;Red card;29;24;24;timeloss;QFQ
+E0051;C0051;TMA;male;TMA012;15/06/2024;Injury;recurrent injury;delayed;Abdomen;Sudden-onset;;Internal organs;Organ trauma;Match;13;Yes, direct contact (to injured body part);Opponent;Tackle;;Opponent committing foul;No card;9;6;6;timeloss;OOX
