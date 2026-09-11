@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it using these metadata."
+title: fifa-surveillance-tools
+abstract: >-
+  Shared tools, templates and synthetic data for FIFA Player Health
+  Surveillance analyses, covering injury and illness incidence, burden,
+  OSIICS 16 coding, disclosure control and report generation.
+type: software
+authors:
+  - family-names: Clarsen
+    given-names: Ben
+    # orcid: "https://orcid.org/0000-0003-3713-8938"
+license: MIT
+repository-code: "https://github.com/benclarsen/fifa-surveillance-tools"
+doi: 10.5281/zenodo.22715101
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.22715100
+    description: Concept DOI, resolves to the latest version
+version: v2.0.0
+date-released: "2026-09-11"
+keywords:
+  - sports injury surveillance
+  - epidemiology
+  - football
+  - OSIICS
+  - reproducibility
