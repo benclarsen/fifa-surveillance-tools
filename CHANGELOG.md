@@ -7,92 +7,82 @@ newest first.
 ## September 2026 — library restructure and defect fixes
 
 The repository has been restructured from a flat folder of scripts into a
-shared library plus per-competition project templates, and a number of defects
-have been fixed. Several of those defects changed published numbers.
+shared library plus per-competition project templates, and five defects that
+changed results have been fixed.
 
-The previous public version remains reachable at commit `893bdc8`.
+The previous version remains reachable at commit `893bdc8`.
 
 
 ### If you used an earlier version of this code
 
-Four of the fixes below change results. If you have run an analysis with the
-earlier code, the following outputs may have moved:
+Five defects in the published code changed results. If you have run an analysis
+with it, the following outputs moved.
 
-- **Training exposure, and every rate that uses it.** The surveillance period
-  began at each team's first match, so training recorded before the first match
-  was discarded. Exposure was therefore too low and training and overall rates
-  too high.
+- **"All injuries" incidence and burden were too high.** The all-injuries rows
+  were calculated from the whole case list without filtering to
+  `problem_type == "Injury"`, so illnesses were counted as injuries. The match
+  and training rows did filter on `when_occurred`, so the subgroups never
+  summed to the total. Illness rows were calculated separately and are
+  unaffected.
 
-- **Match exposure, and match rates.** Match exposure was not restricted to
-  consenting players, while the case list was. The match denominator was
-  therefore too large and match rates too low.
+- **"All injuries" also included cases recorded as occurring outside training
+  and matches.** Those cases have no exposure denominator. They sat in the
+  all-injuries numerator against total exposure, inflating it further.
 
-- **Injury burden.** The burden calculation did not filter to injuries, so time
-  loss from illnesses was counted as injury burden. Injury burden was too high.
+- **Player ages were up to a year too high.** `calculate_age()` subtracted a
+  year only when the whole comparison date fell before the whole date of birth,
+  which is never true for a living player, so the adjustment for a birthday not
+  yet reached never happened. This affects the player characteristics table
+  only, not any rate.
 
-- **Pattern tables in the report.** The pattern table functions wrote to a
-  hard-coded filename, so every pattern table overwrote the last. The report
-  displayed whichever table was written most recently under the label of
-  another.
+- **Participation counts were overstated where consent was missing.** Consent
+  was tested with `==`, which returns `NA` rather than `FALSE` for a missing
+  value. The `NA` survived into `n_distinct()` and was counted as an additional
+  team and an additional player.
 
-To check your own results, re-run the analysis with the current code and
-compare total training hours, total match hours, the injury burden estimates,
-and the pattern tables. Case counts and incidence denominators for illness are
-unaffected.
+- **Cases with no subsequent-injury category were silently dropped.**
+  Exacerbations were excluded with `subsequent_cat != "exacerbation"`, and
+  `NA != "exacerbation"` is `NA`, which `filter()` discards. Case counts were
+  therefore too low wherever that field was incomplete.
+
+To check your own results, re-run with the current code and compare the
+all-injuries incidence and burden rows, the total case count, the participation
+table and the player characteristics table.
+
+
+### What this repository does not cover
+
+Preparing a competition's source data and building its exposure denominator
+have always been competition-specific work, done outside this repository. No
+preprocessing or exposure script was ever published here, so nothing in this
+changelog speaks to how any particular competition's exposure was calculated.
+`templates/scripts/` now includes those steps as a starting point, with the
+decisions they require documented in the script headers, but they are expected
+to be edited for every competition.
 
 
 ### Fixed
 
-- **Surveillance period.** Each team's period now runs from their first
-  recorded training exposure, not from their first match. Teams arrive at
-  different times and record from arrival.
+- The all-injuries rows filter to injuries, and cases recorded as occurring
+  neither in training nor in a match are excluded from all rates and summary
+  tables, reported separately, and never dropped silently. A missing value for
+  when the case occurred means gradual onset and is retained.
 
-- **Match exposure and consent.** Match exposure is now restricted to
-  consenting players, matching the case list. The unrestricted file is retained
-  for the potential injury analysis, which observes every player on the pitch
-  from broadcast footage and so uses a different denominator from the same
-  source.
+- `calculate_age()` compares month and day, so a birthday not yet reached
+  subtracts a year.
 
-- **Burden.** The burden calculation now filters to injuries.
+- Consent and exacerbation are tested with `%in%` rather than `==` and `!=`, so
+  a missing value is treated as not matching rather than propagating or
+  discarding the row.
 
-- **Pattern tables.** Each pattern table is written to its own file, named by
-  the analysis that produced it.
-
-- **Age.** `calculate_age()` did not subtract a year for a birthday not yet
-  reached, so ages were up to a year too high in the player characteristics
-  table.
-
-- **Consent.** Consent was tested with `==`, which returns `NA` for a missing
-  value rather than `FALSE`, so players and teams with no recorded consent were
-  counted as consenting. Tested with `%in%` throughout.
-
-- **Cases outside training and matches.** Cases recorded as occurring neither
-  in training nor in a match have no exposure denominator. They were included
-  in rates. They are now excluded from all rates and summary tables, reported
-  separately, and never dropped silently. A missing value means gradual onset
-  and is retained.
-
-- **Exacerbations.** Filtered with `%in%` rather than `!=`, so a case with no
-  subsequent-injury category is kept rather than silently dropped.
-
-- **Taxonomy join.** The case list and the OSIICS reference both carry
-  `problem_type`. An unspecified join keyed on it as well as the code and
-  produced missing taxonomy wherever the two disagreed. The join is now on the
-  code alone.
-
-- **Imputation of missing training exposure.** The previous code took a single
-  imputed dataset and discarded the rest, making the result depend on an
-  arbitrary draw. All draws are now used, and the range across draws is
-  reported alongside the value used.
-
-- **Team-day training value.** Taken as the median of the players who recorded
-  something, rather than the mode, which returns an arbitrary first value when
-  players differ.
+- The case list and the OSIICS reference both carry `problem_type`. The join is
+  now specified on the code alone; an unspecified join keyed on both and
+  produced missing taxonomy wherever the two disagreed.
 
 
 ### Changed
 
-- The repository is now a shared library. `load_tools.R` is the entry point and
+- The repository is a shared library. `load_tools.R` is the entry point and
   sources everything in `R/`. Analysis functions, table functions, figures,
   de-identification, OSIICS handling and run notes are separated by purpose.
 
@@ -119,9 +109,12 @@ unaffected.
 
 - OSIICS 16 combines hip and groin into one body area. The football-specific
   extension of the IOC consensus statement (Waldén et al., 2023) recommends
-  reporting them separately, so codes can now be reassigned per competition
-  through `config.R`. Aligning the OSIICS reference itself with the consensus
-  statement remains outstanding.
+  reporting them separately, so codes can be reassigned per competition through
+  `config.R`. Aligning the OSIICS reference itself with the consensus statement
+  recommendations remains outstanding.
+
+- Missing training exposure is imputed across all draws rather than one, with
+  the range across draws reported alongside the value used.
 
 
 ### Added
@@ -150,7 +143,8 @@ unaffected.
 - The Sankey diagram, which is no longer produced. The script is retained under
   `dev/`.
 
-- Medical attention outcomes. Reporting is time loss only.
+- Medical attention outcomes. Reporting is time loss only, in line with the
+  reporting threshold now used across the programme.
 
 
 ### Known gaps
@@ -158,3 +152,5 @@ unaffected.
 - `templates/report_surveillance_plainlanguage.Rmd` still reads
   `overall_results.csv`, which the current pipeline does not write. The
   plain-language report does not run and is awaiting rebuild.
+
+- `README.md` still describes the previous folder layout.
