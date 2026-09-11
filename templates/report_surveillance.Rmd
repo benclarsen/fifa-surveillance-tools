@@ -1,98 +1,197 @@
 ---
 title: "Player Health Surveillance Results"
-subtitle: "FIFA Arab Cup Qatar 2025"
-author: "Ben Clarsen"
-date: "`r Sys.Date()`"
-output: 
+subtitle: "`r params$competition_name`"
+date: "`r format(Sys.Date(), '%d %B %Y')`"
+params:
+  competition_name: "Competition"
+  results_dir: "."
+  suppression_note: ""
+output:
   word_document:
-      reference_docx: word-styles-reference-02.docx
+    reference_docx: word-styles-reference-02.docx
 ---
 
 ```{r setup, include=FALSE}
-# Global knitr options (tweak as you like)
-knitr::opts_chunk$set(
-  echo    = FALSE,
-  message = FALSE,
-  warning = FALSE
-)
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
 
-# Libraries
 library(readr)
 library(dplyr)
 library(flextable)
 library(officer)
-library(scales)
 
-# Absolute path to your results folder
- res_dir <- "~/Library/CloudStorage/OneDrive-FIFA.org/Projects (FIFA)/Competition surveillance projects - current/2025-FAC-Qatar/03_Analysis/Results"
+res_dir <- params$results_dir
 
-
-# Apply global defaults to all flextables created after this call
 flextable::set_flextable_defaults(
-  #theme_fun   = flextable::theme_zebra, # base table look
-  font.family = "Open Sans Light",                # font family
-  font.size   = 9,                       # font size
-  padding     = 3                         # cell padding
+  font.family = "Open Sans Light",
+  font.size   = 9,
+  padding     = 3
 )
 
-
-# Number formatter: 2 dp when needed, no trailing .00 for integers
-fmt <- scales::label_number(accuracy = 0.01, drop0trailing = TRUE)
-
-# Thin border (width in points)
 thin_border <- officer::fp_border(color = "black", width = 0.3)
 
-# ---- Reusable helpers ----
 
-# 1) Read a CSV and format all numeric columns using `fmt`
-read_fmt_csv <- function(path) {
-  readr::read_csv(path, show_col_types = FALSE) %>%
-    mutate(across(where(is.numeric), ~ fmt(.x)))
+# Read a result file. Values are already formatted by the analysis, so nothing
+# is rounded or reformatted here - the report displays what the analysis wrote.
+read_result <- function(name) {
+  readr::read_csv(
+    file.path(res_dir, paste0(name, ".csv")),
+    show_col_types = FALSE
+  )
 }
 
-# 2) Standard flextable styling:
-#    - remove header row
-#    - remove all borders
-#    - add thin top & bottom rules only
-#    - full-width table, autofit
 
-library(flextable)
-library(officer) # for fp_border
+# Does a result file exist? Some are only written when there is something to
+# report.
+has_result <- function(name) {
+  file.exists(file.path(res_dir, paste0(name, ".csv")))
+}
 
+
+# Look a value up by name rather than by position. The previous version indexed
+# results as df[4, 11], which silently returns the wrong number as soon as a row
+# or column order changes upstream.
+result_value <- function(data, key, key_column = 1, value_column = 2) {
+
+  match <- data[[value_column]][data[[key_column]] == key]
+
+  if (length(match) == 0) return(NA_character_)
+
+  as.character(match[1])
+}
+
+
+# Standard table styling: no borders except a rule above and below the body,
+# first column left aligned, the rest centred.
 style_ft <- function(ft) {
-  # Number of display columns in the flextable
+
   ncols <- flextable::ncol_keys(ft)
 
-  ft %>%
-    # Apply zebra theme to body rows first
+  ft <- ft %>%
     theme_zebra() %>%
-    # Remove all borders everywhere (header, body, footer)
     border_remove() %>%
-    # As some document templates still show outer borders, explicitly clear them
-    border_outer(part = "all", border = fp_border(color = "transparent", width = 0)) %>%
-    border_inner_h(part = "all", border = fp_border(color = "transparent", width = 0)) %>%
-    border_inner_v(part = "all", border = fp_border(color = "transparent", width = 0)) %>%
-
-    # Header styling: white background, not bold, left-align first column, center the rest
     bg(part = "header", bg = "white") %>%
     bold(part = "header", bold = FALSE) %>%
-    align(j = 1, align = "left",   part = "header") %>%
-    align(j = 2:ncols, align = "center", part = "header") %>%
-
-    # Body alignment: left first column, center the rest
-    align(j = 1, align = "left",   part = "body") %>%
-    align(j = 2:ncols, align = "center", part = "body") %>%
-
-    # Reintroduce only the horizontal top & bottom lines on the body
+    align(j = 1, align = "left", part = "all") %>%
     hline_top(part = "header", border = thin_border) %>%
     hline_top(part = "body", border = thin_border) %>%
     hline_bottom(part = "body", border = thin_border) %>%
-
-    # Fit layout
     set_table_properties(width = 1, layout = "autofit")
+
+  # A one-column table has nothing to centre, and 2:1 would reverse the columns.
+  if (ncols > 1) {
+    ft <- align(ft, j = 2:ncols, align = "center", part = "all")
+  }
+
+  ft
 }
 
 
+# A two-column metric/value table with no header row.
+value_table <- function(data) {
+  flextable(data) %>%
+    style_ft() %>%
+    delete_part(part = "header") %>%
+    hline_top(part = "body", border = thin_border)
+}
+
+
+# A pattern table: incidence, severity and burden through the taxonomy.
+#
+# `labels` names each level in order, outermost first. The first is bold, the
+# last italic, and each is indented one step further than the last. One
+# function serves both the body-area and tissue-type tables, which were
+# sixty near-identical lines each.
+pattern_table <- function(data, labels, footnote = NULL) {
+
+  levels_present <- sort(unique(data$level))
+
+  header_normal <- fp_text(font.family = "Open Sans Light", font.size = 9)
+  header_bold   <- fp_text(font.family = "Open Sans Light", font.size = 9, bold = TRUE)
+  header_italic <- fp_text(font.family = "Open Sans Light", font.size = 9, italic = TRUE)
+
+  # The first header cell lists the levels on separate lines, indented to match
+  # the body rows beneath them.
+  chunks <- list()
+
+  for (i in seq_along(labels)) {
+
+    props <- if (i == 1) {
+      header_bold
+    } else if (i == length(labels)) {
+      header_italic
+    } else {
+      header_normal
+    }
+
+    chunks <- c(chunks, list(as_chunk(paste0(strrep("\u00A0", (i - 1) * 5), labels[i]),
+                                      props = props)))
+
+    if (i < length(labels)) chunks <- c(chunks, list("\n"))
+  }
+
+  ft <- flextable(data)
+
+  # Body formatting by level. Row indices rather than formulas, so the level
+  # values are taken from the data and not from the calling environment.
+  for (i in seq_along(levels_present)) {
+
+    rows <- which(data$level == levels_present[i])
+    if (length(rows) == 0) next
+
+    if (i == 1) {
+      ft <- bold(ft, i = rows, j = "label", bold = TRUE)
+      ft <- bg(ft, i = rows, j = 1:ncol(data), bg = "grey95", part = "body")
+    } else {
+      ft <- padding(ft, i = rows, j = "label", padding.left = (i - 1) * 10)
+      ft <- italic(ft, i = rows, j = "label",
+                   italic = i == length(levels_present))
+      ft <- bg(ft, i = rows, j = 1:ncol(data), bg = "white", part = "body")
+    }
+  }
+
+  ft %>%
+    style_ft() %>%
+    # Alignment applied before the level column is dropped: estimates right,
+    # intervals left, so each pair reads as one value.
+    align(j = 2,          align = "left",  part = "all") %>%
+    align(j = c(4, 6, 8), align = "right", part = "all") %>%
+    align(j = c(5, 7, 9), align = "left",  part = "all") %>%
+    hline_top(part = "body", border = thin_border) %>%
+    delete_columns(j = "level") %>%
+    merge_at(j = 3:4, part = "header") %>%
+    merge_at(j = 5:6, part = "header") %>%
+    merge_at(j = 7:8, part = "header") %>%
+    compose(part = "header", j = 1, value = do.call(as_paragraph, chunks)) %>%
+    compose(part = "header", j = 2,
+            value = as_paragraph(as_chunk("Cases\n(n)", props = header_normal))) %>%
+    compose(part = "header", j = 3,
+            value = as_paragraph(as_chunk("Incidence\n[95% CI]", props = header_normal))) %>%
+    compose(part = "header", j = 5,
+            value = as_paragraph(as_chunk("Median time loss\n(IQR)", props = header_normal))) %>%
+    compose(part = "header", j = 7,
+            value = as_paragraph(as_chunk("Burden\n[95% CI]", props = header_normal))) %>%
+    align(j = 1,   align = "left",   part = "header") %>%
+    align(j = 2:8, align = "center", part = "header") %>%
+    valign(valign = "bottom", part = "header") %>%
+    font(part = "body", fontname = "Open Sans Light") %>%
+    fontsize(part = "body", size = 9) %>%
+    add_footer_lines(values = c(footnote, params$suppression_note)) %>%
+    font(part = "footer", fontname = "Open Sans Light") %>%
+    fontsize(part = "footer", size = 7) %>%
+    align(align = "left", part = "footer") %>%
+    autofit()
+}
+
+
+# Top rows of a distribution, for the potential injury breakdowns.
+top_rows <- function(name, n = 3, label = "") {
+
+  data <- read_result(name) %>% slice_head(n = n)
+
+  names(data) <- c(label, "n", "%")
+
+  flextable(data) %>% style_ft()
+}
 ```
 
 <br>
@@ -100,12 +199,7 @@ style_ft <- function(ft) {
 **Participants**
 
 ```{r}
-df <- read_fmt_csv(file.path(res_dir, "participation_table.csv"))
-ft <- flextable(df) %>% style_ft() %>%  
-    delete_part(part = "header") %>%
-      hline_top(part = "body", border = thin_border) 
-
-ft
+value_table(read_result("participation_table"))
 ```
 
 <br>
@@ -113,10 +207,9 @@ ft
 **Player characteristics**
 
 ```{r}
-df <- read_fmt_csv(file.path(res_dir, "player_characteristics_table.csv"))
-ft <- flextable(df) %>% 
-  style_ft()
-ft
+flextable(read_result("player_characteristics_table")) %>%
+  style_ft() %>%
+  set_header_labels(Variable = "")
 ```
 
 <br>
@@ -124,38 +217,29 @@ ft
 **Exposure**
 
 ```{r}
-
-
-
-library(readr)
-library(flextable)
-
-df <- read_fmt_csv(file.path(res_dir, "exposure_table.csv"))
-
-# Convert character columns to best types (incl. numeric).
-# Adjust locale if your CSV uses comma decimals.
-
-ft <- flextable(df) %>%
-  style_ft() %>%
-      delete_part(part = "header") %>%
-        hline_top(part = "body", border = thin_border) 
-
-
-
-ft
-
+value_table(read_result("exposure_table"))
 ```
 
 \pagebreak
 
-**Basic numbers**
+**Health problems recorded**
 
 ```{r}
-df <- read_fmt_csv(file.path(res_dir, "basic_numbers_table.csv"))
-ft <- flextable(df) %>% style_ft() %>%  
-    hline_top(part = "body", border = thin_border) %>%
-  set_header_labels(problem_type = "") 
-ft
+flextable(read_result("basic_numbers_table")) %>%
+  style_ft() %>%
+  set_header_labels(problem_type = "")
+```
+
+```{r results='asis'}
+if (has_result("cases_outside_training_and_matches")) {
+
+  excluded <- read_result("cases_outside_training_and_matches")
+
+  cat("\nNote: ", nrow(excluded),
+      " case(s) occurred outside training and matches and are excluded from all ",
+      "rates and summary tables, as there is no exposure denominator for them.\n",
+      sep = "")
+}
 ```
 
 <br>
@@ -163,401 +247,123 @@ ft
 **Subsequent cases**
 
 ```{r}
-df <- read_fmt_csv(file.path(res_dir, "subsequent_table.csv"))
-ft <- flextable(df) %>% style_ft() %>%  
-  hline_top(part = "body", border = thin_border)
-ft
-```
-Note: One injury registered as recurrent but date of previous RTP unknown
-<br>
-
-**Overall injury rates (per 1000h)**
-
-```{r}
-
-library(flextable)
-
-df <- read_fmt_csv(file.path(res_dir, "injury_table.csv"))
-ft <- flextable(df) %>%
+flextable(read_result("subsequent_table")) %>%
   style_ft() %>%
-  hline_top(part = "body", border = thin_border) %>%
-  compose(part = "header", j = 2, value = as_paragraph("Exposure\n(h)")) %>%
-  compose(part = "header", j = 3, value = as_paragraph("Cases\n(n)")) %>%
-  compose(part = "header", j = 4, value = as_paragraph("Incidence rate\n[95% CI]")) %>%
-  compose(part = "header", j = 5, value = as_paragraph("Time loss\n(days)")) %>%
-  compose(part = "header", j = 6, value = as_paragraph("Burden rate\n[95% CI]")) %>%
-  set_header_labels(outcome = "")
-
-# Indent the first column only
-ft <- padding(ft, i = 2:3, j = 1, padding.left = 5)
-ft <- padding(ft, i = 4:5, j = 1, padding.left = 10)
-
-ft
-
+  set_header_labels(problem_type = "")
 ```
 
 <br>
 
-**Incidence and burden rates for injury, illness, and mental health problems (per 1000 player days)**
+**Injury incidence and burden, per 1000 hours**
 
 ```{r}
-df <- read_fmt_csv(file.path(res_dir, "health_problems_table.csv"))
-ft <- flextable(df) %>% style_ft() %>%  
-  hline_top(part = "body", border = thin_border) %>%
-    compose(part = "header", j = 2, value = as_paragraph("Exposure\n(days)")) %>%
-  compose(part = "header", j = 3, value = as_paragraph("Cases\n(n)")) %>%
-  compose(part = "header", j = 4, value = as_paragraph("Incidence rate\n[95% CI]")) %>%
- compose(part = "header", j = 5, value = as_paragraph("Time loss\n(days)")) %>%
-  compose(part = "header", j = 6, value = as_paragraph("Burden rate\n[95% CI]")) %>%
-      set_header_labels(outcome = "") 
-
-ft
-```
-
-\pagebreak
-
-**Pattern of all time-loss injuries by body area, pathology type and selected diagnoses**
-
-```{r}
-library(dplyr)
-library(flextable)
-
-# --- Data ---
-df <- read_fmt_csv(file.path(res_dir, "table_injury_all_tl_1_3_4.csv")) %>%
-  filter(level != 2) 
-
-# Indent simulation in the first header cell (multi-line)
-nbsp10 <- strrep("\u00A0", 5)  # small indent
-nbsp20 <- strrep("\u00A0", 10)  # larger indent
-
-# Define header chunk props: Open Sans Light size 9
-hdr_normal <- fp_text(font.family = "Open Sans Light", font.size = 9)
-hdr_bold   <- fp_text(font.family = "Open Sans Light", font.size = 9, bold = TRUE)
-hdr_italic <- fp_text(font.family = "Open Sans Light", font.size = 9, italic = TRUE)
-
-ft <- flextable(df) %>%
+flextable(read_result("injury_table")) %>%
   style_ft() %>%
-  # Body alignment
-  align(j = 2,           align = "left",  part = "all") %>%
-  align(j = c(4, 6, 8),  align = "right", part = "all") %>%
-  align(j = c(5, 7, 9),  align = "left",  part = "all") %>%
-  # Body row formatting based on 'level'
-  bold(   i = ~ level == 1, j = "label", bold = TRUE) %>%
-  padding(i = ~ level == 3, j = 2, padding.left = 10) %>%
-  padding(i = ~ level == 4, j = 2, padding.left = 20) %>%
-  italic( i = ~ level == 4, j = 2, italic = TRUE) %>%
-   # Body row formatting based on 'level'
-  bg(i = ~ level == 1, j = 1:9, bg = "grey95", part = "body") %>% 
-  bg(i = ~ level != 1, j = 1:9, bg = "white", part = "body") %>% 
-
-  # Top border for body
-  hline_top(part = "body", border = thin_border) %>%
-  # Drop first column (level)
-  delete_columns(j = 1) %>%
-  # Merge header spans (single header row)
-  merge_at(j = 3:4, part = "header") %>%
-  merge_at(j = 5:6, part = "header") %>%
-  merge_at(j = 7:8, part = "header") %>%
-  # Header labels (apply chunk props to ensure font)
-  compose(
-    part = "header", j = 2,
-    value = as_paragraph(as_chunk("Cases\n(n)", props = hdr_normal))
-  ) %>%
-  compose(
-    part = "header", j = 3,
-    value = as_paragraph(as_chunk("Incidence\n[95% CI]", props = hdr_normal))
-  ) %>%
-  compose(
-    part = "header", j = 5,
-    value = as_paragraph(as_chunk("Median time loss\n(IQR)", props = hdr_normal))
-  ) %>%
-  compose(
-    part = "header", j = 7,
-    value = as_paragraph(as_chunk("Burden\n[95% CI]", props = hdr_normal))
-  ) %>%
-  # First header cell: three lines with per-chunk font props
-  compose(
-    part  = "header", j = 1,
-    value = as_paragraph(
-      as_chunk("Body part",                 props = hdr_bold),   "\n",
-      as_chunk(paste0(nbsp10, "Pathology type"), props = hdr_normal), "\n",
-      as_chunk(paste0(nbsp20, "Diagnosis"),      props = hdr_italic)
-    )
-  ) %>%
-  # Header alignment (first cell left, others centered)
-  align(j = 1,   align = "left",   part = "header") %>%
-  align(j = 2:8, align = "center", part = "header") %>%
-  valign(valign = "bottom", part = "header") %>%
-  # Body font (Open Sans Light size 9)
-  font(part = "body",   fontname = "Open Sans Light") %>%
-  fontsize(part = "body", size = 9) %>%
-  # Fit columns
-  autofit()
-
-ft <- ft %>%
-  add_footer_lines(
-    values = "For confidentiality reasons, specific diagnoses are only presented if five or more of the same diagnosis were recorded. Median time loss is only reported for categories with more than one case, Interquartile range (IQR) for time-loss days is only reported for subcategories containing five or more cases. Non-specific diagnoses are not included."
-  ) %>%
+  set_header_labels(Outcome = "") %>%
+  add_footer_lines(values = paste(
+    "Match and training injuries do not sum to all injuries: gradual-onset",
+    "injuries have no single setting of occurrence and appear in neither row."
+  )) %>%
   font(part = "footer", fontname = "Open Sans Light") %>%
   fontsize(part = "footer", size = 7) %>%
-  align(j = 1:8, align = "left", part = "footer")
-
-ft
-
+  align(align = "left", part = "footer")
 ```
 
-\pagebreak
+<br>
 
-**Pattern of all time-loss injuries by tissue and pathology type**
+**All health problems, per 1000 player-days**
 
 ```{r}
-library(dplyr)
-library(flextable)
-
-# --- Data ---
-df <- read_fmt_csv(file.path(res_dir, "table_injury_all_tl_2_3.csv")) 
-
-# Indent simulation in the first header cell (multi-line)
-nbsp10 <- strrep("\u00A0", 5)  # small indent
-nbsp20 <- strrep("\u00A0", 10)  # larger indent
-
-# Define header chunk props: Open Sans Light size 9
-hdr_normal <- fp_text(font.family = "Open Sans Light", font.size = 9)
-hdr_bold   <- fp_text(font.family = "Open Sans Light", font.size = 9, bold = TRUE)
-hdr_italic <- fp_text(font.family = "Open Sans Light", font.size = 9, italic = TRUE)
-
-ft <- flextable(df) %>%
+flextable(read_result("health_problems_table")) %>%
   style_ft() %>%
-  # Body alignment
-  align(j = 2,           align = "left",  part = "all") %>%
-  align(j = c(4, 6, 8),  align = "right", part = "all") %>%
-  align(j = c(5, 7, 9),  align = "left",  part = "all") %>%
-  # Body row formatting based on 'level'
-  bold(   i = ~ level == 2, j = "label", bold = TRUE) %>%
-  padding(i = ~ level == 3, j = 2, padding.left = 10) %>%
-  
-   # Body row formatting based on 'level'
-  bg(i = ~ level == 2, j = 1:9, bg = "grey95", part = "body") %>% 
-  bg(i = ~ level != 2, j = 1:9, bg = "white", part = "body") %>% 
-
-  # Top border for body
-  hline_top(part = "body", border = thin_border) %>%
-  # Drop first column (level)
-  delete_columns(j = 1) %>%
-  # Merge header spans (single header row)
-  merge_at(j = 3:4, part = "header") %>%
-  merge_at(j = 5:6, part = "header") %>%
-  merge_at(j = 7:8, part = "header") %>%
-  # Header labels (apply chunk props to ensure font)
-  compose(
-    part = "header", j = 2,
-    value = as_paragraph(as_chunk("Cases\n(n)", props = hdr_normal))
-  ) %>%
-  compose(
-    part = "header", j = 3,
-    value = as_paragraph(as_chunk("Incidence\n[95% CI]", props = hdr_normal))
-  ) %>%
-  compose(
-    part = "header", j = 5,
-    value = as_paragraph(as_chunk("Median time loss\n(IQR)", props = hdr_normal))
-  ) %>%
-  compose(
-    part = "header", j = 7,
-    value = as_paragraph(as_chunk("Burden\n[95% CI]", props = hdr_normal))
-  ) %>%
-  # First header cell: three lines with per-chunk font props
-  compose(
-    part  = "header", j = 1,
-    value = as_paragraph(
-      as_chunk("Tissue type",                 props = hdr_bold),   "\n",
-      as_chunk(paste0(nbsp10, "Pathology type"), props = hdr_normal)
-    )
-  ) %>%
-  # Header alignment (first cell left, others centered)
-  align(j = 1,   align = "left",   part = "header") %>%
-  align(j = 2:8, align = "center", part = "header") %>%
-  valign(valign = "bottom", part = "header") %>%
-  # Body font (Open Sans Light size 9)
-  font(part = "body",   fontname = "Open Sans Light") %>%
-  fontsize(part = "body", size = 9) %>%
-  # Fit columns
-  autofit()
-
-
-
-ft <- ft %>%
-  add_footer_lines(
-    values = "Median time-loss is shown for tissue type categories with more than one case, with inter-quartile range (IQR) shown if there were 5 or more cases. Injury incidence rates, median time-loss days, and burden rates are only reported for pathology type subcategories containing five or more cases."
-  ) %>%
-  font(part = "footer", fontname = "Open Sans Light") %>%
-  fontsize(part = "footer", size = 7) %>%
-  align(j = 1:8, align = "left", part = "footer")
-
-ft
-
+  set_header_labels(Outcome = "")
 ```
 
 \pagebreak
 
-**Risk matrix depicting the relationship between incidence rates and severity of time-loss injuries. The darker the background colour, the greater the burden. The curved isobars depict an equal burden of 10, 20, 50 and 100 days lost per 1000h. Vertical and horizontal error bars represent 95% CIs.**
+**Pattern of time-loss injuries by body area, pathology type and diagnosis**
+
+```{r}
+pattern_table(
+  read_result("pattern_injury_all"),
+  labels = c("Body area", "Pathology type", "Diagnosis")
+)
+```
+
+\pagebreak
+
+**Pattern of time-loss injuries by tissue type and pathology type**
+
+```{r}
+pattern_table(
+  read_result("pattern_tissue_all"),
+  labels = c("Tissue type", "Pathology type")
+)
+```
+
+\pagebreak
+
+**Risk matrix: incidence rate against average severity of time-loss injuries. The darker the background, the greater the burden. The curved isobars mark equal burden, in days lost per 1000 hours. Vertical and horizontal bars are 95% confidence intervals; a bar running to the panel edge extends beyond it. Severity here is the mean time loss per case, because burden is incidence multiplied by mean severity; the tables report medians.**
 
 ```{r echo=FALSE, fig.align='center', out.width='100%'}
 knitr::include_graphics(file.path(res_dir, "risk_matrix.png"))
-
 ```
 
 \pagebreak
 
-**Distribution of injuries by onset, setting, type of contact, and player action.**
-
-```{r echo=FALSE, fig.align='center', out.width='100%'}
-knitr::include_graphics(file.path(res_dir, "sankey.png"))
-
-```
-
-\pagebreak
-
-**Number of injuries by body area and time lost from normal football participation**
+**Number of injuries by body area and time lost from football**
 
 ```{r}
-library(readr)
-library(dplyr)
-library(flextable)
-library(grDevices)
+severity <- read_result("severity_by_body_area")
 
-# --- Read the CSV with explicit types ---
-df <- read_csv(file.path(res_dir, "time_loss_table.csv"),
-               col_types = cols(
-                 osiics_16_level_1 = col_character(),
-                 `1-3 days`        = col_double(),
-                 `4-7 days`        = col_double(),
-                 `8-28 days`       = col_double(),
-                 `29-90 days`      = col_double(),
-                 `91-180 days`     = col_double(),
-                 Total             = col_double()
-               ),
-               na = c("NA", "", " ")
-)
+numeric_columns <- names(severity)[-1]
 
-# Columns to heatmap (all numeric bins + Total)
-num_cols <- names(df)[-1]
+palette <- grDevices::colorRampPalette(c("#F7FBFF", "#6BAED6", "#084594"))(100)
+range_all <- range(unlist(severity[numeric_columns]), na.rm = TRUE)
 
-# --- Global palette and range ---
-pal     <- colorRampPalette(c("#F7FBFF", "#6BAED6", "#084594"))  # Blues
-levels  <- pal(100)
-rng     <- range(unlist(df[num_cols]), na.rm = TRUE)
-if (!is.finite(rng[1]) || !is.finite(rng[2]) || rng[1] == rng[2]) {
-  rng <- c(0, ifelse(is.finite(rng[2]) && rng[2] != 0, rng[2], 1))
+if (!all(is.finite(range_all)) || range_all[1] == range_all[2]) {
+  range_all <- c(0, max(1, range_all[2], na.rm = TRUE))
 }
 
-# Map numeric vector to heatmap colors (global scale)
-col_colors <- function(v) {
-  norm <- (v - rng[1]) / (rng[2] - rng[1])
-  out  <- rep("#FFFFFF", length(v))
-  ok   <- is.finite(norm)
-  idx  <- pmax(1, pmin(100, floor(norm[ok] * 99) + 1))
-  out[ok] <- levels[idx]
-  list(bg = out, norm = replace(norm, !ok, NA_real_))
+# Shade each cell by its value on one scale across the whole table.
+shade <- function(values) {
+  scaled <- (values - range_all[1]) / (range_all[2] - range_all[1])
+  list(
+    fill = ifelse(is.finite(scaled), palette[pmax(1, pmin(100, floor(scaled * 99) + 1))], "#FFFFFF"),
+    scaled = scaled
+  )
 }
 
-# Build color matrices
-m_list   <- lapply(df[num_cols], col_colors)
-bg_mat   <- do.call(cbind, lapply(m_list, `[[`, "bg"))
-norm_mat <- do.call(cbind, lapply(m_list, `[[`, "norm"))
-colnames(bg_mat) <- num_cols
+ft <- flextable(severity)
+ft <- bg(ft, j = 1, bg = "#FFFFFF", part = "body")
 
-# --- Build flextable (NO theme_zebra here) ---
-ft <- flextable(df)
+for (column in numeric_columns) {
 
-# Locally disable any zebra/striping by force-setting the label column bg to white
-ft <- bg(ft, i = seq_len(nrow(df)), j = 1, bg = "#FFFFFF", part = "body")
+  shading <- shade(severity[[column]])
 
-# Apply heatmap backgrounds for numeric columns
-for (j in seq_along(num_cols)) {
-  ft <- bg(ft, i = seq_len(nrow(df)), j = num_cols[j], bg = bg_mat[, j])
+  ft <- bg(ft, j = column, bg = shading$fill, part = "body")
+
+  dark <- which(is.finite(shading$scaled) & shading$scaled >= 0.78)
+  if (length(dark) > 0) ft <- color(ft, i = dark, j = column, color = "#FFFFFF")
 }
 
-# Improve contrast: white text on darker cells
-cutoff <- 0.78
-for (j in seq_along(num_cols)) {
-  white_rows <- which(!is.na(norm_mat[, j]) & norm_mat[, j] >= cutoff)
-  if (length(white_rows)) {
-    ft <- color(ft, i = white_rows, j = num_cols[j], color = "#FFFFFF")
-  }
-}
+total_row <- which(severity[[1]] == "Total")
+total_col <- which(names(severity) == "Total")
 
-# Optional emphasis: bold Total row label and Total column header
-ft <- bold(ft, i = which(df[[1]] == "Total"), j = 1, bold = TRUE)
-ft <- bold(ft, j = which(names(df) == "Total"), part = "header", bold = TRUE)
-
-ft <- autofit(ft)
-
-# ---- Styling additions ----
-
-
-
-# Column keys used by flextable internally (robust targeting)
-col_keys <- names(ft$body$dataset)
-first_key <- col_keys[1]
-
-# 1) Align: first column left, all others centered
 ft <- ft %>%
-  { align(., j = first_key,   align = "left",   part = "all") } %>%
-  { align(., j = col_keys[-1], align = "center", part = "all") }
-
-# 2) Thin border spec (0.4 pt)
-thin <- fp_border(color = "#000000", width = 0.4)
-
-# 3) Header: white background + lines above and below header
-ft <- ft %>%
+  bold(i = total_row, j = 1, bold = TRUE) %>%
+  bold(j = total_col, part = "header", bold = TRUE) %>%
+  align(j = 1, align = "left", part = "all") %>%
+  align(j = 2:ncol(severity), align = "center", part = "all") %>%
   bg(part = "header", bg = "#FFFFFF") %>%
-  hline_top(part = "header",    border = thin) %>%   # NEW: line above header
-  hline_bottom(part = "header", border = thin)       # existing: line under header
-
-# 4) Remove header text in first cell (first column key)
-ft <- set_header_labels(ft, values = setNames("", first_key))
-
-# 5) Horizontal lines above & below the Total row (search in first column of body)
-total_row_idx <- which(ft$body$dataset[[first_key]] == "Total")
-if (length(total_row_idx) == 1) {
-  ft <- border(
-    ft,
-    i = total_row_idx, j = col_keys,
-    border.top = thin, 
-    border.bottom = thin,
-    part = "body"
-  )
-}
-
-# 6) Vertical lines left & right of the Total column (continuous header + body)
-total_col_idx <- which(col_keys == "Total")
-if (length(total_col_idx) == 1) {
-  # Body: left & right borders for all rows in Total column
-  ft <- border(
-    ft,
-    i = seq_len(nrow(ft$body$dataset)),
-    j = col_keys[total_col_idx],
-    border.left = thin, border.right = thin,
-    part = "body"
-  )
-  # Header: left & right borders for Total column header cell
-  ft <- border(
-    ft,
-    i = 1,
-    j = col_keys[total_col_idx],
-    border.left = thin, border.right = thin,
-    part = "header"
-  )
-}
-
-# 7) (Optional) Re-fit column widths after styling
-ft <-     set_table_properties(ft, width = 1, layout = "autofit")
-
-
+  hline_top(part = "header", border = thin_border) %>%
+  hline_bottom(part = "header", border = thin_border) %>%
+  set_header_labels(osiics_16_level_1 = "") %>%
+  border(i = total_row, border.top = thin_border, border.bottom = thin_border,
+         part = "body") %>%
+  set_table_properties(width = 1, layout = "autofit")
 
 ft
-
-
 ```
 
 \pagebreak
@@ -565,61 +371,37 @@ ft
 **Potential injuries**
 
 ```{r}
-
-df <-  read_fmt_csv(file.path(res_dir,  "Potential_injuries/potential_injuries_summary.csv"))
-
-  ft <- flextable(df) %>% style_ft() %>%  
-    delete_part(part = "header") %>%
-      hline_top(part = "body", border = thin_border) 
-ft
-
+value_table(read_result("potential_injuries_summary"))
 ```
 
 <br>
 
-**Potential injuries - Contact involved in potential injury situations**
+**Referee actions**
 
 ```{r}
-
-df <- read_fmt_csv(file.path(res_dir, "Potential_injuries/contact_type_distribution.csv"))
-
-df %>%
-  slice_head(n = 3) %>% #limits to first 3 rows
-  select(-3) %>% #remove column 3
-  flextable() %>%
-  set_header_labels(contact_type = "") %>%
-  style_ft()
-
+value_table(read_result("potential_injuries_referee_actions"))
 ```
 
-<br>
+\pagebreak
 
-**Potential injuries: top-3 player actions involved**
-
-```{r player action}
-
-df <- read_fmt_csv(file.path(res_dir, "Potential_injuries/player_action_distribution.csv"))
-
-df %>%
-  slice_head(n = 3) %>% #limits to first 3 rows
-  select(-3) %>% #remove column 3
-  flextable() %>%
-  style_ft()
-
-```
-
-<br>
-
-**Potential injuries: Top-3 body parts**
+**Potential injuries: contact involved**
 
 ```{r}
+top_rows("potential_injuries_contact_type", label = "Contact type")
+```
 
-df <- read_fmt_csv(file.path(res_dir, "Potential_injuries/body_part_distribution.csv"))
+<br>
 
-df %>%
-  slice_head(n = 3) %>% #limits to first 3 rows
-  select(-3) %>% #remove column 3
-  flextable() %>%
-  style_ft()
+**Potential injuries: top three player actions**
 
+```{r}
+top_rows("potential_injuries_player_action", label = "Player action")
+```
+
+<br>
+
+**Potential injuries: top three body parts**
+
+```{r}
+top_rows("potential_injuries_body_part", label = "Body part")
 ```
