@@ -106,6 +106,50 @@ load_osiics <- function(file = osiics_file) {
 }
 
 
+## Body area recoding ----
+
+# Reassign the body area for particular OSIICS codes.
+#
+# OSIICS 16 places some diagnoses in a combined "Hip/groin" body area, while the
+# football-specific extension of the IOC consensus statement (Waldén et al.,
+# 2023) recommends reporting hip and groin separately. A competition can
+# therefore assign individual codes by hand, in config.R, based on the clinical
+# information available for each case.
+#
+# This changes the analysis for that competition only. It does not alter the
+# OSIICS reference table.
+#
+# `recode` is a data frame with columns osiics_16_code and osiics_16_level_1.
+apply_body_area_recode <- function(caselist, recode) {
+  
+  if (is.null(recode) || nrow(recode) == 0) {
+    return(caselist)
+  }
+  
+  unknown <- setdiff(recode$osiics_16_level_1, level_1_order)
+  
+  if (length(unknown) > 0) {
+    stop("body_area_recode assigns body areas that are not in level_1_order: ",
+         paste(unknown, collapse = ", "))
+  }
+  
+  matched <- match(caselist$osiics_16_code, recode$osiics_16_code)
+  rows    <- which(!is.na(matched))
+  
+  if (length(rows) == 0) {
+    warning("None of the codes in body_area_recode appear in this caselist.",
+            call. = FALSE)
+    return(caselist)
+  }
+  
+  caselist$osiics_16_level_1[rows] <- recode$osiics_16_level_1[matched[rows]]
+  
+  attr(caselist, "n_recoded") <- length(rows)
+  
+  caselist
+}
+
+
 ## Validation ----
 
 # Warn when a column contains labels the ordering does not cover. Those labels

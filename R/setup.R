@@ -18,10 +18,29 @@ load_or_install <- function(packages) {
 }
 
 
+## Configuration lookup ----
+
+# Look up a value defined in the competition's config.R, falling back to a
+# default. With no default, a missing setting is an error naming the setting.
+get_setting <- function(name, default = NULL) {
+  
+  if (exists(name, envir = globalenv(), inherits = FALSE)) {
+    return(get(name, envir = globalenv()))
+  }
+  
+  if (is.null(default)) {
+    stop("`", name, "` is not set. Define it in config.R.")
+  }
+  
+  default
+}
+
+
 ## Project folders ----
 
 # Create the standard folder structure for a new competition.
-# Run once, by hand, when setting a competition up. Existing folders are left alone.
+# Run once, by hand, when setting a competition up. Existing folders are left
+# alone.
 setup_project_folders <- function(path = ".") {
   
   folders <- c(
@@ -47,10 +66,6 @@ setup_project_folders <- function(path = ".") {
 ## Output paths ----
 
 # Build a path inside the competition's results folder, creating it if needed.
-# `output_dir` is normally set once in the competition's config.R; pass it
-# directly to override.
-
-
 make_output_path <- function(filename, output_dir = get_setting("output_dir")) {
   
   if (!dir.exists(output_dir)) {
@@ -71,26 +86,6 @@ write_result <- function(data, name) {
   
   invisible(path)
 }
-
-
-
-## Configuration lookup ----
-
-# Look up a value defined in the competition's config.R, falling back to a
-# default. With no default, a missing setting is an error naming the setting.
-get_setting <- function(name, default = NULL) {
-  
-  if (exists(name, envir = globalenv(), inherits = FALSE)) {
-    return(get(name, envir = globalenv()))
-  }
-  
-  if (is.null(default)) {
-    stop("`", name, "` is not set. Define it in config.R.")
-  }
-  
-  default
-}
-
 
 
 ## Reading competition data ----
@@ -136,4 +131,27 @@ parse_logical_loose <- function(x) {
     text %in% c("false", "no",  "0") ~ FALSE,
     TRUE ~ NA
   )
+}
+
+
+## Excluded teams ----
+
+# Remove teams excluded from the health surveillance analysis.
+#
+# A team is excluded when it returned no health data at all, so its exposure
+# would sit in the denominator with no possible numerator. Health surveillance
+# only - the potential injury analysis observes every team from broadcast
+# footage and is unaffected.
+exclude_teams <- function(data,
+                          teams  = get_setting("excluded_teams", character()),
+                          column = "team") {
+  
+  if (length(teams) == 0) return(data)
+  
+  if (!column %in% names(data)) {
+    stop("Cannot exclude teams: '", column, "' is not a column here. ",
+         "Filter by player_id instead.")
+  }
+  
+  filter(data, !.data[[column]] %in% teams)
 }

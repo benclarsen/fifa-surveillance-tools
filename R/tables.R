@@ -18,12 +18,22 @@ fmt <- function(x, digits = 2) {
 }
 
 
-# "12.34 [10.11 to 14.57]", or "" when any part is missing.
+# "12.34 [10.11 to 14.57]"; the estimate alone where no interval can be
+# computed; "" where there is no estimate.
+#
+# A blank cell in a published table means withheld. A true zero with no
+# interval - as when a category has no cases - must still read as zero, which
+# is why a missing interval does not blank the estimate.
 fmt_ci <- function(estimate, lower, upper, digits = 2) {
   ifelse(
-    is.na(estimate) | is.na(lower) | is.na(upper),
+    is.na(estimate),
     "",
-    paste0(fmt(estimate, digits), " [", fmt(lower, digits), " to ", fmt(upper, digits), "]")
+    ifelse(
+      is.na(lower) | is.na(upper),
+      fmt(estimate, digits),
+      paste0(fmt(estimate, digits), " [", fmt(lower, digits), " to ",
+             fmt(upper, digits), "]")
+    )
   )
 }
 
@@ -45,34 +55,37 @@ problem_type_plural <- c(
 
 ## Participation ----
 
-generate_participation_table <- function(player_details) {
+# Takes the FULL player list, including excluded teams, so the table can report
+# both how many teams were invited and how many contributed data.
+generate_participation_table <- function(player_details,
+                                         excluded_teams = get_setting("excluded_teams", character())) {
   
-  totals <- player_details %>%
-    summarise(
-      teams_total        = n_distinct(team),
-      teams_consenting   = n_distinct(team[consent %in% "yes"]),
-      players_total      = n(),
-      players_consenting = n_distinct(player_id[consent %in% "yes"])
-    )
+  contributing <- filter(player_details, !team %in% excluded_teams)
+  
+  teams_total        <- n_distinct(player_details$team)
+  teams_contributing <- n_distinct(contributing$team)
+  players_total      <- nrow(contributing)
+  players_consenting <- n_distinct(contributing$player_id[contributing$consent %in% "yes"])
   
   tibble::tibble(
     Metric = c(
       "Total number of teams",
-      "Participating teams",
-      "Total number of players",
+      "Teams contributing data",
+      "Players in contributing teams",
       "Consenting players"
     ),
     Value = c(
-      as.character(totals$teams_total),
-      fmt_count_percent(totals$teams_consenting, totals$teams_total),
-      as.character(totals$players_total),
-      fmt_count_percent(totals$players_consenting, totals$players_total)
+      as.character(teams_total),
+      fmt_count_percent(teams_contributing, teams_total),
+      as.character(players_total),
+      fmt_count_percent(players_consenting, players_total)
     )
   )
 }
 
 
 ## Player characteristics ----
+
 generate_player_characteristics_table <- function(player_details) {
   
   if (!"age" %in% names(player_details)) {
@@ -88,7 +101,6 @@ generate_player_characteristics_table <- function(player_details) {
     describe_variable(players$weight, "Body mass (kg)")
   )
 }
-
 
 
 # Median, interquartile range and range for one variable.
@@ -618,7 +630,9 @@ write_pattern_table_excel <- function(pattern_table, path, sheet = "table") {
 
 suppress_severity <- function(results, min_n_severity = get_setting("min_n_severity", 2)) {
   
-  below <- results$n_cases < min_n_severity
+  # A row with no cases has nothing to protect - blanking it would hide a
+  # genuine zero rather than conceal an individual.
+  below <- results$n_cases > 0 & results$n_cases < min_n_severity
   
   for (column in c("median_timeloss", "total_timeloss",
                    "burden_rate", "lower_bound", "upper_bound")) {

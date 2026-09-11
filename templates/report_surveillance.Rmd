@@ -6,6 +6,8 @@ params:
   competition_name: "Competition"
   results_dir: "."
   suppression_note: ""
+  methods_note: !r character()
+  include_notes: true
 output:
   word_document:
     reference_docx: word-styles-reference-02.docx
@@ -192,6 +194,13 @@ top_rows <- function(name, n = 3, label = "") {
 
   flextable(data) %>% style_ft()
 }
+```
+
+```{r results='asis'}
+cat("**Internal document.** Analysis results for the ", params$competition_name,
+    ", prepared as the basis for a scientific manuscript. This is not the ",
+    "published report, and the figures may still change as outstanding data ",
+    "queries are resolved.\n\n", sep = "")
 ```
 
 <br>
@@ -404,4 +413,54 @@ top_rows("potential_injuries_player_action", label = "Player action")
 
 ```{r}
 top_rows("potential_injuries_body_part", label = "Body part")
+```
+
+```{r results='asis'}
+# Draft methods text, assembled from the settings actually in force.
+# Passages marked [CHECK] need a figure or a decision the settings cannot supply.
+
+if (length(params$methods_note) > 0) {
+
+  cat("\n\\pagebreak\n\n")
+  cat("**Suggested methods text**\n\n")
+  cat("A draft, assembled from the settings this analysis actually used. ",
+      "Passages marked [CHECK] need a figure or a decision that the settings ",
+      "cannot supply - most of them are in the run notes below.\n\n", sep = "")
+
+  cat(paste(params$methods_note, collapse = "\n\n"), "\n\n")
+}
+```
+
+```{r results='asis'}
+# Appendix: the narrative lines from each script's run notes.
+#
+# The brief notes hold the narrative only. The full notes, which include the
+# case-level tables behind each check, stay in the results folder.
+
+if (isTRUE(params$include_notes)) {
+
+  notes <- c(
+    "Data preparation and exposure" = "notes_exposure_brief",
+    "Analysis"                      = "notes_analysis_brief",
+    "Potential injuries"            = "notes_potential_injuries_brief",
+    "Figures"                       = "notes_figures_brief"
+  )
+
+  cat("\n\\pagebreak\n\n")
+  cat("**Appendix: run notes**\n\n")
+  cat("Written by the analysis scripts as they run. They record the settings in ",
+      "force, every exclusion and the reason for it, and the data-quality checks. ",
+      "The tables behind each check are in the full notes in the results folder.\n\n",
+      sep = "")
+
+  for (title in names(notes)) {
+
+    path <- file.path(res_dir, paste0(notes[[title]], ".txt"))
+    if (!file.exists(path)) next
+
+    cat("\n*", title, "*\n\n", sep = "")
+    cat("```\n", paste(readLines(path, warn = FALSE), collapse = "\n"), "\n```\n",
+        sep = "")
+  }
+}
 ```
